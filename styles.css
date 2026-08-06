@@ -475,8 +475,12 @@ a.brand-name { text-decoration: none; color: var(--ink); }
   max-width: 56px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 .ai-wa { background: linear-gradient(160deg, #5BD066, #27B43E); }
-.ai-waze { background: #05C8F2; font-size: 1rem; }
-.ai-bit { background: linear-gradient(150deg, #FF5A5F, #EE2A7B); font-size: .74rem; font-weight: 800; font-style: italic; }
+.ai-waze { background: #33CCFF; }
+.ai-bit {
+  background: linear-gradient(150deg, #FF3B4E, #E6007E);
+  font-size: .98rem; font-weight: 800; font-style: italic;
+  letter-spacing: -.5px; direction: ltr;
+}
 .ai-wolt { background: #009DE0; font-size: 1rem; }
 .ai-yad2 { background: #FF7100; font-size: .68rem; font-weight: 800; }
 .ai-moovit { background: linear-gradient(150deg, #FF9E1B, #F26722); font-size: 1rem; }
@@ -656,9 +660,8 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .proof-label { font-size: .9rem; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
 .proof-shots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
 @media (max-width: 560px) { .proof-shots { grid-template-columns: 1fr 1fr; } }
-.proof-shot { margin: 0; overflow: hidden; border-radius: 10px; transition: transform .2s ease, box-shadow .2s ease; }
+.proof-shot { margin: 0; overflow: hidden; border-radius: 10px; }
 .proof-shot img { display: block; width: 100%; height: auto; }
-.proof-shot:hover { transform: translateY(-3px) scale(1.02); box-shadow: 0 14px 30px rgba(0,0,0,.25); }
 .proof-note { margin-top: 12px; font-size: .8rem; color: var(--ink-soft); }
 
 /* ---------- pricing ---------- */
@@ -766,7 +769,6 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .hw { display: inline-block; }
 .hw-anim .hw { opacity: 0; transform: translateY(.55em) rotate(2deg); }
 .hw-anim .hw.in { opacity: 1; transform: none; transition: opacity .5s ease, transform .5s cubic-bezier(.2,1,.3,1); }
-.hw:hover { color: var(--brand-ink); transition: color .15s ease; }
 .hl {
   background-image: linear-gradient(transparent 58%, rgba(37,211,102,.32) 0);
   background-repeat: no-repeat; background-position: 100% 0; background-size: 0% 100%;
@@ -807,11 +809,10 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .boundary-wrap .bnd-ours { opacity: 0; transform: translateX(-28px); transition: all .6s cubic-bezier(.2,.7,.3,1) .3s; }
 .boundary-wrap.rv-on .bnd-yours, .boundary-wrap.rv-on .bnd-ours { opacity: 1; transform: none; }
 
-/* proof screenshots: scattered polaroids that straighten on hover */
+/* proof screenshots: scattered polaroids */
 .proof-shot:nth-child(1) { rotate: -2.2deg; }
 .proof-shot:nth-child(2) { rotate: 1.6deg; }
 .proof-shot:nth-child(3) { rotate: -1.2deg; }
-.proof-shot:hover { rotate: 0deg; }
 
 /* primary price card glows once it lands */
 .price-card.primary.rv-on { animation: cardglow 1.7s ease .5s 1; }
