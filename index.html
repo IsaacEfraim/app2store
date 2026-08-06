@@ -36,7 +36,7 @@
 <link rel="preload" href="/assets/fonts/suezone-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=20260806d">
+<link rel="stylesheet" href="/styles.css?v=20260806e">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -160,10 +160,10 @@
     <div class="hero-copy">
       <span class="eyebrow">Base44 · Lovable · v0 — מהדפדפן לחנויות</span>
       <h1>מה שבנית עם AI ראוי להיות אפליקציה אמיתית.</h1>
-      <p class="hero-sub">אנחנו לוקחים את האפליקציה שבניתם ב-Base44, Lovable או v0 ומעלים אותה עד הסוף לגוגל פליי ול-App Store — עם אייקון, עמוד חנות וכפתור התקנה אמיתי.</p>
+      <p class="hero-sub">בניתם משהו מגניב ב-Base44, Lovable או v0 — אבל הוא עדיין תקוע בדפדפן. אנחנו לוקחים אותו עד הסוף: גוגל פליי, אפ סטור, אייקון על מסך הבית וכפתור התקנה אמיתי.</p>
 
       <div class="paste-row">
-        <label class="paste-label" for="appUrl">רוצים לראות את שלכם נכנסת לחנות? הדביקו קישור:</label>
+        <label class="paste-label" for="appUrl">רוצים לראות איך זה ייראה אצלכם? הדביקו את הקישור:</label>
         <div class="paste-box">
           <input id="appUrl" type="url" inputmode="url" placeholder="https://yourapp.base44.app" autocomplete="off">
           <button id="launchBtn" type="button">שגרו לחנות</button>
@@ -176,7 +176,7 @@
           <svg width="19" height="19" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
           בדיקת התאמה חינם ב-WhatsApp
         </a>
-        <p class="hero-micro">שולחים קישור, מקבלים תשובה מאדם אמיתי — לפני שמשלמים שקל. <strong>חבילות במחיר קבוע מ-₪1,190.</strong></p>
+        <p class="hero-micro">שולחים קישור בוואטסאפ, מקבלים תשובה מבנאדם — עוד לפני ששילמתם שקל. <strong>מחיר קבוע מ-₪1,190.</strong></p>
       </div>
 
       <div class="hero-nots">
@@ -212,20 +212,42 @@
       </div>
 
       <div class="phone-col">
-        <div class="phone">
+        <div class="phone" id="phoneShell">
+          <i class="pbtn pb-pow" aria-hidden="true"></i>
+          <i class="pbtn pb-vu" aria-hidden="true"></i>
+          <i class="pbtn pb-vd" aria-hidden="true"></i>
           <div class="phone-screen">
-            <div class="phone-status"><span>9:41</span><span>▮▮▮ 100%</span></div>
-            <div class="icon-grid">
-              <div class="app-ico"><i style="background:#5A7D9A"></i><span>יומן</span></div>
-              <div class="app-ico"><i style="background:#7A9E7E"></i><span>מזג אוויר</span></div>
-              <div class="app-ico"><i style="background:#9A8FBF"></i><span>מוזיקה</span></div>
-              <div class="app-ico"><i style="background:#C4A35A"></i><span>תמונות</span></div>
-              <div class="app-ico"><i style="background:#B76E79"></i><span>כושר</span></div>
-              <div class="app-ico"><i style="background:#6E9AA8"></i><span>מפות</span></div>
-              <div class="app-ico"><i style="background:#8A8F98"></i><span>הגדרות</span></div>
-              <div class="app-ico slot" id="slot"><i id="slotIcon"></i><span id="slotLabel">האפליקציה שלך</span></div>
+            <div class="p-island" aria-hidden="true"></div>
+            <div class="phone-status" aria-hidden="true">
+              <span class="ptime">9:41</span>
+              <span class="pstat">
+                <svg width="15" height="10" viewBox="0 0 16 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.2" y="5" width="3" height="6" rx="1"/><rect x="8.4" y="2.5" width="3" height="8.5" rx="1"/><rect x="12.6" y="0" width="3" height="11" rx="1"/></svg>
+                <svg width="14" height="11" viewBox="0 0 16 12" fill="currentColor"><circle cx="8" cy="10.3" r="1.7"/><path d="M4.5 8.1a5 5 0 0 1 7 0l-1.5 1.5a3 3 0 0 0-4 0z"/><path d="M1.6 5.2a9 9 0 0 1 12.8 0l-1.5 1.5a7 7 0 0 0-9.8 0z"/></svg>
+                <svg width="21" height="10" viewBox="0 0 25 12" fill="none" stroke="currentColor"><rect x="0.5" y="0.5" width="21" height="11" rx="3.2"/><rect x="2.3" y="2.3" width="15" height="7.4" rx="1.6" fill="currentColor" stroke="none"/><path d="M23.6 4v4a2.1 2.1 0 0 0 0-4z" fill="currentColor" stroke="none"/></svg>
+              </span>
             </div>
-            <div class="phone-dock"><i></i><i></i><i></i><i></i></div>
+            <div class="pwidget" aria-hidden="true">
+              <span class="pw-city">תל אביב</span>
+              <span class="pw-temp">31°</span>
+              <span class="pw-cond">שמש, כרגיל</span>
+            </div>
+            <div class="icon-grid">
+              <div class="app-ico"><i class="ai ai-wa"><svg width="21" height="21" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg></i><span>וואטסאפ</span></div>
+              <div class="app-ico"><i class="ai ai-waze">W</i><span>וייז</span></div>
+              <div class="app-ico"><i class="ai ai-bit">bit</i><span>ביט</span></div>
+              <div class="app-ico"><i class="ai ai-wolt">W</i><span>וולט</span></div>
+              <div class="app-ico"><i class="ai ai-yad2">יד2</i><span>יד2</span></div>
+              <div class="app-ico"><i class="ai ai-moovit">M</i><span>מוביט</span></div>
+              <div class="app-ico"><i class="ai ai-insta"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="#fff" stroke="none"/></svg></i><span>אינסטגרם</span></div>
+              <div class="app-ico slot" id="slot"><i class="ai" id="slotIcon"></i><span id="slotLabel">האפליקציה שלך</span></div>
+            </div>
+            <div class="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
+            <div class="phone-dock" aria-hidden="true">
+              <i class="dk dk-phone"><svg width="19" height="19" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></i>
+              <i class="dk dk-msg"><svg width="19" height="19" viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.5 1.4 4.7 3.6 6.1-.2.8-.7 2-1.5 3 0 0 2.4-.3 4.2-1.6.9.2 1.8.4 2.7.4 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg></i>
+              <i class="dk dk-saf"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#fff" stroke-width="1.6"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z" fill="#fff"/></svg></i>
+              <i class="dk dk-cam"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg></i>
+            </div>
           </div>
         </div>
         <div class="listing" dir="rtl">
@@ -248,28 +270,28 @@
 <section id="pain">
   <div class="container">
     <div class="sec-head">
-      <h2>בניתם את החלק החכם. עכשיו מגיע החלק שאף אחד לא הזהיר אתכם ממנו.</h2>
-      <p>הפלטפורמות של ה-AI נעצרות בדיוק במקום שבו הבירוקרטיה של גוגל ואפל מתחילה.</p>
+      <h2>בניתם את החלק הכיפי. עכשיו מגיע החלק שאף אחד לא סיפר לכם עליו.</h2>
+      <p>הפלטפורמות של ה-AI נעצרות בדיוק איפה שהבירוקרטיה של גוגל ואפל מתחילה.</p>
     </div>
     <div class="case-file">
       <div class="case-row panel">
         <span class="case-num">01</span>
-        <div><h3>פתיחת חשבונות מפתח</h3><p>Google Play Console ו-Apple Developer — טפסים, אימותים ותשלומי אגרה, הכול על שמכם.</p></div>
+        <div><h3>פתיחת חשבונות מפתח</h3><p>Google Play Console ו-Apple Developer — טפסים, אימותים, כרטיס אשראי, והכול באנגלית טכנית.</p></div>
       </div>
       <div class="case-row panel">
         <span class="case-num">02</span>
-        <div><h3>חתימות והצפנה</h3><p><span class="en">Certificates</span>, <span class="en">Keystores</span> ו-<span class="en">Provisioning Profiles</span> — מילים שאף אחד לא רוצה לפגוש לבד.</p></div>
+        <div><h3>חתימות והצפנה</h3><p><span class="en">Certificates</span>, <span class="en">Keystores</span>, <span class="en">Provisioning</span> — מילים שאף אחד לא רוצה לפגוש לבד בלילה.</p></div>
       </div>
       <div class="case-row panel">
         <span class="case-num">03</span>
-        <div><h3>דרישות החנויות</h3><p>אייקונים בכל הגדלים, צילומי מסך, מדיניות פרטיות, טפסי Data Safety — ורשימה שמתעדכנת כל הזמן.</p></div>
+        <div><h3>דרישות החנויות</h3><p>אייקונים בשבעה גדלים, צילומי מסך, מדיניות פרטיות, טופס Data Safety — והרשימה מתעדכנת בדיוק כשסיימתם.</p></div>
       </div>
       <div class="case-row panel">
         <span class="case-num">04</span>
-        <div><h3>דחיות והערות</h3><p>הבודקים של גוגל ואפל עונים בקצרה ובאנגלית טכנית. תשובה לא נכונה = סבב דחייה נוסף.</p></div>
+        <div><h3>דחיות והערות</h3><p>הבודקים של אפל עונים במשפט אחד קריפטי. תשובה לא נכונה — ומחכים עוד שבוע לסבב הבא.</p></div>
       </div>
     </div>
-    <p class="pain-close">לא צריך להפוך למפתחים כדי לפרסם את מה שכבר בניתם.</p>
+    <p class="pain-close">לא בשביל זה למדתם לדבר עם AI. את הבירוקרטיה תשאירו לנו.</p>
   </div>
 </section>
 
@@ -282,20 +304,20 @@
       <div class="step panel">
         <span class="step-tag">שלב 1 · חינם</span>
         <h3>בודקים התאמה</h3>
-        <p>שולחים לנו קישור לאפליקציה בוואטסאפ. אנחנו בודקים שהיא מתאימה לחנויות ומחזירים תשובה ישרה ומחיר סופי.</p>
-        <p class="step-need"><b>מה נדרש מכם:</b> קישור. זהו.</p>
+        <p>שולחים לנו קישור בוואטסאפ. אנחנו בודקים שהאפליקציה באמת מוכנה לחנויות, וחוזרים עם תשובה ישרה ומחיר סופי — כולל "עוד לא, והנה למה" אם זה המצב.</p>
+        <p class="step-need"><b>מה צריך מכם:</b> קישור. זהו, באמת.</p>
       </div>
       <div class="step panel">
         <span class="step-tag">שלב 2</span>
         <h3>אורזים ומגישים</h3>
-        <p>מעטפת מובייל, אייקון ומסכי פתיחה, חתימות, עמוד חנות בעברית — והגשה מסודרת מחשבון המפתח שלכם.</p>
-        <p class="step-need"><b>מה נדרש מכם:</b> הזמנה לקונסולה ואישורים. בלי סיסמאות, אף פעם.</p>
+        <p>אנחנו עושים את כל העבודה השחורה: אייקון, מסכי פתיחה, חתימות, עמוד חנות בעברית — ומגישים מחשבון המפתח שלכם.</p>
+        <p class="step-need"><b>מה צריך מכם:</b> הזמנה לקונסולה. סיסמאות? אף פעם.</p>
       </div>
       <div class="step panel">
         <span class="step-tag">שלב 3</span>
         <h3>עולים לחנות</h3>
-        <p>מלווים את הבדיקה של גוגל ואפל, מטפלים בהערות ובדחיות שקשורות לאריזה ולהגשה — עד לפרסום.</p>
-        <p class="step-need"><b>מה נדרש מכם:</b> לחכות להודעה שהאפליקציה שלכם באוויר.</p>
+        <p>מלווים את הבדיקה של גוגל ואפל עד שהאפליקציה באוויר. דחייה שקשורה לאריזה או להגשה? עלינו, בלי תוספת.</p>
+        <p class="step-need"><b>מה צריך מכם:</b> לחכות להודעה "האפליקציה שלך פורסמה". זה הכול.</p>
       </div>
     </div>
   </div>
@@ -352,12 +374,12 @@
 <section id="trust">
   <div class="container">
     <div class="sec-head">
-      <h2>המותג חדש. הצוות שמאחוריו כבר מלווה מפתחים ישראלים כל יום.</h2>
+      <h2>השם חדש. הצוות שמאחוריו כבר עוזר למפתחים ישראלים כל יום.</h2>
     </div>
     <div class="sister">
       <div class="sister-main panel">
         <p><strong>App2Store הוא השירות החדש של הצוות שמאחורי <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל</a></strong> — השירות שמעביר מפתחים ישראלים את הבדיקה הסגורה של גוגל פליי (12 בודקים, 14 יום).</p>
-        <p>ראינו שוב ושוב את אותה שאלה בקבוצות: "בניתי אפליקציה ב-Base44 — איך אני מעלה אותה לחנות?" אז בנינו לזה שירות שלם, באותה שיטה שכבר עובדת: מחיר קבוע מראש, וואטסאפ ישיר, ותשובה מאדם אמיתי.</p>
+        <p>בקבוצות של Base44 ו-vibe coding עולה כל יום אותה שאלה: "בניתי משהו מדהים — עכשיו איך מכניסים את זה לחנות?" במקום לענות אחד-אחד, בנינו לזה שירות שלם. אותה שיטה שכבר עובדת: מחיר סגור מראש, וואטסאפ ישיר, ובנאדם אמיתי בצד השני.</p>
         <a class="btn btn-ghost btn-sm" href="https://www.12testersisrael.com" target="_blank" rel="noopener">לאתר 12 בודקים ישראל ←</a>
       </div>
       <div class="sister-split panel">
@@ -465,8 +487,8 @@
 
 <section class="final">
   <div class="container">
-    <h2>האפליקציה כבר קיימת. עכשיו תנו לאנשים להתקין אותה.</h2>
-    <p>שלחו את הקישור — נחזור אליכם עם תשובה ישרה ומחיר סופי, לפני שאתם משלמים שקל.</p>
+    <h2>האפליקציה כבר קיימת. תנו לאנשים להתקין אותה.</h2>
+    <p>שלחו קישור — תקבלו תשובה ישרה ומחיר סופי. לא שילמתם כלום עד שהחלטתם שבא לכם.</p>
     <a class="btn btn-wa wa" href="#" data-wa>
       <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
       שלחו את הקישור לבדיקה ב-WhatsApp
@@ -526,6 +548,6 @@
   </div>
 </div>
 
-<script src="/script.js?v=20260806d" defer></script>
+<script src="/script.js?v=20260806e" defer></script>
 </body>
 </html>

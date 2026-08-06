@@ -342,33 +342,92 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .chip.on .tick { background: var(--brand); border-color: var(--brand); color: #fff; }
 .chip .tick svg { width: 9px; height: 9px; }
 
-/* phone */
+/* phone — a real iPhone with the apps every Israeli actually has */
 .phone-col { display: flex; flex-direction: column; gap: 12px; align-items: center; }
 .phone {
-  width: 100%; max-width: 210px;
-  background: var(--slab); border-radius: 30px; padding: 9px;
-  border: 1px solid var(--line);
-  box-shadow: var(--shadow-app);
+  position: relative;
+  width: 100%; max-width: 226px;
+  background: linear-gradient(145deg, #46586A 0%, #1B2935 26%, #101D28 72%, #33434F 100%);
+  border-radius: 44px; padding: 9px;
+  border: 1px solid rgba(255,255,255,.16);
+  box-shadow: var(--shadow-app), inset 0 0 3px rgba(255,255,255,.28);
+  will-change: transform;
+  transition: transform .25s ease;
 }
+.pbtn { position: absolute; background: #374855; border-radius: 3px; }
+.pb-pow { left: -2px; top: 100px; width: 3px; height: 44px; }
+.pb-vu { right: -2px; top: 82px; width: 3px; height: 26px; }
+.pb-vd { right: -2px; top: 114px; width: 3px; height: 26px; }
 .phone-screen {
-  background: linear-gradient(160deg, #17364A 0%, #0F2233 65%);
-  border-radius: 22px; padding: 12px 10px 10px; min-height: 250px;
-  display: flex; flex-direction: column;
+  position: relative;
+  background:
+    radial-gradient(120% 90% at 85% 6%, rgba(139,123,255,.5), transparent 55%),
+    radial-gradient(110% 80% at 10% 32%, rgba(37,211,102,.3), transparent 55%),
+    radial-gradient(130% 100% at 60% 100%, rgba(47,77,168,.65), transparent 62%),
+    linear-gradient(168deg, #142244, #0B1626);
+  border-radius: 36px; padding: 8px 8px 8px; min-height: 316px;
+  display: flex; flex-direction: column; overflow: hidden;
 }
-.phone-status { display: flex; justify-content: space-between; font-size: .55rem; color: rgba(255,255,255,.75); padding: 0 6px 10px; direction: ltr; }
-.icon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px 6px; }
+.p-island {
+  position: absolute; top: 8px; left: 50%; transform: translateX(-50%);
+  width: 60px; height: 17px; border-radius: 999px; background: #04070B;
+  box-shadow: inset 0 0 2px rgba(255,255,255,.15);
+}
+.phone-status {
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: .62rem; font-weight: 600; color: #fff;
+  padding: 3px 10px 8px; direction: ltr;
+}
+.pstat { display: inline-flex; gap: 3.5px; align-items: center; }
+.pwidget {
+  display: flex; align-items: baseline; gap: 7px;
+  background: rgba(255,255,255,.14); backdrop-filter: blur(5px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 14px; padding: 8px 12px; margin: 2px 2px 11px;
+  color: #fff;
+}
+.pw-city { font-size: .6rem; font-weight: 600; }
+.pw-temp { font-family: var(--font-display); font-size: 1.15rem; line-height: 1; }
+.pw-cond { font-size: .54rem; opacity: .85; margin-inline-start: auto; }
+.icon-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px 4px; }
 .app-ico { display: flex; flex-direction: column; align-items: center; gap: 3px; }
-.app-ico i {
-  width: 34px; height: 34px; border-radius: 10px; display: block;
-  background: rgba(255,255,255,.16);
+.ai {
+  width: 38px; height: 38px; border-radius: 10.5px;
+  display: grid; place-items: center;
+  font-style: normal; font-weight: 700; color: #fff;
+  font-family: var(--font-body); font-size: .82rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.35);
 }
-.app-ico span { font-size: .5rem; color: rgba(255,255,255,.6); max-width: 44px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.app-ico.slot i { background: transparent; border: 1.5px dashed rgba(255,255,255,.35); }
-.app-ico.slot span { color: transparent; }
-.app-ico.slot.landed i { border: none; }
-.app-ico.slot.landed span { color: rgba(255,255,255,.92); font-weight: 500; }
-.phone-dock { margin-top: auto; display: flex; justify-content: center; gap: 8px; background: rgba(255,255,255,.08); border-radius: 14px; padding: 6px 10px; }
-.phone-dock i { width: 28px; height: 28px; border-radius: 8px; background: rgba(255,255,255,.18); }
+.app-ico span {
+  font-size: .5rem; color: rgba(255,255,255,.88);
+  text-shadow: 0 1px 3px rgba(0,0,0,.6);
+  max-width: 48px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+.ai-wa { background: linear-gradient(160deg, #5BD066, #27B43E); }
+.ai-waze { background: #05C8F2; font-size: 1rem; }
+.ai-bit { background: linear-gradient(150deg, #FF5A5F, #EE2A7B); font-size: .74rem; font-weight: 800; font-style: italic; }
+.ai-wolt { background: #009DE0; font-size: 1rem; }
+.ai-yad2 { background: #FF7100; font-size: .68rem; font-weight: 800; }
+.ai-moovit { background: linear-gradient(150deg, #FF9E1B, #F26722); font-size: 1rem; }
+.ai-insta { background: radial-gradient(120% 120% at 20% 100%, #FEDA75 8%, #FA7E1E 32%, #D62976 56%, #962FBF 80%, #4F5BD5); }
+.app-ico.slot .ai { background: rgba(255,255,255,.07); border: 1.5px dashed rgba(255,255,255,.42); box-shadow: none; }
+.app-ico.slot span { color: transparent; text-shadow: none; }
+.app-ico.slot.landed .ai { border: none; box-shadow: 0 2px 6px rgba(0,0,0,.35); }
+.app-ico.slot.landed span { color: rgba(255,255,255,.95); font-weight: 600; text-shadow: 0 1px 3px rgba(0,0,0,.6); }
+.pdots { display: flex; gap: 5px; justify-content: center; padding: 9px 0 7px; margin-top: auto; }
+.pdots i { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,.35); }
+.pdots i.on { background: #fff; }
+.phone-dock {
+  display: flex; justify-content: space-around; gap: 6px;
+  background: rgba(255,255,255,.15); backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 19px; padding: 7px 8px;
+}
+.dk { width: 37px; height: 37px; border-radius: 10.5px; display: grid; place-items: center; box-shadow: 0 2px 5px rgba(0,0,0,.3); }
+.dk-phone { background: linear-gradient(160deg, #67E273, #1EA83C); }
+.dk-msg { background: linear-gradient(160deg, #6BE07A, #12B32B); }
+.dk-saf { background: linear-gradient(160deg, #3AA2FF, #1668DC); }
+.dk-cam { background: linear-gradient(160deg, #8E9BA9, #5C6B7A); }
 
 /* mini store listing */
 .listing {
@@ -606,6 +665,17 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .page-body h2 { font-size: 1.3rem; margin: 28px 0 8px; }
 .page-body p, .page-body li { color: var(--ink-soft); margin-bottom: 10px; font-size: .97rem; }
 .page-body ul { padding-inline-start: 20px; }
+
+/* ---------- scroll reveal + hover lift ---------- */
+.rv { opacity: 0; transform: translateY(18px); transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.3,1); }
+.rv-on { opacity: 1; transform: none; }
+.case-row, .step, .price-card, .maint-strip, .sister-main, .sister-split {
+  transition: transform .2s ease, box-shadow .2s ease, opacity .55s ease;
+}
+.case-row:hover, .step:hover { transform: translateY(-3px); box-shadow: 0 4px 6px rgba(0,0,0,.08), 0 16px 34px rgba(0,0,0,.12); }
+.price-card:hover { transform: translateY(-3px); }
+.case-num { transition: transform .3s cubic-bezier(.2,1.4,.4,1); }
+.case-row:hover .case-num { transform: rotate(4deg) scale(1.08); }
 
 /* ---------- floating buttons: WhatsApp (left) + accessibility (right) ---------- */
 .wa-float {

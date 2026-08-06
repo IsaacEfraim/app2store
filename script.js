@@ -359,6 +359,38 @@
     setTimeout(runShow, 700);
   }
 
+  /* ---------- scroll reveal ---------- */
+
+  var motionOff = reducedMotion || document.documentElement.classList.contains("a11y-motion");
+  if (!motionOff && "IntersectionObserver" in window) {
+    var revEls = document.querySelectorAll(
+      ".sec-head, .case-row, .step, .boundary-wrap, .deliver-item, .exclude-strip, .sister-main, .sister-split, .price-card, .maint-strip, .fees-note, .faq-item, .final h2, .final .btn-wa, .final-what"
+    );
+    revEls.forEach(function (el, i) {
+      el.classList.add("rv");
+      el.style.transitionDelay = ((i % 4) * 70) + "ms";
+    });
+    var revObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { en.target.classList.add("rv-on"); revObs.unobserve(en.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
+    revEls.forEach(function (el) { revObs.observe(el); });
+  }
+
+  /* ---------- phone tilt (desktop pointers only) ---------- */
+
+  var shell = document.getElementById("phoneShell");
+  if (shell && !motionOff && window.matchMedia("(pointer: fine)").matches) {
+    stage.addEventListener("pointermove", function (e) {
+      var r = stage.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5;
+      var y = (e.clientY - r.top) / r.height - 0.5;
+      shell.style.transform = "perspective(700px) rotateY(" + (x * -8).toFixed(2) + "deg) rotateX(" + (y * 7).toFixed(2) + "deg)";
+    });
+    stage.addEventListener("pointerleave", function () { shell.style.transform = ""; });
+  }
+
   /* ---------- sticky mobile CTA: appears after hero, hides over pricing/footer ---------- */
 
   var sticky = document.getElementById("stickyCta");
