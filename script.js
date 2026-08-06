@@ -385,6 +385,49 @@
     document.addEventListener("click", function () { dd.classList.remove("open"); });
   }
 
+  /* ---------- readiness checker ---------- */
+
+  var checkQs = document.getElementById("checkQs");
+  var checkResult = document.getElementById("checkResult");
+  if (checkQs && checkResult) {
+    var answers = {};
+    checkQs.addEventListener("click", function (e) {
+      var btn = e.target.closest(".cq-btn");
+      if (!btn) return;
+      var q = btn.closest(".cq");
+      q.querySelectorAll(".cq-btn").forEach(function (b) { b.classList.remove("on"); });
+      btn.classList.add("on");
+      answers[q.dataset.q] = btn.dataset.a;
+      if (Object.keys(answers).length === 4) showVerdict();
+    });
+
+    function showVerdict() {
+      var ready = answers.mobile === "yes" && answers.real === "yes";
+      var html = "";
+      var waSummary;
+      if (ready) {
+        html += "<h3>נראית מוכנה לחנות 🎉</h3>";
+        html += "<p>על בסיס התשובות, האפליקציה שלכם מועמדת טובה לגוגל פליי" + (answers.digital === "yes" ? "" : " ולאפ סטור") + ".</p>";
+        if (answers.login === "yes") html += "<p>👤 בגלל שיש התחברות — נכין יחד משתמש דמו לבודקים של החנויות. עניין של דקות.</p>";
+        if (answers.digital === "yes") html += "<p>💳 מוצר דיגיטלי בתשלום דורש בדרך כלל רכישות In-App אצל אפל (עם עמלה). נבדוק את זה בבדיקת ההתאמה — לפעמים יש דרך חכמה יותר.</p>";
+        html += "<p><strong>הצעד הבא לוקח דקה:</strong> שלחו לנו את הקישור, ותקבלו אישור סופי ומחיר סגור.</p>";
+        waSummary = "היי, עשיתי את בדיקת המוכנות באתר ויצא שהאפליקציה שלי מוכנה. זה הקישור: ";
+      } else {
+        checkResult.classList.add("warn");
+        html += "<h3>כמעט שם — יש מה לחזק קודם</h3>";
+        if (answers.mobile !== "yes") html += "<p>📱 קודם כול מובייל: פתחו את האפליקציה בטלפון. אם משהו נשבר — ברוב הפלטפורמות זה פרומפט תיקון אחד (\"make it mobile friendly\").</p>";
+        if (answers.real !== "yes") html += "<p>⚡ החנויות אוהבות אפליקציות שעושות משהו: הוסיפו פעולה אמיתית אחת — טופס, חישוב, שמירת מידע — וזה כבר סיפור אחר.</p>";
+        html += "<p>לא בטוחים? שלחו לנו את הקישור ונגיד לכם בדיוק מה חסר — בחינם, בלי התחייבות.</p>";
+        waSummary = "היי, עשיתי את בדיקת המוכנות באתר ויצא שכדאי לחזק כמה דברים. אשמח לחוות דעת על הקישור: ";
+      }
+      html += '<a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waSummary + (state.domain ? "https://" + state.domain : "")) + '">'
+        + '<svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>'
+        + 'שלחו את הקישור בוואטסאפ</a>';
+      checkResult.innerHTML = html;
+      checkResult.hidden = false;
+    }
+  }
+
   /* ---------- scroll reveal ---------- */
 
   var motionOff = reducedMotion || document.documentElement.classList.contains("a11y-motion");
@@ -400,7 +443,7 @@
       else if (el.classList.contains("sister-split")) el.classList.add("rv-left");
       else if (el.classList.contains("case-row")) { el.classList.add(caseIdx % 2 === 0 ? "rv-right" : "rv-left"); caseIdx++; }
       else if (el.classList.contains("step") || el.classList.contains("price-card")) el.classList.add("rv-pop");
-      else if (el.classList.contains("proof-shot")) el.classList.add("rv-tilt");
+      else if (el.classList.contains("proof-shot")) el.classList.add("rv-pop");
       el.style.transitionDelay = ((i % 4) * 70) + "ms";
     });
     var revObs = new IntersectionObserver(function (entries) {

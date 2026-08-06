@@ -36,7 +36,7 @@
 <link rel="preload" href="/assets/fonts/suezone-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=20260806h">
+<link rel="stylesheet" href="/styles.css?v=20260806i">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -283,6 +283,43 @@
   </div>
 </section>
 
+<div class="platform-strip" aria-hidden="true">
+  <div class="pl-track">
+    <span>Base44</span><i>✦</i><span>Lovable</span><i>✦</i><span>v0</span><i>✦</i><span>Bolt</span><i>✦</i><span>Replit</span><i>✦</i><span>Cursor</span><i>✦</i><span>Windsurf</span><i>✦</i>
+    <span>Base44</span><i>✦</i><span>Lovable</span><i>✦</i><span>v0</span><i>✦</i><span>Bolt</span><i>✦</i><span>Replit</span><i>✦</i><span>Cursor</span><i>✦</i><span>Windsurf</span><i>✦</i>
+  </div>
+</div>
+
+<section id="check" class="check-sec">
+  <div class="container">
+    <div class="checker panel">
+      <div class="check-head">
+        <h2>האפליקציה שלך מוכנה לחנות? בדקו ב-30 שניות.</h2>
+        <p>בלי להשאיר פרטים, בלי אימייל — התשובה מופיעה כאן בדף.</p>
+      </div>
+      <div class="check-qs" id="checkQs">
+        <div class="cq" data-q="mobile">
+          <span class="cq-text">האפליקציה נטענת ועובדת יפה בדפדפן של הטלפון?</span>
+          <span class="cq-btns"><button type="button" class="cq-btn" data-a="yes">כן</button><button type="button" class="cq-btn" data-a="no">לא / לא בדקתי</button></span>
+        </div>
+        <div class="cq" data-q="real">
+          <span class="cq-text">יש בה פעולות אמיתיות — לא רק דף מידע סטטי?</span>
+          <span class="cq-btns"><button type="button" class="cq-btn" data-a="yes">כן</button><button type="button" class="cq-btn" data-a="no">לא</button></span>
+        </div>
+        <div class="cq" data-q="login">
+          <span class="cq-text">היא דורשת התחברות של משתמשים?</span>
+          <span class="cq-btns"><button type="button" class="cq-btn" data-a="yes">כן</button><button type="button" class="cq-btn" data-a="no">לא</button></span>
+        </div>
+        <div class="cq" data-q="digital">
+          <span class="cq-text">אתם מוכרים בה מוצר דיגיטלי בתשלום (מנוי, תוכן, קרדיטים)?</span>
+          <span class="cq-btns"><button type="button" class="cq-btn" data-a="yes">כן</button><button type="button" class="cq-btn" data-a="no">לא</button></span>
+        </div>
+      </div>
+      <div class="check-result" id="checkResult" hidden></div>
+    </div>
+  </div>
+</section>
+
 <section id="pain">
   <div class="container">
     <div class="sec-head">
@@ -387,31 +424,6 @@
   </div>
 </section>
 
-<section id="trust">
-  <div class="container">
-    <div class="sec-head">
-      <h2>השם חדש. הצוות שמאחוריו כבר עוזר למפתחים ישראלים כל יום.</h2>
-    </div>
-    <div class="sister">
-      <div class="sister-main panel">
-        <p><strong>App2Store הוא השירות החדש של הצוות שמאחורי <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל</a></strong> — השירות שמעביר מפתחים ישראלים את הבדיקה הסגורה של גוגל פליי (12 בודקים, 14 יום).</p>
-        <p>בקבוצות של Base44 ו-vibe coding עולה כל יום אותה שאלה: "בניתי משהו מדהים — עכשיו איך מכניסים את זה לחנות?" במקום לענות אחד-אחד, בנינו לזה שירות שלם. אותה שיטה שכבר עובדת: מחיר סגור מראש, וואטסאפ ישיר, ובנאדם אמיתי בצד השני.</p>
-        <a class="btn btn-ghost btn-sm" href="https://www.12testersisrael.com" target="_blank" rel="noopener">לאתר 12 בודקים ישראל ←</a>
-      </div>
-      <div class="sister-split panel">
-        <div class="split-row">
-          <span class="split-badge b12">12 בודקים ישראל</span>
-          <p>עמידה בדרישת הבדיקה הסגורה של גוגל פליי — 12 בודקים אמיתיים למשך 14 יום.</p>
-        </div>
-        <div class="split-row">
-          <span class="split-badge ba2s">App2Store</span>
-          <p>כל הדרך מהאפליקציה שבניתם ב-AI ועד אפליקציה מפורסמת בחנויות.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <section id="about">
   <div class="container">
     <div class="sec-head">
@@ -419,6 +431,10 @@
     </div>
     <div class="about-grid">
       <div class="about-story panel">
+        <div class="founder">
+          <span class="f-avatar" id="founderAvatar" aria-hidden="true">א״א</span>
+          <span class="f-meta"><b>אייזיק אפרים</b><small>מייסד App2Store ו-12 בודקים ישראל</small></span>
+        </div>
         <p class="about-lead"><strong>אני אייזיק אפרים — יזם דיגיטלי שחי את חנויות האפליקציות מבפנים.</strong> אני מפעיל פורטפוליו של מוצרים דיגיטליים חיים, כולל אפליקציות שפרסמתי בעצמי בגוגל פליי ובאפ סטור וצברו עשרות אלפי הורדות — ואת <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל</a>, השירות שמעביר מפתחים ישראלים את הבדיקה הסגורה של גוגל, כל שבוע.</p>
         <p>אחרי עשרות הגשות לחנויות, אני מכיר כל טופס, כל דחייה וכל מלכודת של גוגל ואפל — כולל אלה שמגלים רק בפעם השלישית. ושמתי לב שכמעט כל שיחה מתחילה באותו משפט: <em>"בניתי אפליקציה ב-AI... אבל אין לי מושג איך מעלים אותה לחנות."</em> אנשים עם מוצר אמיתי ביד, תקועים מול בירוקרטיה באנגלית. בדיוק בשבילם בניתי את App2Store.</p>
         <p>אנחנו עובדים באותה שיטה שבנתה לנו את השם: <strong>מחיר סגור מראש, וואטסאפ ישיר, ותשובה ישרה — כולל "לא" כשצריך.</strong> בלי חברת פיתוח, בלי פגישות זום מיותרות, בלי הצעות מחיר מנופחות.</p>
@@ -429,10 +445,13 @@
       </div>
       <div class="about-proof">
         <p class="proof-label">שיחות אמיתיות עם לקוחות של הצוות שלנו ב-12 בודקים ישראל:</p>
-        <div class="proof-shots">
+        <div class="proof-shots" tabindex="0" aria-label="גלריית המלצות — גללו הצידה">
           <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-approved.jpg" alt="צילום וואטסאפ: לקוח מעדכן שהאפליקציה אושרה ועלתה לגוגל פליי" loading="lazy"></figure>
+          <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-production-access.jpg" alt="צילום וואטסאפ: לקוח מקבל אישור גישה לפרודקשן" loading="lazy"></figure>
           <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-fast-service.jpg" alt="צילום וואטסאפ: לקוח מודה על שירות מהיר" loading="lazy"></figure>
+          <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-opted-in.jpg" alt="צילום וואטסאפ: כל הבודקים הצטרפו לבדיקה" loading="lazy"></figure>
           <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-premium-report.jpg" alt="צילום וואטסאפ: לקוח מגיב לדוח הבדיקה המפורט" loading="lazy"></figure>
+          <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-hebrew-flow.jpg" alt="צילום וואטסאפ: שיחת ליווי בעברית עם לקוח" loading="lazy"></figure>
         </div>
         <p class="proof-note">ההמלצות משירות הבדיקות שלנו — App2Store חדש, והביקורות הראשונות שלו יופיעו כאן ברגע שיהיו. ככה נראית שקיפות.</p>
       </div>
@@ -595,6 +614,6 @@
   </div>
 </div>
 
-<script src="/script.js?v=20260806h" defer></script>
+<script src="/script.js?v=20260806i" defer></script>
 </body>
 </html>
