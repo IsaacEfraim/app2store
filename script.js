@@ -45,7 +45,7 @@
 
   function iconStyleFor(domain) {
     if (!domain) {
-      return { bg: "linear-gradient(135deg, #0E8A5C, #0B6B48)", letter: "א" };
+      return { bg: "linear-gradient(135deg, #17A876, #0B6B48)", letter: "✦" };
     }
     var hue = hashHue(domain);
     return {
@@ -171,6 +171,7 @@
     els.slotLabel.textContent = state.domain ? shortDomain(state.domain) : "האפליקציה שלך";
     els.listingName.textContent = state.domain ? shortDomain(state.domain) : "האפליקציה שלך";
     els.listingIcon.removeAttribute("style");
+    els.listingIcon.classList.remove("lit");
     els.installBtn.classList.remove("ready");
     els.installBtn.textContent = "בתהליך…";
     els.stamp.classList.remove("show");
@@ -198,6 +199,7 @@
   function finalState() {
     var icon = iconStyleFor(state.domain);
     applyBrowserMono(icon);
+    els.listingIcon.classList.add("lit");
     els.chips.forEach(function (c) { c.classList.add("on"); });
     els.slot.classList.add("landed");
     els.slotIcon.style.background = icon.bg;
@@ -226,6 +228,7 @@
     var icon = iconStyleFor(state.domain);
     els.urlbar.textContent = state.domain || "yourapp.base44.app";
     applyBrowserMono(icon);
+    els.fly.style.background = icon.bg;
 
     /* 1 — the url bar pulses: today it's just a link */
     els.urlbar.classList.remove("pulse");
@@ -236,8 +239,6 @@
     /* 2 — the app contracts into an icon over the browser */
     var browserRect = els.browserBody.getBoundingClientRect();
     var start = centerIn(browserRect, 44);
-    els.fly.textContent = icon.letter;
-    els.fly.style.background = icon.bg;
     els.fly.style.transform = "translate(" + start.x + "px," + start.y + "px) scale(2.6)";
     els.fly.style.opacity = "0";
     els.fly.animate(
@@ -282,6 +283,7 @@
 
     /* 6 — the listing goes live: התקנה */
     els.listingIcon.style.background = icon.bg;
+    els.listingIcon.classList.add("lit");
     await wait(280);
     els.installBtn.classList.add("ready");
     els.installBtn.textContent = "התקנה";
@@ -390,11 +392,15 @@
     var revEls = document.querySelectorAll(
       ".sec-head, .case-row, .step, .boundary-wrap, .deliver-item, .exclude-strip, .sister-main, .sister-split, .about-story, .proof-shot, .price-card, .maint-strip, .fees-note, .faq-item, .final h2, .final .btn-wa, .final-what"
     );
+    var caseIdx = 0;
     revEls.forEach(function (el, i) {
       el.classList.add("rv");
-      /* opposing panels slide in from opposite sides — everything else rises */
+      /* each section gets its own motion character */
       if (el.classList.contains("sister-main") || el.classList.contains("about-story")) el.classList.add("rv-right");
-      if (el.classList.contains("sister-split")) el.classList.add("rv-left");
+      else if (el.classList.contains("sister-split")) el.classList.add("rv-left");
+      else if (el.classList.contains("case-row")) { el.classList.add(caseIdx % 2 === 0 ? "rv-right" : "rv-left"); caseIdx++; }
+      else if (el.classList.contains("step") || el.classList.contains("price-card")) el.classList.add("rv-pop");
+      else if (el.classList.contains("proof-shot")) el.classList.add("rv-tilt");
       el.style.transitionDelay = ((i % 4) * 70) + "ms";
     });
     var revObs = new IntersectionObserver(function (entries) {
@@ -403,6 +409,69 @@
       });
     }, { threshold: 0.12, rootMargin: "0px 0px -5% 0px" });
     revEls.forEach(function (el) { revObs.observe(el); });
+  }
+
+  /* ---------- hero headline: word-by-word entrance + marker sweep ---------- */
+
+  var heroTitle = document.getElementById("heroTitle");
+  if (heroTitle && !motionOff) {
+    var frag = document.createDocumentFragment();
+    Array.prototype.slice.call(heroTitle.childNodes).forEach(function (node) {
+      if (node.nodeType === 3) {
+        node.textContent.split(/(\s+)/).forEach(function (part) {
+          if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(part)); }
+          else if (part) {
+            var w = document.createElement("span");
+            w.className = "hw"; w.textContent = part;
+            frag.appendChild(w);
+          }
+        });
+      } else if (node.nodeType === 1) {
+        node.classList.add("hw");
+        frag.appendChild(node);
+      }
+    });
+    heroTitle.innerHTML = "";
+    heroTitle.appendChild(frag);
+    heroTitle.classList.add("hw-anim");
+    var words = heroTitle.querySelectorAll(".hw");
+    words.forEach(function (w, i) { w.style.transitionDelay = (120 + i * 85) + "ms"; });
+    setTimeout(function () {
+      words.forEach(function (w) { w.classList.add("in"); });
+      var hl = heroTitle.querySelector(".hl");
+      if (hl) setTimeout(function () { hl.classList.add("swept"); }, 300);
+    }, 80);
+  } else if (heroTitle) {
+    var hlNow = heroTitle.querySelector(".hl");
+    if (hlNow) hlNow.classList.add("swept");
+  }
+
+  /* ---------- price count-up when pricing reveals ---------- */
+
+  function countUp(el) {
+    var m = el.textContent.match(/([\d,]+)/);
+    if (!m) return;
+    var target = parseInt(m[1].replace(/,/g, ""), 10);
+    var numNode = null;
+    el.childNodes.forEach(function (n) { if (n.nodeType === 3 && /\d/.test(n.textContent)) numNode = n; });
+    if (!numNode || !target) return;
+    var t0 = performance.now(), dur = 950;
+    function tick(t) {
+      var p = Math.min(1, (t - t0) / dur);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var val = Math.round(target * eased);
+      numNode.textContent = "₪" + val.toLocaleString("en-US") + " ";
+      if (p < 1) requestAnimationFrame(tick);
+    }
+    requestAnimationFrame(tick);
+  }
+  if (!motionOff && "IntersectionObserver" in window) {
+    var priceObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) { countUp(en.target); priceObs.unobserve(en.target); }
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll(".price-fig").forEach(function (el) { priceObs.observe(el); });
   }
 
   /* ---------- phone tilt (desktop pointers only) ---------- */

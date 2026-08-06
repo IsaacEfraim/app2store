@@ -36,7 +36,7 @@
 <link rel="preload" href="/assets/fonts/suezone-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=20260806f">
+<link rel="stylesheet" href="/styles.css?v=20260806g">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -133,6 +133,7 @@
 
 <header class="site-header">
   <div class="container">
+    <button class="burger" id="burgerBtn" type="button" aria-label="תפריט" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
     <div class="brand">
       <a class="brand-home" href="/" aria-label="App2Store — דף הבית">
         <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10222E"/><path d="M24 10v16" stroke="#25D366" stroke-width="4.5" stroke-linecap="round"/><path d="M16 20l8 8 8-8" stroke="#25D366" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 32v3a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3v-3" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
@@ -156,7 +157,6 @@
       <a class="nav-link" href="/#about">מי אנחנו</a>
     </nav>
     <div class="header-actions">
-      <button class="burger" id="burgerBtn" type="button" aria-label="תפריט" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="החלפת מצב תצוגה כהה/בהיר">
         <svg class="ic-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
         <svg class="ic-moon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.8 8.8 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.74A10 10 0 1 0 21.44 15.4a.6.6 0 0 0-.74-.8z"/></svg>
@@ -173,7 +173,7 @@
   <div class="container">
     <div class="hero-copy">
       <span class="eyebrow">Base44 · Lovable · v0 — מהדפדפן לחנויות</span>
-      <h1>מה שבנית עם AI ראוי להיות אפליקציה אמיתית.</h1>
+      <h1 id="heroTitle">מה שבנית עם AI ראוי להיות <span class="hl">אפליקציה אמיתית.</span></h1>
       <p class="hero-sub">בניתם משהו מגניב ב-Base44, Lovable או v0 — אבל הוא עדיין תקוע בדפדפן. אנחנו לוקחים אותו עד הסוף: גוגל פליי, אפ סטור, אייקון על מסך הבית וכפתור התקנה אמיתי.</p>
 
       <div class="paste-row">
@@ -208,8 +208,8 @@
           <span class="urlbar" id="urlbar">yourapp.base44.app</span>
         </div>
         <div class="browser-body" id="browserBody">
-          <div class="sk-nav"><i class="sk-logo sk-mono">א</i><span class="sk sk-navline"></span><span class="sk-menu"><i></i><i></i><i></i></span></div>
-          <div class="sk-hero2"><span class="sk-mono-big sk-mono">א</span><span class="sk-cta">הצטרפו עכשיו</span></div>
+          <div class="sk-nav"><i class="sk-logo sk-mono">✦</i><span class="sk sk-navline"></span><span class="sk-menu"><i></i><i></i><i></i></span></div>
+          <div class="sk-hero2"><span class="sk-mono-big sk-mono">✦</span><span class="sk-cta">הצטרפו עכשיו</span></div>
           <div class="sk-cards">
             <div class="sk-card"><i class="skc-thumb t1"></i><span class="sk skc-line"></span></div>
             <div class="sk-card"><i class="skc-thumb t2"></i><span class="sk skc-line"></span></div>
@@ -235,12 +235,12 @@
           <div class="phone-screen">
             <div class="p-island" aria-hidden="true"></div>
             <div class="phone-status" aria-hidden="true">
-              <span class="ptime">9:41</span>
               <span class="pstat">
                 <svg width="15" height="10" viewBox="0 0 16 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="1"/><rect x="4.2" y="5" width="3" height="6" rx="1"/><rect x="8.4" y="2.5" width="3" height="8.5" rx="1"/><rect x="12.6" y="0" width="3" height="11" rx="1"/></svg>
                 <svg width="14" height="11" viewBox="0 0 16 12" fill="currentColor"><circle cx="8" cy="10.3" r="1.7"/><path d="M4.5 8.1a5 5 0 0 1 7 0l-1.5 1.5a3 3 0 0 0-4 0z"/><path d="M1.6 5.2a9 9 0 0 1 12.8 0l-1.5 1.5a7 7 0 0 0-9.8 0z"/></svg>
                 <svg width="21" height="10" viewBox="0 0 25 12" fill="none" stroke="currentColor"><rect x="0.5" y="0.5" width="21" height="11" rx="3.2"/><rect x="2.3" y="2.3" width="15" height="7.4" rx="1.6" fill="currentColor" stroke="none"/><path d="M23.6 4v4a2.1 2.1 0 0 0 0-4z" fill="currentColor" stroke="none"/></svg>
               </span>
+              <span class="ptime">9:41</span>
             </div>
             <div class="pwidget" aria-hidden="true">
               <span class="pw-city">תל אביב</span>
@@ -255,19 +255,19 @@
               <div class="app-ico"><i class="ai ai-yad2"><img src="/assets/apps/yad2.png" alt=""></i><span>יד2</span></div>
               <div class="app-ico"><i class="ai ai-moovit"><img src="/assets/apps/moovit.png" alt=""></i><span>מוביט</span></div>
               <div class="app-ico"><i class="ai ai-insta"><img src="/assets/apps/instagram.png" alt=""></i><span>אינסטגרם</span></div>
-              <div class="app-ico slot" id="slot"><i class="ai" id="slotIcon"></i><span id="slotLabel">האפליקציה שלך</span></div>
+              <div class="app-ico slot" id="slot"><i class="ai" id="slotIcon"><svg class="spark" width="24" height="24" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></i><span id="slotLabel">האפליקציה שלך</span></div>
             </div>
             <div class="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
             <div class="phone-dock" aria-hidden="true">
-              <i class="dk dk-phone"><svg width="19" height="19" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></i>
-              <i class="dk dk-msg"><svg width="19" height="19" viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.5 1.4 4.7 3.6 6.1-.2.8-.7 2-1.5 3 0 0 2.4-.3 4.2-1.6.9.2 1.8.4 2.7.4 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg></i>
-              <i class="dk dk-saf"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#fff" stroke-width="1.6"/><path d="M15.5 8.5l-2 5-5 2 2-5 5-2z" fill="#fff"/></svg></i>
-              <i class="dk dk-cam"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8"><path d="M4 7h3l1.5-2h7L17 7h3a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V8a1 1 0 0 1 1-1z"/><circle cx="12" cy="13" r="3.6"/></svg></i>
+              <i class="dk dk-music"><svg width="22" height="22" viewBox="0 0 24 24" fill="#FA2D48"><path d="M9.5 18.2a2.6 2.6 0 1 1-1.6-2.4V6.6a1 1 0 0 1 .8-1l9-1.9a1 1 0 0 1 1.2 1v11a2.6 2.6 0 1 1-1.6-2.4V7.6l-7.8 1.7z"/></svg></i>
+              <i class="dk dk-msg"><svg width="21" height="21" viewBox="0 0 24 24" fill="#fff"><path d="M12 3C6.5 3 2 6.6 2 11c0 2.5 1.4 4.7 3.6 6.1-.2.8-.7 2-1.5 3 0 0 2.4-.3 4.2-1.6.9.2 1.8.4 2.7.4 5.5 0 10-3.6 10-8s-4.5-8-10-8z"/></svg></i>
+              <i class="dk dk-saf"><svg width="22" height="22" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="#2E8AF6"/><path d="M16.2 7.8l-2.6 5.8-5.8 2.6 2.6-5.8 5.8-2.6z" fill="#fff"/><path d="M16.2 7.8l-2.6 5.8-1.6-1.6 4.2-4.2z" fill="#FB5959"/></svg></i>
+              <i class="dk dk-phone"><svg width="21" height="21" viewBox="0 0 24 24" fill="#fff"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg></i>
             </div>
           </div>
         </div>
         <div class="listing" dir="rtl">
-          <span class="listing-icon" id="listingIcon"></span>
+          <span class="listing-icon" id="listingIcon"><svg class="spark" width="18" height="18" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></span>
           <span class="listing-meta">
             <span class="listing-name" id="listingName">האפליקציה שלך</span><br>
             <span class="listing-dev">מאת: אתם · בחנות</span>
@@ -276,7 +276,7 @@
         </div>
       </div>
 
-      <div class="fly" id="fly" aria-hidden="true">א</div>
+      <div class="fly" id="fly" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></div>
       <div class="stamp" id="stamp" aria-hidden="true">עלה לחנות ✓</div>
       <button class="replay" id="replayBtn" type="button" aria-label="הפעלת ההדגמה שוב">↻ הפעילו שוב</button>
     </div>
@@ -419,8 +419,8 @@
     </div>
     <div class="about-grid">
       <div class="about-story panel">
-        <p class="about-lead"><strong>אני איציק אפרון, ומאחורי App2Store עומד הצוות של <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל</a></strong> — השירות שמעביר מפתחים ישראלים את הבדיקה הסגורה של גוגל פליי, כל שבוע, כבר היום.</p>
-        <p>שמנו לב שכמעט כל שיחה איתנו מתחילה באותו משפט: <em>"בניתי אפליקציה ב-AI... אבל אין לי מושג איך מעלים אותה לחנות."</em> אנשים עם מוצר אמיתי ביד, תקועים מול קונסולות באנגלית, חתימות דיגיטליות וטפסים של אפל. בדיוק בשבילם בנינו את App2Store.</p>
+        <p class="about-lead"><strong>אני אייזיק אפרים — יזם דיגיטלי שחי את חנויות האפליקציות מבפנים.</strong> אני מפעיל פורטפוליו של מוצרים דיגיטליים חיים, כולל אפליקציות שפרסמתי בעצמי בגוגל פליי ובאפ סטור וצברו עשרות אלפי הורדות — ואת <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל</a>, השירות שמעביר מפתחים ישראלים את הבדיקה הסגורה של גוגל, כל שבוע.</p>
+        <p>אחרי עשרות הגשות לחנויות, אני מכיר כל טופס, כל דחייה וכל מלכודת של גוגל ואפל — כולל אלה שמגלים רק בפעם השלישית. ושמתי לב שכמעט כל שיחה מתחילה באותו משפט: <em>"בניתי אפליקציה ב-AI... אבל אין לי מושג איך מעלים אותה לחנות."</em> אנשים עם מוצר אמיתי ביד, תקועים מול בירוקרטיה באנגלית. בדיוק בשבילם בניתי את App2Store.</p>
         <p>אנחנו עובדים באותה שיטה שבנתה לנו את השם: <strong>מחיר סגור מראש, וואטסאפ ישיר, ותשובה ישרה — כולל "לא" כשצריך.</strong> בלי חברת פיתוח, בלי פגישות זום מיותרות, בלי הצעות מחיר מנופחות.</p>
         <a class="btn btn-wa wa" href="#" data-wa>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
@@ -595,6 +595,6 @@
   </div>
 </div>
 
-<script src="/script.js?v=20260806f" defer></script>
+<script src="/script.js?v=20260806g" defer></script>
 </body>
 </html>
