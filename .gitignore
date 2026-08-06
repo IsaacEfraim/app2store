@@ -1,0 +1,5 @@
+.vercel
+node_modules
+*.log
+internal/
+IMAGES-TODO.md
