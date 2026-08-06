@@ -85,6 +85,22 @@
     };
   }
 
+  /* the icon hops in a small arc between stations, like a parcel being passed */
+  var cur = { x: 0, y: 0, s: 1 };
+  function moveFly(to, toScale, dur) {
+    var mid = { x: (cur.x + to.x) / 2, y: Math.min(cur.y, to.y) - 36 };
+    els.fly.animate(
+      [
+        { transform: "translate(" + cur.x + "px," + cur.y + "px) scale(" + cur.s + ")" },
+        { transform: "translate(" + mid.x + "px," + mid.y + "px) scale(" + ((cur.s + toScale) / 2) + ")", offset: 0.5 },
+        { transform: "translate(" + to.x + "px," + to.y + "px) scale(" + toScale + ")" }
+      ],
+      { duration: dur, easing: "ease-in-out", fill: "forwards" }
+    );
+    cur = { x: to.x, y: to.y, s: toScale };
+    return wait(dur + 10);
+  }
+
   function resetShow() {
     els.chips.forEach(function (c) { c.classList.remove("on"); });
     els.slot.classList.remove("landed");
@@ -97,6 +113,8 @@
     els.stamp.classList.remove("show");
     els.fly.style.opacity = "0";
     els.browserBody.style.opacity = "1";
+    var tag = document.getElementById("browserTag");
+    if (tag) tag.textContent = "היום: קישור בדפדפן";
   }
 
   function shortDomain(d) {
@@ -118,9 +136,9 @@
   function positionStamp() {
     var phoneRect = document.querySelector(".phone").getBoundingClientRect();
     var stageRect = stage.getBoundingClientRect();
-    els.stamp.style.top = (phoneRect.top - stageRect.top - 8) + "px";
+    els.stamp.style.top = Math.max(10, phoneRect.top - stageRect.top - 8) + "px";
     els.stamp.style.insetInlineStart = "auto";
-    els.stamp.style.left = (phoneRect.left - stageRect.left - 24) + "px";
+    els.stamp.style.left = Math.max(12, phoneRect.left - stageRect.left - 24) + "px";
   }
 
   async function runShow() {
@@ -152,18 +170,14 @@
     );
     els.browserBody.animate([{ opacity: 1 }, { opacity: 0.35 }], { duration: 550, fill: "forwards" });
     els.browserBody.style.opacity = "0.35";
+    cur = { x: start.x, y: start.y, s: 1 };
     await wait(620);
 
     /* 3 — it travels through the gate; each station approves it */
     for (var i = 0; i < els.chips.length; i++) {
       var chipRect = els.chips[i].getBoundingClientRect();
       var p = centerIn(chipRect, 44);
-      var from = getComputedStyle(els.fly).transform;
-      els.fly.animate(
-        [{ transform: "translate(" + p.x + "px," + (p.y - 34) + "px) scale(.82)" }],
-        { duration: 420, easing: "ease-in-out", fill: "forwards" }
-      );
-      await wait(430);
+      await moveFly({ x: p.x, y: p.y - 34 }, 0.82, 430);
       els.chips[i].classList.add("on");
       await wait(260);
     }
@@ -173,18 +187,21 @@
     els.stamp.classList.add("show");
     await wait(650);
 
-    /* 5 — it lands on the home screen */
+    /* 5 — it lands on the home screen; the phone takes the weight */
     var slotRect = els.slotIcon.getBoundingClientRect();
     var land = centerIn(slotRect, 44);
-    els.fly.animate(
-      [{ transform: "translate(" + land.x + "px," + land.y + "px) scale(.77)" }],
-      { duration: 520, easing: "cubic-bezier(.2,1.1,.3,1)", fill: "forwards" }
-    );
-    await wait(540);
+    await moveFly(land, 0.77, 540);
     els.fly.style.opacity = "0";
     els.slot.classList.add("landed");
     els.slotIcon.style.background = icon.bg;
     els.slotIcon.animate([{ transform: "scale(1.35)" }, { transform: "scale(1)" }], { duration: 320, easing: "cubic-bezier(.2,1.4,.4,1)" });
+    var phoneEl = document.querySelector(".phone");
+    if (phoneEl) phoneEl.animate(
+      [{ transform: "translateY(0)" }, { transform: "translateY(3px)" }, { transform: "translateY(0)" }],
+      { duration: 240, easing: "ease-out" }
+    );
+    var tag = document.getElementById("browserTag");
+    if (tag) tag.textContent = "האתר? נשאר באוויר כרגיל ✓";
 
     /* 6 — the listing goes live: התקנה */
     els.listingIcon.style.background = icon.bg;
