@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מ-Lovable לאפ סטור: איך עוברים את אפל ב-2026 (Guideline 4.2) | App2Store</title>
+<meta name="description" content="אפליקציית Lovable שלכם יכולה להגיע לאפ סטור — אם יודעים לעבור את Guideline 4.2 של אפל. המדריך בעברית: ייצוא ל-GitHub, בעיית ה-SSR, Capacitor, ולמה עטיפות ריקות נדחות.">
+<link rel="canonical" href="https://app2store.co.il/lovable-to-app-store">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="מ-Lovable לאפ סטור: איך עוברים את אפל ב-2026">
+<meta property="og:description" content="ייצוא ל-GitHub, בעיית ה-SSR, Capacitor, ו-Guideline 4.2 — למה אפל דוחה עטיפות ריקות ואיך עוברים בכל זאת.">
+<meta property="og:url" content="https://app2store.co.il/lovable-to-app-store">
+<meta property="og:image" content="https://app2store.co.il/assets/og.png">
+<meta name="theme-color" content="#0C1720">
+<script>
+(function(){
+  try{
+    var q=new URLSearchParams(location.search).get('theme');
+    if(q==='light'||(q!=='dark'&&localStorage.getItem('a2s-theme')==='light'))document.documentElement.setAttribute('data-theme','light');
+    var a=JSON.parse(localStorage.getItem('a2s-a11y')||'{}');
+    if(a.fs===1)document.documentElement.classList.add('a11y-fs1');
+    if(a.fs===2)document.documentElement.classList.add('a11y-fs2');
+    if(a.contrast)document.documentElement.classList.add('a11y-contrast');
+    if(a.links)document.documentElement.classList.add('a11y-links');
+    if(a.motion)document.documentElement.classList.add('a11y-motion');
+  }catch(e){}
+})();
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css?v=20260806f">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "מ-Lovable לאפ סטור: איך עוברים את אפל ב-2026 (Guideline 4.2)",
+      "inLanguage": "he",
+      "author": { "@type": "Organization", "name": "App2Store", "url": "https://app2store.co.il/" },
+      "publisher": { "@type": "Organization", "name": "App2Store" },
+      "dateModified": "2026-08-06",
+      "mainEntityOfPage": "https://app2store.co.il/lovable-to-app-store"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "App2Store", "item": "https://app2store.co.il/" },
+        { "@type": "ListItem", "position": 2, "name": "מדריך: Lovable לאפ סטור", "item": "https://app2store.co.il/lovable-to-app-store" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        { "@type": "Question", "name": "למה אפל דוחה אפליקציות שהן עטיפה של אתר?", "acceptedAnswer": { "@type": "Answer", "text": "בגלל Guideline 4.2 (Minimum Functionality): אפל דורשת שאפליקציה תיתן חוויה שונה מגלישה בדפדפן. עטיפת WebView חשופה נדחית עם הנימוק שהיא 'לא שונה מספיק מחוויית דפדפן'. הפתרון: להוסיף יכולות שדפדפן לא נותן — התראות פוש, ניווט נייטיב וטיפול במצב לא מקוון." } },
+        { "@type": "Question", "name": "כמה עולה חשבון מפתח של אפל?", "acceptedAnswer": { "@type": "Answer", "text": "99 דולר לשנה (Apple Developer Program), משולם ישירות לאפל. בלי חשבון פעיל האפליקציה יורדת מהחנות, ולכן זו עלות שנתית קבועה שצריך לתקצב." } },
+        { "@type": "Question", "name": "האם צריך מק כדי להעלות אפליקציה לאפ סטור?", "acceptedAnswer": { "@type": "Answer", "text": "כדי לבנות ולחתום אפליקציית iOS צריך סביבת macOS עם Xcode (או שירותי בנייה בענן). זו אחת הסיבות שרוב בוני ה-AI הישראלים משתמשים בשירות במקום להתקין סביבת פיתוח שלמה בשביל הגשה אחת." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <a class="brand-home" href="/" aria-label="App2Store — דף הבית">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10222E"/><path d="M24 10v16" stroke="#25D366" stroke-width="4.5" stroke-linecap="round"/><path d="M16 20l8 8 8-8" stroke="#25D366" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 32v3a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3v-3" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
+      </a>
+      <span><a class="brand-name" href="/">App2Store</a></span>
+    </div>
+    <a class="btn btn-wa btn-sm" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%D7%A2%D7%9C%20Lovable%20%D7%95%D7%90%D7%A4%20%D7%A1%D7%98%D7%95%D7%A8" target="_blank" rel="noopener">שאלה? וואטסאפ</a>
+  </div>
+</header>
+<main class="page-body guide-body">
+  <div class="container">
+    <p class="guide-crumb"><a href="/">App2Store</a> ← מדריכים ← Lovable לאפ סטור</p>
+    <h1>מ-Lovable לאפ סטור: איך עוברים את אפל (2026)</h1>
+    <p class="guide-intro">גוגל פליי סלחני. אפל — לא. מי שמנסה להעלות אפליקציית Lovable לאפ סטור בתור "עוד עטיפה של אתר" מקבל את אותו מייל דחייה שכולם מקבלים. הנה למה זה קורה ואיך עוברים בכל זאת — בלי קסמים, עם הנדסה נכונה.</p>
+
+    <h2>שלב 1: מוציאים את הקוד מ-Lovable</h2>
+    <p>היתרון הגדול של Lovable: <strong>הקוד שלכם באמת שלכם.</strong> מחברים את הפרויקט ל-GitHub (בהגדרות הפרויקט) ומקבלים אפליקציית React מלאה. עם הקוד ביד אפשר לארוז אריזה אמיתית — לא רק להצביע על כתובת.</p>
+    <p>⚠️ <strong>המלכודת של 2026:</strong> פרויקטים חדשים ב-Lovable נבנים כברירת מחדל עם רינדור בצד שרת (SSR). אריזת מובייל צריכה build סטטי — אז מבקשים מ-Lovable בפרומפט לבנות כ-SPA, או מגדירים build סטטי ידנית. מי שמדלג על זה מגלה אפליקציה עם מסך לבן.</p>
+
+    <h2>שלב 2: אורזים עם Capacitor</h2>
+    <p>Capacitor (הכלי הפתוח של צוות Ionic) עוטף את ה-build בקונטיינר נייטיב של iOS. זה השלב שבו נכנסות היכולות שאפל מחפשת: התראות פוש, ניווט מותאם, splash, אייקונים וטיפול במצב לא מקוון. הבנייה והחתימה דורשות סביבת macOS עם Xcode ופרופילי חתימה (Provisioning Profiles) — החלק שבו רוב האנשים מרימים ידיים.</p>
+
+    <h2>שלב 3: המבחן האמיתי — Guideline 4.2</h2>
+    <p>סעיף 4.2 של אפל (Minimum Functionality) הוא הסיבה מספר אחת לדחיית אפליקציות מהסוג הזה. הנוסח שמקבלים במייל: <em>"your app provides a limited user experience as it is not sufficiently different from a mobile browsing experience"</em>. בעברית: "זה סתם האתר שלך בקופסה".</p>
+    <p>מה כן עובר? אפליקציה שמשתמשת ביכולות שדפדפן לא נותן:</p>
+    <ul>
+      <li><strong>התראות פוש</strong> — היכולת הבודדת עם היחס הכי טוב של מאמץ/תוצאה מול הבודקים.</li>
+      <li><strong>התנהגות אפליקציה</strong> — ניווט בלי שורת כתובת, קישורים חיצוניים שנפתחים החוצה, כיבוד ה-safe area של האייפון.</li>
+      <li><strong>טיפול במצב לא מקוון</strong> — מסך ייעודי במקום שגיאת דפדפן.</li>
+    </ul>
+    <p>וגם אז — אפל לפעמים דוחה בסבב ראשון. ההבדל בין מקצוען לחובבן הוא התשובה לבודק: תיאור מדויק של היכולות הנייטיביות, וידאו קצר, וסבב תיקון ממוקד. בחבילות שלנו, דחיות שקשורות לאריזה ולהגשה — עלינו.</p>
+
+    <h2>עוד שלושה דברים שאפל דורשת</h2>
+    <ul>
+      <li><strong>חשבון Apple Developer:</strong> <span class="en">$99</span> לשנה, על שמכם, משולם ישירות לאפל.</li>
+      <li><strong>חשבון דמו לבודקים:</strong> אם האפליקציה דורשת התחברות, מספקים משתמש בדיקה — לא סיסמה אישית שלכם.</li>
+      <li><strong>רכישות בתוך האפליקציה:</strong> מוכרים מוצר דיגיטלי? אפל תדרוש IAP עם העמלה שלה. מוצרים ושירותים פיזיים — פטורים. את זה בודקים <em>לפני</em> שמתחילים.</li>
+    </ul>
+
+    <div class="guide-cta panel">
+      <p><strong>רוצים שמישהו שכבר עבר את זה יעשה את הכול?</strong> אריזה עם היכולות שאפל דורשת, חתימות, עמוד חנות והגשה — כולל טיפול בדחיות אריזה בלי תוספת מחיר. בדיקת התאמה חינם, כולל תשובה ישרה אם האפליקציה שלכם עוד לא מוכנה לאפל.</p>
+      <a class="btn btn-wa" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA%20Lovable%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%92%D7%99%D7%A2%20%D7%9C%D7%90%D7%A4%20%D7%A1%D7%98%D7%95%D7%A8" target="_blank" rel="noopener">שלחו לנו את הקישור בוואטסאפ</a>
+    </div>
+
+    <p class="guide-related">מדריכים נוספים: <a href="/base44-to-google-play">Base44 ← גוגל פליי</a> · <a href="/app-store-costs">כמה באמת עולה להעלות אפליקציה</a></p>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container"><p class="legal-line">© 2026 App2Store · <a href="/">דף הבית</a> · <a href="/accessibility">הצהרת נגישות</a> · App Store הוא סימן מסחרי של Apple Inc.; השימוש תיאורי בלבד.</p></div>
+</footer>
+<a class="wa-float" href="https://wa.me/972552672300" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+</a>
+<button class="a11y-btn" id="a11yBtn" type="button" aria-label="תפריט נגישות" aria-expanded="false">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4.4" r="2.1"/><path d="M19.2 7.2a1 1 0 0 0-1.2-.7c-2 .5-4 .8-6 .8s-4-.3-6-.8a1 1 0 1 0-.5 1.9c1.6.4 3.2.7 4.8.8v2.9l-2.2 6.3a1 1 0 0 0 1.9.7l2-5.7 2 5.7a1 1 0 1 0 1.9-.7l-2.2-6.3V9.2c1.6-.1 3.2-.4 4.8-.8a1 1 0 0 0 .7-1.2z"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="הגדרות נגישות">
+  <h3>נגישות</h3>
+  <button class="a11y-row" data-a11y="fs"><span>גודל טקסט</span><span class="state" id="fsState">רגיל</span></button>
+  <button class="a11y-row" data-a11y="contrast"><span>ניגודיות גבוהה</span><span class="state" id="contrastState">כבוי</span></button>
+  <button class="a11y-row" data-a11y="links"><span>הדגשת קישורים</span><span class="state" id="linksState">כבוי</span></button>
+  <button class="a11y-row" data-a11y="motion"><span>עצירת אנימציות</span><span class="state" id="motionState">כבוי</span></button>
+  <div class="a11y-foot">
+    <a href="/accessibility">הצהרת נגישות</a>
+    <button class="a11y-reset" id="a11yReset" type="button">איפוס</button>
+  </div>
+</div>
+<script src="/script.js?v=20260806f" defer></script>
+</body>
+</html>

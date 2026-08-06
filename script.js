@@ -359,15 +359,42 @@
     setTimeout(runShow, 700);
   }
 
+  /* ---------- header nav: burger + guides dropdown ---------- */
+
+  var burger = document.getElementById("burgerBtn");
+  var mainNav = document.getElementById("mainNav");
+  if (burger && mainNav) {
+    burger.addEventListener("click", function () {
+      var open = mainNav.classList.toggle("open");
+      burger.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    mainNav.querySelectorAll("a").forEach(function (a) {
+      a.addEventListener("click", function () { mainNav.classList.remove("open"); });
+    });
+  }
+  var guidesBtn = document.getElementById("guidesBtn");
+  if (guidesBtn) {
+    var dd = guidesBtn.closest(".nav-dd");
+    guidesBtn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      var open = dd.classList.toggle("open");
+      guidesBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("click", function () { dd.classList.remove("open"); });
+  }
+
   /* ---------- scroll reveal ---------- */
 
   var motionOff = reducedMotion || document.documentElement.classList.contains("a11y-motion");
   if (!motionOff && "IntersectionObserver" in window) {
     var revEls = document.querySelectorAll(
-      ".sec-head, .case-row, .step, .boundary-wrap, .deliver-item, .exclude-strip, .sister-main, .sister-split, .price-card, .maint-strip, .fees-note, .faq-item, .final h2, .final .btn-wa, .final-what"
+      ".sec-head, .case-row, .step, .boundary-wrap, .deliver-item, .exclude-strip, .sister-main, .sister-split, .about-story, .proof-shot, .price-card, .maint-strip, .fees-note, .faq-item, .final h2, .final .btn-wa, .final-what"
     );
     revEls.forEach(function (el, i) {
       el.classList.add("rv");
+      /* opposing panels slide in from opposite sides — everything else rises */
+      if (el.classList.contains("sister-main") || el.classList.contains("about-story")) el.classList.add("rv-right");
+      if (el.classList.contains("sister-split")) el.classList.add("rv-left");
       el.style.transitionDelay = ((i % 4) * 70) + "ms";
     });
     var revObs = new IntersectionObserver(function (entries) {

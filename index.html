@@ -36,7 +36,7 @@
 <link rel="preload" href="/assets/fonts/suezone-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-hebrew.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/rubik-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css?v=20260806e">
+<link rel="stylesheet" href="/styles.css?v=20260806f">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -142,7 +142,21 @@
         <span class="brand-sub">מבית הצוות של <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל</a></span>
       </span>
     </div>
+    <nav class="main-nav" id="mainNav" aria-label="ניווט ראשי">
+      <div class="nav-dd">
+        <button class="nav-link nav-dd-btn" id="guidesBtn" type="button" aria-expanded="false">מדריכים <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+        <div class="nav-dd-menu" id="guidesMenu">
+          <a href="/base44-to-google-play">Base44 ← גוגל פליי</a>
+          <a href="/lovable-to-app-store">Lovable ← אפ סטור</a>
+          <a href="/app-store-costs">כמה זה באמת עולה</a>
+        </div>
+      </div>
+      <a class="nav-link" href="/#pricing">מחירים</a>
+      <a class="nav-link" href="/#faq">שאלות</a>
+      <a class="nav-link" href="/#about">מי אנחנו</a>
+    </nav>
     <div class="header-actions">
+      <button class="burger" id="burgerBtn" type="button" aria-label="תפריט" aria-expanded="false"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
       <button class="theme-toggle" id="themeToggle" type="button" aria-label="החלפת מצב תצוגה כהה/בהיר">
         <svg class="ic-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.4"/><path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M4.9 4.9l1.7 1.7M17.4 17.4l1.7 1.7M19.1 4.9l-1.7 1.7M6.6 17.4l-1.7 1.7"/></svg>
         <svg class="ic-moon" width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.7 14.6A8.8 8.8 0 0 1 9.4 3.3a.6.6 0 0 0-.8-.74A10 10 0 1 0 21.44 15.4a.6.6 0 0 0-.74-.8z"/></svg>
@@ -194,11 +208,13 @@
           <span class="urlbar" id="urlbar">yourapp.base44.app</span>
         </div>
         <div class="browser-body" id="browserBody">
-          <div class="sk-nav"><i class="sk-logo sk-mono">א</i><span class="sk sk-navline"></span></div>
-          <div class="sk-hero2"><span class="sk-mono-big sk-mono">א</span></div>
-          <div class="sk sk-line"></div>
-          <div class="sk sk-line short"></div>
-          <div class="sk-btns"><span class="sk-btn primary"></span><span class="sk-btn"></span></div>
+          <div class="sk-nav"><i class="sk-logo sk-mono">א</i><span class="sk sk-navline"></span><span class="sk-menu"><i></i><i></i><i></i></span></div>
+          <div class="sk-hero2"><span class="sk-mono-big sk-mono">א</span><span class="sk-cta">הצטרפו עכשיו</span></div>
+          <div class="sk-cards">
+            <div class="sk-card"><i class="skc-thumb t1"></i><span class="sk skc-line"></span></div>
+            <div class="sk-card"><i class="skc-thumb t2"></i><span class="sk skc-line"></span></div>
+          </div>
+          <div class="sk-rate"><span class="sk-stars">★★★★★</span><span class="sk-rate-n">4.9 · 128 משתמשים</span></div>
         </div>
         <div class="browser-tag" id="browserTag">היום: קישור בדפדפן</div>
       </div>
@@ -233,12 +249,12 @@
             </div>
             <div class="icon-grid">
               <div class="app-ico"><i class="ai ai-wa"><svg width="21" height="21" viewBox="0 0 24 24" fill="#fff" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg></i><span>וואטסאפ</span></div>
-              <div class="app-ico"><i class="ai ai-waze">W</i><span>וייז</span></div>
-              <div class="app-ico"><i class="ai ai-bit">bit</i><span>ביט</span></div>
-              <div class="app-ico"><i class="ai ai-wolt">W</i><span>וולט</span></div>
-              <div class="app-ico"><i class="ai ai-yad2">יד2</i><span>יד2</span></div>
-              <div class="app-ico"><i class="ai ai-moovit">M</i><span>מוביט</span></div>
-              <div class="app-ico"><i class="ai ai-insta"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.2" fill="#fff" stroke="none"/></svg></i><span>אינסטגרם</span></div>
+              <div class="app-ico"><i class="ai ai-waze"><img src="/assets/apps/waze.png" alt=""></i><span>וייז</span></div>
+              <div class="app-ico"><i class="ai ai-bit"><img src="/assets/apps/bit.png" alt=""></i><span>ביט</span></div>
+              <div class="app-ico"><i class="ai ai-wolt"><img src="/assets/apps/wolt.png" alt=""></i><span>וולט</span></div>
+              <div class="app-ico"><i class="ai ai-yad2"><img src="/assets/apps/yad2.png" alt=""></i><span>יד2</span></div>
+              <div class="app-ico"><i class="ai ai-moovit"><img src="/assets/apps/moovit.png" alt=""></i><span>מוביט</span></div>
+              <div class="app-ico"><i class="ai ai-insta"><img src="/assets/apps/instagram.png" alt=""></i><span>אינסטגרם</span></div>
               <div class="app-ico slot" id="slot"><i class="ai" id="slotIcon"></i><span id="slotLabel">האפליקציה שלך</span></div>
             </div>
             <div class="pdots" aria-hidden="true"><i class="on"></i><i></i><i></i></div>
@@ -396,6 +412,34 @@
   </div>
 </section>
 
+<section id="about">
+  <div class="container">
+    <div class="sec-head">
+      <h2>מי אנחנו — ולמה אפשר לסמוך עלינו</h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-story panel">
+        <p class="about-lead"><strong>אני איציק אפרון, ומאחורי App2Store עומד הצוות של <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל</a></strong> — השירות שמעביר מפתחים ישראלים את הבדיקה הסגורה של גוגל פליי, כל שבוע, כבר היום.</p>
+        <p>שמנו לב שכמעט כל שיחה איתנו מתחילה באותו משפט: <em>"בניתי אפליקציה ב-AI... אבל אין לי מושג איך מעלים אותה לחנות."</em> אנשים עם מוצר אמיתי ביד, תקועים מול קונסולות באנגלית, חתימות דיגיטליות וטפסים של אפל. בדיוק בשבילם בנינו את App2Store.</p>
+        <p>אנחנו עובדים באותה שיטה שבנתה לנו את השם: <strong>מחיר סגור מראש, וואטסאפ ישיר, ותשובה ישרה — כולל "לא" כשצריך.</strong> בלי חברת פיתוח, בלי פגישות זום מיותרות, בלי הצעות מחיר מנופחות.</p>
+        <a class="btn btn-wa wa" href="#" data-wa>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+          דברו איתי ישירות
+        </a>
+      </div>
+      <div class="about-proof">
+        <p class="proof-label">שיחות אמיתיות עם לקוחות של הצוות שלנו ב-12 בודקים ישראל:</p>
+        <div class="proof-shots">
+          <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-approved.jpg" alt="צילום וואטסאפ: לקוח מעדכן שהאפליקציה אושרה ועלתה לגוגל פליי" loading="lazy"></figure>
+          <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-fast-service.jpg" alt="צילום וואטסאפ: לקוח מודה על שירות מהיר" loading="lazy"></figure>
+          <figure class="proof-shot panel"><img src="/assets/testimonials/whatsapp-review-premium-report.jpg" alt="צילום וואטסאפ: לקוח מגיב לדוח הבדיקה המפורט" loading="lazy"></figure>
+        </div>
+        <p class="proof-note">ההמלצות משירות הבדיקות שלנו — App2Store חדש, והביקורות הראשונות שלו יופיעו כאן ברגע שיהיו. ככה נראית שקיפות.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="pricing">
   <div class="container">
     <div class="sec-head">
@@ -509,6 +553,9 @@
         <p>מעלים אפליקציות שנבנו ב-AI לגוגל פליי ול-App Store. שירות ישראלי, וואטסאפ ישיר, מחיר קבוע מראש.</p>
       </div>
       <div class="footer-links">
+        <a href="/base44-to-google-play">מדריך: Base44 ← גוגל פליי</a>
+        <a href="/lovable-to-app-store">מדריך: Lovable ← אפ סטור</a>
+        <a href="/app-store-costs">מדריך: כמה זה באמת עולה</a>
         <a href="https://www.12testersisrael.com" target="_blank" rel="noopener">12 בודקים ישראל — השירות האחות</a>
         <a href="/privacy">מדיניות פרטיות</a>
         <a href="/terms">תנאי שירות</a>
@@ -548,6 +595,6 @@
   </div>
 </div>
 
-<script src="/script.js?v=20260806e" defer></script>
+<script src="/script.js?v=20260806f" defer></script>
 </body>
 </html>

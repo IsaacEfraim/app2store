@@ -14,5 +14,8 @@
 
 ## עמודים
 - [דף הבית](https://app2store.co.il/): השירות, התהליך, המחירים והשאלות הנפוצות.
+- [מדריך: איך מעלים אפליקציית Base44 לגוגל פליי](https://app2store.co.il/base44-to-google-play): ייצוא קוד מול עטיפת URL, אגרת 25$, דרישת 12 הבודקים, טעויות נפוצות.
+- [מדריך: מ-Lovable לאפ סטור](https://app2store.co.il/lovable-to-app-store): ייצוא ל-GitHub, בעיית SSR, Capacitor ו-Guideline 4.2 של אפל.
+- [מדריך: כמה באמת עולה להעלות אפליקציה לחנויות](https://app2store.co.il/app-store-costs): כל העלויות — אגרות, בודקים, עבודה — בשקלים.
 - [תנאי שירות](https://app2store.co.il/terms)
 - [מדיניות פרטיות](https://app2store.co.il/privacy)
