@@ -184,8 +184,20 @@
     return d.length > 20 ? d.slice(0, 19) + "…" : d;
   }
 
+  /* the mini-site inside the browser wears the visitor's own monogram */
+  function applyBrowserMono(icon) {
+    document.querySelectorAll(".sk-mono").forEach(function (m) { m.textContent = icon.letter; });
+    if (state.domain) {
+      var hero2 = document.querySelector(".sk-hero2");
+      var logo = document.querySelector(".sk-logo");
+      if (hero2) hero2.style.background = icon.bg;
+      if (logo) logo.style.background = icon.bg;
+    }
+  }
+
   function finalState() {
     var icon = iconStyleFor(state.domain);
+    applyBrowserMono(icon);
     els.chips.forEach(function (c) { c.classList.add("on"); });
     els.slot.classList.add("landed");
     els.slotIcon.style.background = icon.bg;
@@ -213,6 +225,7 @@
 
     var icon = iconStyleFor(state.domain);
     els.urlbar.textContent = state.domain || "yourapp.base44.app";
+    applyBrowserMono(icon);
 
     /* 1 — the url bar pulses: today it's just a link */
     els.urlbar.classList.remove("pulse");
@@ -232,8 +245,8 @@
        { opacity: 1, transform: "translate(" + start.x + "px," + start.y + "px) scale(1)" }],
       { duration: 550, easing: "cubic-bezier(.3,1.2,.4,1)", fill: "forwards" }
     );
-    els.browserBody.animate([{ opacity: 1 }, { opacity: 0.35 }], { duration: 550, fill: "forwards" });
-    els.browserBody.style.opacity = "0.35";
+    els.browserBody.animate([{ opacity: 1 }, { opacity: 0.55 }], { duration: 550, fill: "forwards" });
+    els.browserBody.style.opacity = "0.55";
     cur = { x: start.x, y: start.y, s: 1 };
     await wait(620);
 
