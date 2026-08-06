@@ -54,6 +54,69 @@
     };
   }
 
+  /* ---------- theme toggle (dark is default) ---------- */
+
+  var themeBtn = document.getElementById("themeToggle");
+  if (themeBtn) themeBtn.addEventListener("click", function () {
+    var root = document.documentElement;
+    if (root.getAttribute("data-theme") === "light") {
+      root.removeAttribute("data-theme");
+      localStorage.removeItem("a2s-theme");
+    } else {
+      root.setAttribute("data-theme", "light");
+      localStorage.setItem("a2s-theme", "light");
+    }
+  });
+
+  /* ---------- accessibility widget ---------- */
+
+  var A11Y_KEY = "a2s-a11y";
+  function a11yState() {
+    try { return JSON.parse(localStorage.getItem(A11Y_KEY) || "{}"); } catch (e) { return {}; }
+  }
+  function a11ySave(s) { localStorage.setItem(A11Y_KEY, JSON.stringify(s)); }
+  function a11yApply(s) {
+    var root = document.documentElement;
+    root.classList.toggle("a11y-fs1", s.fs === 1);
+    root.classList.toggle("a11y-fs2", s.fs === 2);
+    root.classList.toggle("a11y-contrast", !!s.contrast);
+    root.classList.toggle("a11y-links", !!s.links);
+    root.classList.toggle("a11y-motion", !!s.motion);
+    var fsState = document.getElementById("fsState");
+    if (fsState) fsState.textContent = s.fs === 1 ? "גדול" : s.fs === 2 ? "ענק" : "רגיל";
+    ["contrast", "links", "motion"].forEach(function (k) {
+      var el = document.getElementById(k + "State");
+      if (el) el.textContent = s[k] ? "פועל" : "כבוי";
+    });
+  }
+  var a11yBtn = document.getElementById("a11yBtn");
+  var a11yPanel = document.getElementById("a11yPanel");
+  if (a11yBtn && a11yPanel) {
+    a11yApply(a11yState());
+    a11yBtn.addEventListener("click", function () {
+      var open = a11yPanel.classList.toggle("open");
+      a11yBtn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") { a11yPanel.classList.remove("open"); a11yBtn.setAttribute("aria-expanded", "false"); }
+    });
+    a11yPanel.querySelectorAll(".a11y-row").forEach(function (row) {
+      row.addEventListener("click", function () {
+        var s = a11yState();
+        var k = row.dataset.a11y;
+        if (k === "fs") s.fs = ((s.fs || 0) + 1) % 3;
+        else s[k] = !s[k];
+        a11ySave(s); a11yApply(s);
+      });
+    });
+    var reset = document.getElementById("a11yReset");
+    if (reset) reset.addEventListener("click", function () {
+      localStorage.removeItem(A11Y_KEY); a11yApply({});
+    });
+  }
+
+  refreshWaLinks();
+
   /* ---------- stage elements ---------- */
 
   var stage = document.getElementById("stage");
@@ -142,6 +205,7 @@
   }
 
   async function runShow() {
+    if (document.documentElement.classList.contains("a11y-motion")) { resetShow(); finalState(); return; }
     if (state.running) return;
     state.running = true;
     state.played = true;

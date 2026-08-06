@@ -5,8 +5,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>404 — App2Store</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#0C1720">
+<script>
+(function(){
+  try{
+    if(localStorage.getItem('a2s-theme')==='light')document.documentElement.setAttribute('data-theme','light');
+  }catch(e){}
+})();
+</script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styles.css?v=20260806b">
+<link rel="stylesheet" href="/styles.css?v=20260806c">
 </head>
 <body>
 <main class="page-body" style="text-align:center; padding-top:110px;">
