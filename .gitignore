@@ -3,3 +3,6 @@ node_modules
 *.log
 internal/
 IMAGES-TODO.md
+
+.vercel
+.env*
