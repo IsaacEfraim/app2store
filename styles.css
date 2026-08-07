@@ -139,7 +139,7 @@ a { color: var(--brand-ink); }
 
 .en { direction: ltr; unicode-bidi: isolate; }
 
-section { padding: 84px 0; }
+section { padding: 84px 0; overflow-x: clip; }
 @media (max-width: 720px) { section { padding: 56px 0; } }
 
 /* ---------- header ---------- */
@@ -290,7 +290,7 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .stage {
   position: relative;
   display: grid;
-  grid-template-columns: 1.05fr 1fr;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
   gap: 22px; align-items: center;
   padding: 26px 20px;
   background: var(--surface);
@@ -310,14 +310,11 @@ a.brand-name { text-decoration: none; color: var(--ink); }
   transform: translateY(-50%);
 }
 @media (max-width: 640px) {
-  .stage::before { right: 50%; left: auto; top: 40px; bottom: 40px; border-top: none; border-right: 2px dashed var(--line); transform: none; }
+  .stage::before { display: none; }
 }
 /* stations ride above the conveyor track (the transformed ::before paints late) */
 .stage > .flow-col, .stage > .phone-col { position: relative; z-index: 1; }
 @media (max-width: 920px) { .stage { max-width: 560px; margin: 0 auto; } }
-@media (max-width: 640px) {
-  .stage { grid-template-columns: 1fr; justify-items: center; gap: 14px; padding: 22px 14px; }
-}
 
 /* browser card */
 .browser {
@@ -695,22 +692,29 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .check-result p { font-size: .93rem; margin-bottom: 8px; }
 .check-result .btn { margin-top: 8px; }
 .check-result.warn { background: rgba(199,154,59,.12); border-color: rgba(199,154,59,.45); }
+@media (max-width: 640px) {
+  .checker { padding: 22px 16px; }
+  .cq { flex-direction: column; align-items: stretch; gap: 9px; padding: 12px 0; }
+  .cq-btns { width: 100%; }
+  .cq-btn { flex: 1; text-align: center; padding: 11px 8px; }
+}
 
 /* ---------- about + real proof ---------- */
 .founder { display: flex; align-items: center; gap: 13px; margin-bottom: 18px; }
 .f-avatar {
-  width: 58px; height: 58px; border-radius: 50%; flex: none;
+  width: 68px; height: 68px; border-radius: 50%; flex: none;
   display: grid; place-items: center; overflow: hidden;
-  font-family: var(--font-display); font-size: 1.15rem; color: #fff;
   background: linear-gradient(135deg, var(--brand), #2F4DA8);
+  border: 2px solid var(--brand-line);
   box-shadow: 0 4px 12px rgba(0,0,0,.25);
 }
 .f-avatar img { width: 100%; height: 100%; object-fit: cover; }
 .f-meta { display: flex; flex-direction: column; line-height: 1.35; }
 .f-meta b { font-size: 1.05rem; }
 .f-meta small { color: var(--ink-soft); font-size: .82rem; }
-.about-grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 16px; align-items: start; }
-@media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+.about-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 900px) { .about-grid { grid-template-columns: minmax(0, 1fr); } }
+.proof-shots { min-width: 0; max-width: 100%; }
 .about-story { padding: 28px; }
 .about-story p { margin-bottom: 14px; }
 .about-lead { font-size: 1.08rem; }
@@ -993,4 +997,47 @@ html[dir="ltr"] .sec-head h2::after { transform-origin: left; }
 /* focus visibility */
 a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visible {
   outline: 2px solid var(--brand); outline-offset: 2px; border-radius: 4px;
+}
+
+/* ---------- mobile stage + header (kept LAST so it wins the cascade) ---------- */
+@media (max-width: 640px) {
+  .stage { grid-template-columns: 1fr; justify-items: center; gap: 16px; padding: 20px 12px 24px; min-height: unset; }
+  /* browser and gate sit side by side; the phone gets the spotlight below */
+  .flow-col { flex-direction: row; align-items: stretch; justify-content: center; gap: 8px; flex-wrap: nowrap; }
+  .browser { width: 158px; max-width: 158px; flex: 0 1 auto; }
+  .gate { flex: 0 1 auto; }
+  .browser-body { padding: 9px; gap: 6px; min-height: unset; }
+  .sk-hero2 { height: 46px; }
+  .sk-mono-big { font-size: 1.15rem; }
+  .sk-cta { font-size: .5rem; padding: 3px 7px; }
+  .urlbar { font-size: .54rem; }
+  .browser-tag { font-size: .66rem; padding: 5px 4px; }
+  .gate { max-width: 140px; min-width: 128px; padding: 8px 8px 10px; }
+  .chip { font-size: .72rem; padding: 6px 8px; gap: 6px; }
+  .chip .tick { width: 13px; height: 13px; }
+  .gate-title { font-size: .58rem; padding-bottom: 6px; }
+  .phone { max-width: 196px; border-radius: 44px; padding: 7px; }
+  .phone-screen { border-radius: 38px; }
+  .ai { width: 36px; height: 36px; border-radius: 10px; font-size: .7rem; }
+  .ai-bit { font-size: .78rem; }
+  .icon-grid { gap: 11px 3px; }
+  .app-ico span { font-size: .5rem; max-width: 44px; }
+  .dk { width: 35px; height: 35px; border-radius: 10px; }
+  .dk svg { width: 17px; height: 17px; }
+  .phone-dock { padding: 6px 7px; border-radius: 18px; }
+  .pwidget { padding: 6px 9px; margin-bottom: 8px; }
+  .pw-temp { font-size: .95rem; }
+  .p-island { height: 16px; }
+  .phone-status { font-size: .56rem; padding: 4px 10px 8px; }
+  .listing { max-width: 196px; }
+  .fly { width: 38px; height: 38px; }
+}
+@media (max-width: 480px) {
+  .site-header .container { padding-left: 12px; padding-right: 12px; gap: 8px; }
+  .header-actions { gap: 7px; }
+  .header-actions .btn-wa { padding: 8px 12px; font-size: .85rem; }
+  .theme-toggle { width: 34px; height: 34px; }
+  .burger { width: 34px; height: 34px; }
+  .brand-mark { width: 33px; height: 33px; }
+  .brand-name { font-size: 1.1rem; }
 }
