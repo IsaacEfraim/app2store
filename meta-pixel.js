@@ -1,7 +1,7 @@
 /* Meta Pixel loader — set PIXEL_ID after creating the pixel in Events Manager.
    Fires PageView on load and a Lead event on every WhatsApp click. */
 (function () {
-  var PIXEL_ID = ""; /* <-- paste the pixel ID here to activate */
+  var PIXEL_ID = "2226390161485178";
   if (!PIXEL_ID) return;
 
   !(function (f, b, e, v, n, t, s) {
