@@ -472,13 +472,9 @@ a.brand-name { text-decoration: none; color: var(--ink); }
   text-shadow: 0 1px 3px rgba(0,0,0,.55);
   max-width: 56px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
-.ai-wa { background: linear-gradient(160deg, #5BD066, #27B43E); }
-.ai-waze { background: #33CCFF; }
-.ai-bit {
-  background: linear-gradient(150deg, #FF3B4E, #E6007E);
-  font-size: .98rem; font-weight: 800; font-style: italic;
-  letter-spacing: -.5px; direction: ltr;
-}
+.ai-wa { background: #25D366; }
+.ai-waze { background: #77D1F3; }
+.ai-bit { background: #003B3E; }
 .ai-wolt { background: #009DE0; font-size: 1rem; }
 .ai-yad2 { background: #FF7100; font-size: .68rem; font-weight: 800; }
 .ai-moovit { background: linear-gradient(150deg, #FF9E1B, #F26722); font-size: 1rem; }
@@ -501,6 +497,7 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .dk-music { background: #fff; }
 .dk-msg { background: linear-gradient(160deg, #6BE07A, #12B32B); }
 .dk-saf { background: #fff; }
+.dk img { width: 86%; height: 86%; object-fit: contain; display: block; }
 .dk-phone { background: linear-gradient(160deg, #67E273, #1EA83C); }
 
 /* mini store listing */
