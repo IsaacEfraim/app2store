@@ -16,7 +16,8 @@
   var PLAN_TEXT = {
     full: "אני מתעניין במסלול המלא (Android + iPhone).",
     android: "אני מתעניין בחבילת Google Play.",
-    maint: "אני רוצה לשאול על חבילת התחזוקה החודשית."
+    maint: "אני רוצה לשאול על חבילת התחזוקה החודשית.",
+    combo: "אני רוצה את החבילה המשולבת — המרה + 12 בודקים."
   };
 
   function waMessage(plan) {
@@ -45,11 +46,11 @@
 
   function iconStyleFor(domain) {
     if (!domain) {
-      return { bg: "linear-gradient(135deg, #17A876, #0B6B48)", letter: "✦" };
+      return { bg: "linear-gradient(135deg, #7C4DFF 0%, #19B37E 55%, #2EE6A8 100%)", letter: "✦" };
     }
     var hue = hashHue(domain);
     return {
-      bg: "linear-gradient(135deg, hsl(" + hue + ",58%,46%), hsl(" + ((hue + 42) % 360) + ",62%,34%))",
+      bg: "linear-gradient(135deg, hsl(" + hue + ",70%,52%), hsl(" + ((hue + 45) % 360) + ",72%,44%), hsl(" + ((hue + 90) % 360) + ",68%,56%))",
       letter: domain.charAt(0).toUpperCase()
     };
   }
@@ -433,7 +434,7 @@
   var motionOff = reducedMotion || document.documentElement.classList.contains("a11y-motion");
   if (!motionOff && "IntersectionObserver" in window) {
     var revEls = document.querySelectorAll(
-      ".sec-head, .case-row, .step, .boundary-wrap, .deliver-item, .exclude-strip, .sister-main, .sister-split, .about-story, .proof-shot, .price-card, .maint-strip, .fees-note, .faq-item, .final h2, .final .btn-wa, .final-what"
+      ".sec-head, .case-row, .t12-band, .step, .boundary-wrap, .deliver-item, .exclude-strip, .sister-main, .sister-split, .about-story, .proof-shot, .price-card, .maint-strip, .fees-note, .faq-item, .final h2, .final .btn-wa, .final-what"
     );
     var caseIdx = 0;
     revEls.forEach(function (el, i) {
