@@ -6,7 +6,9 @@ param(
     [Parameter(Mandatory = $true)][string]$Version
 )
 
-$ErrorActionPreference = "Stop"
+# NOTE: keep Continue — native tools (npm/vercel) write warnings to stderr,
+# and Stop turns those into fatal errors under PowerShell 5.1.
+$ErrorActionPreference = "Continue"
 $appRepo = "C:\New Project\2get"
 $otaDir = "C:\New Project\app2store\ota\2get"
 $bundleName = "bundle-$Version.zip"
@@ -19,15 +21,30 @@ npm run build
 if ($LASTEXITCODE -ne 0) { throw "build failed" }
 Pop-Location
 
-# 2. Zip dist/client (contents at zip root)
+# 2. Zip dist/client (contents at zip root).
+# NOT Compress-Archive — it writes backslash entry names, which the Capgo
+# updater rejects on-device ("Windows path not supported"). Forward slashes
+# are required by the zip spec, so build entries by hand via .NET.
 New-Item -ItemType Directory -Force $otaDir | Out-Null
 $zipPath = Join-Path $otaDir $bundleName
 if (Test-Path $zipPath) { Remove-Item $zipPath -Force }
-Compress-Archive -Path "$appRepo\dist\client\*" -DestinationPath $zipPath
+Add-Type -AssemblyName System.IO.Compression, System.IO.Compression.FileSystem
+$srcDir = "$appRepo\dist\client"
+$zip = [System.IO.Compression.ZipFile]::Open($zipPath, [System.IO.Compression.ZipArchiveMode]::Create)
+try {
+    Get-ChildItem $srcDir -Recurse -File | ForEach-Object {
+        $rel = $_.FullName.Substring($srcDir.Length + 1) -replace "\\", "/"
+        [void][System.IO.Compression.ZipFileExtensions]::CreateEntryFromFile(
+            $zip, $_.FullName, $rel,
+            [System.IO.Compression.CompressionLevel]::Optimal)
+    }
+} finally {
+    $zip.Dispose()
+}
 
-# 3. Manifest
-@{ version = $Version; url = "https://app2store.co.il/ota/2get/$bundleName" } |
-    ConvertTo-Json | Out-File -Encoding utf8 (Join-Path $otaDir "latest.json")
+# 3. Manifest (BOM-less UTF8 — Out-File utf8 adds a BOM in PS 5.1)
+$manifestJson = @{ version = $Version; url = "https://app2store.co.il/ota/2get/$bundleName" } | ConvertTo-Json -Compress
+[System.IO.File]::WriteAllText((Join-Path $otaDir "latest.json"), $manifestJson)
 
 # 4. Deploy the site (serves /ota/2get/*)
 Push-Location "C:\New Project\app2store"
