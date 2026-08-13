@@ -426,6 +426,7 @@
         + 'שלחו את הקישור בוואטסאפ</a>';
       checkResult.innerHTML = html;
       checkResult.hidden = false;
+      try { document.dispatchEvent(new CustomEvent("a2s:checker", { detail: { ready: ready } })); } catch (err) {}
     }
   }
 

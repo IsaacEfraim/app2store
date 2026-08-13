@@ -3,6 +3,8 @@
 (function () {
   var PIXEL_ID = "2226390161485178";
   if (!PIXEL_ID) return;
+  /* skip local development so test clicks never pollute Events Manager */
+  if (/^(localhost|127\.|192\.168\.)/.test(location.hostname)) return;
 
   !(function (f, b, e, v, n, t, s) {
     if (f.fbq) return;
