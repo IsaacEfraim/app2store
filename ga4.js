@@ -45,6 +45,16 @@
     });
   }, true);
 
+  /* hero install button — a <button> + window.open, invisible to the click
+     handler above, so script.js announces it explicitly */
+  document.addEventListener("a2s:whatsapp", function (e) {
+    send("generate_lead", {
+      method: "whatsapp",
+      link_section: (e.detail && e.detail.source) || "install-button",
+      link_text: "install"
+    });
+  });
+
   /* readiness checker finished — dispatched by script.js */
   document.addEventListener("a2s:checker", function (e) {
     send("checker_complete", {

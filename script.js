@@ -332,6 +332,14 @@
 
   els.installBtn.addEventListener("click", function () {
     if (!els.installBtn.classList.contains("ready")) return;
+    /* This is a <button> opening a new window, not an <a href="wa.me">, so the
+       pixel and GA4 anchor listeners never see it. Announce it explicitly or
+       the site's primary CTA stays invisible to both. */
+    try {
+      document.dispatchEvent(new CustomEvent("a2s:whatsapp", {
+        detail: { source: "install-button" }
+      }));
+    } catch (err) {}
     window.open("https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(waMessage()), "_blank", "noopener");
   });
 
