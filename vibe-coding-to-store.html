@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>וייב קודינג: איך מוציאים את האפליקציה לחנות | App2Store</title>
+<meta name="description" content="בניתם אפליקציה בבייס 44, בלאבבל או ב v0 ואתם תקועים לפני החנות. מדריך בעברית: חשבון מפתח, בדיקה סגורה של 12 בודקים, מה אפל דוחה ומה עומד בדרישות, ומועדי 2026.">
+<link rel="canonical" href="https://app2store.co.il/vibe-coding-to-store">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="he_IL">
+<meta property="og:title" content="וייב קודינג: איך מוציאים את האפליקציה לחנות">
+<meta property="og:description" content="בניתם אפליקציה בבייס 44, בלאבבל או ב v0 ואתם תקועים לפני החנות. מדריך בעברית: חשבון מפתח, בדיקה סגורה של 12 בודקים, מה אפל דוחה ומה עומד בדרישות, ומועדי 2026.">
+<meta property="og:url" content="https://app2store.co.il/vibe-coding-to-store">
+<meta property="og:image" content="https://app2store.co.il/assets/og-v2.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0C1720">
+<script>
+(function(){
+  try{
+    var q=new URLSearchParams(location.search).get('theme');
+    if(q==='light'||(q!=='dark'&&localStorage.getItem('a2s-theme')==='light'))document.documentElement.setAttribute('data-theme','light');
+    var a=JSON.parse(localStorage.getItem('a2s-a11y')||'{}');
+    if(a.fs===1)document.documentElement.classList.add('a11y-fs1');
+    if(a.fs===2)document.documentElement.classList.add('a11y-fs2');
+    if(a.contrast)document.documentElement.classList.add('a11y-contrast');
+    if(a.links)document.documentElement.classList.add('a11y-links');
+    if(a.motion)document.documentElement.classList.add('a11y-motion');
+  }catch(e){}
+})();
+</script>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css?v=20260816a">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Article",
+      "headline": "וייב קודינג: איך מוציאים את האפליקציה לחנות",
+      "description": "בניתם אפליקציה בבייס 44, בלאבבל או ב v0 ואתם תקועים לפני החנות. מדריך בעברית: חשבון מפתח, בדיקה סגורה של 12 בודקים, מה אפל דוחה ומה עומד בדרישות, ומועדי 2026.",
+      "inLanguage": "he",
+      "author": {
+        "@type": "Organization",
+        "name": "App2Store",
+        "url": "https://app2store.co.il/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "App2Store",
+        "url": "https://app2store.co.il/"
+      },
+      "dateModified": "2026-08-16",
+      "mainEntityOfPage": "https://app2store.co.il/vibe-coding-to-store",
+      "wordCount": 3129
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "App2Store",
+          "item": "https://app2store.co.il/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "מדריכים",
+          "item": "https://app2store.co.il/#guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "וייב קודינג לחנות",
+          "item": "https://app2store.co.il/vibe-coding-to-store"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "אפשר להעלות אפליקציה מבייס 44 או לאבבל לחנות בלי לדעת לתכנת?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן, אבל לא בלחיצת כפתור. חלק מהכלים כבר מייצרים את הקובץ בעצמם. בייס 44 מייצרת קבצי IPA לאייפון וקבצי AAB לאנדרואיד בתוכנית Builder ומעלה, וכותבת בתיעוד שלה: \"You are responsible for setting up and paying for your Apple and Google developer accounts, as well as managing your app listings and submissions.\" מה שנשאר הוא חשבונות המפתח, רישום שם החבילה, הצהרות הנתונים, הבדיקה הסגורה בגוגל, נכסי החנות והטיפול בסבבי הביקורת. זה החלק שאנחנו עושים, בתוך חשבון שנפתח ונשאר על שמכם."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "כמה עולה חשבון מפתח בגוגל ובאפל?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "גוגל גובה 25 דולר בתשלום חד פעמי, אפל גובה 99 דולר לשנה. שני התשלומים משולמים על ידכם ישירות, והחשבונות נפתחים ונשארים על שמכם."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אם כבר פרסמתי אפליקציה אחת, אני פטור מדרישת 12 הבודקים באפליקציה הבאה?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "אין לנו תשובה מנוסח רשמי, ולכן אנחנו לא טוענים לשום כיוון. עמוד העזרה של גוגל מנסח את הדרישה ברמת האפליקציה, \"must run a closed test for their app with a minimum of 12 testers\", אבל הוא לא אומר במפורש מה קורה עם אפליקציה שנייה באותו חשבון פרטי אחרי שכבר התקבלה גישה לייצור. אנחנו מתכננים לוח זמנים בהנחה שהמסלול חוזר, ובודקים את המצב בקונסולה שלכם לפני שמתחייבים לתאריך. חשבונות ארגוניים לא מוזכרים בדרישה הזאת מלכתחילה."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "המונה של הבדיקה הסגורה בקונסולה לא זז, איבדתי את השבועיים?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כנראה שלא. מההגשות שאנחנו רואים, המסך מתעדכן באיחור של 24 עד 48 שעות אחרי שהתנאי כבר התקיים. זו תצפית שלנו ולא מסמך של גוגל. אל תתחילו מחזור חדש לפני שנתתם למסך יום או יומיים."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אימות מפתחי אנדרואיד בספטמבר 2026 חל עלי בישראל?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "חלקית, וההפרדה חשובה. עד תאריך 30 בספטמבר 2026 צריך לוודא בעמוד הבית של Play Console שכל שמות החבילה שלכם רשומים, וגוגל מנסחת את הסיכון כך: \"to avoid global removal from Google Play\". החלק הזה נוגע לכל מפתח, גם ישראלי. מה שכן אזורי הוא החסימה של התקנות במכשירים, שמתחילה באותו תאריך עבור משתמשים בברזיל, אינדונזיה, סינגפור ותאילנד, ומתרחבת גלובלית בשנת 2027. ולגבי אימות הזהות עצמו גוגל כותבת: \"For most Play developers, no new action is required for identity verification.\""
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "כדאי להפיץ את האפליקציה בכל העולם או רק בישראל?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ההצהרה על סטטוס סוחר מול אפל נדרשת בכל מקרה. אפל כותבת: \"Even if you don't distribute apps in the EU, you'll still need to declare a trader status.\" מה שהפצה לישראל בלבד חוסכת זה את הסיווג כסוחר לצורך הפצה באיחוד האירופי ואת החובות שנלוות אליו. את ההפצה אפשר להרחיב בהמשך בלי לבנות שום דבר מחדש."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "האפליקציה שלי מאחורי מסך התחברות. מה אפל צריכה כדי לבדוק אותה?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "חשבון הדגמה. בטופס App Review Information מסמנים שנדרשת התחברות וממלאים שם משתמש וסיסמה של חשבון פעיל שהסוקר יכול להיכנס איתו. אם יש פיצ׳רים שנפתחים רק אחרי תשלום או רק להרשאה מסוימת, מציינים אותם באותו מקום. בלי זה הסוקר עומד מול מסך שהוא לא יכול לעבור."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אפל מחייבת Sign in with Apple אם יש לי התחברות עם גוגל?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "לא בשמו. סעיף 4.8 מחייב להציע אפשרות התחברות נוספת שוות ערך שעומדת בשלושה מאפיינים: איסוף מוגבל לשם ולכתובת מייל, אפשרות לשמור על כתובת המייל פרטית בעת פתיחת החשבון, ואי איסוף של אינטראקציות באפליקציה לצורכי פרסום בלי הסכמה. Sign in with Apple עומד בשלושתם, ולכן הוא עונה על הדרישה, אבל הוא לא הדרך היחידה. אפליקציה שמשתמשת אך ורק במערכת ההרשמה וההתחברות של החברה עצמה פטורה מהסעיף."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <div class="brand">
+      <a class="brand-home" href="/" aria-label="App2Store — דף הבית">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10222E"/><path d="M24 10v16" stroke="#25D366" stroke-width="4.5" stroke-linecap="round"/><path d="M16 20l8 8 8-8" stroke="#25D366" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 32v3a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3v-3" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
+      </a>
+      <span><a class="brand-name" href="/">App2Store</a></span>
+    </div>
+    <a class="btn btn-wa btn-sm" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%D7%95%D7%99%D7%99%D7%91%20%D7%A7%D7%95%D7%93%D7%99%D7%A0%D7%92%20%D7%9C%D7%97%D7%A0%D7%95%D7%AA%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%94%D7%AA%D7%90%D7%9E%D7%94" target="_blank" rel="noopener">שאלה? וואטסאפ</a>
+  </div>
+</header>
+<main class="page-body guide-body">
+  <div class="container">
+    <p class="guide-crumb"><a href="/">App2Store</a> ← מדריכים ← וייב קודינג לחנות</p>
+    <h1>בניתי אפליקציה עם וייב קודינג. איך מוציאים אותה לחנות?</h1>
+    <p class="guide-intro">בניתם אפליקציה בבייס 44, בלאבבל או ב <span class="en">v0</span> ואתם תקועים לפני החנות. מדריך בעברית: חשבון מפתח, בדיקה סגורה של 12 בודקים, מה אפל דוחה ומה עומד בדרישות, ומועדי 2026.</p>
+    <p class="guide-updated">עודכן ב 16 באוגוסט 2026. כל ציטוט באנגלית בעמוד הזה הוא הנוסח הרשמי של Google או של Apple כלשונו.</p>
+
+      <h2>מה באמת עומד בין אפליקציה שעובדת לבין החנות</h2>
+      <p class="guide-answer">מה שחוסם אתכם זה לא הקוד, זו שכבת החנות. עליה יושבים ארבעה דברים: חשבון מפתח על שמכם, בילד חתום במקום אתר עטוף, דפי מדיניות ומסלול מחיקת חשבון, ובגוגל גם בדיקה סגורה של 12 בודקים לפני שאפשר בכלל לבקש גישה לייצור.</p>
+      <p>הכלי שבנה את האפליקציה, בין אם זה בייס 44, לאבבל, <span class="en">v0, Meta AI</span> או <span class="en">Firebase Studio</span>, מייצר מוצר שעובד בדפדפן. החנויות לא מקבלות דפדפן. הן מקבלות קובץ בילד חתום, עם שם חבילה, מספר גרסה, הרשאות מוצהרות ומדיניות פרטיות שמישהו קורא בפועל. זה הרגע שבו אנשים מגיעים אלינו.</p>
+      <p>הפער הזה הוא לא באג בכלי שבחרתם. הכלים האלה נועדו לבנות אפליקציות ווב, ושכבת החנות היא עולם אחר לגמרי: קונסולות, טפסים, מדיניות, וביקורת שעוברת דרך סוקרים אנושיים בגוגל ובאפל.</p>
+      <p>חלק מהכלים כבר סוגרים את החלק הטכני של הפער בעצמם, וכדאי לדעת את זה לפני שקונים שירות. בייס 44 מייצרת היום קבצי <span class="en">IPA</span> לאייפון וקבצי <span class="en">AAB</span> לאנדרואיד, בתוכנית <span class="en">Builder</span> ומעלה, וכותבת בתיעוד שלה במפורש מה נשאר עליכם: &quot;<span class="en">You are responsible for setting up and paying for your Apple and Google developer accounts, as well as managing your app listings and submissions.</span>&quot; ובאותו עמוד: &quot;<span class="en">Base44 support does not check on the status of your submission, contact Apple or Google on your behalf, or manage store review feedback for you.</span>&quot;</p>
+      <p>כלומר הקובץ הוא לא הצוואר של הבקבוק. הצוואר הוא חשבונות המפתח, רישום שם החבילה, הצהרות התוכן והנתונים, מסלול הבדיקות הסגורות, נכסי החנות, וסבבי הביקורת.</p>
+      <p>וחשוב להגיד את זה בפתיחה ולא בסוף: אף אחד לא שולט באישור. לא אנחנו, לא אף חברה אחרת, וגם לא הכלי שבנה לכם את האפליקציה. בייס 44 כותבת את זה על עצמה במילים האלה: &quot;<span class="en">Base44 cannot guarantee that an app is approved, even with a high readiness score.</span>&quot; מה שכן אפשר לשלוט בו זה להגיע להגשה בלי הטעויות הצפויות מראש, וזה מה שהמדריך הזה מפרט.</p>
+
+      <h2>ההחלטה הראשונה: חשבון מפתח פרטי או חשבון של חברה</h2>
+      <p class="guide-answer">לרוב מי שמגיע עם אפליקציה אחת, חשבון פרטי הוא הבחירה הנכונה, אבל הוא זה שמחייב בדיקה סגורה, וחשבון של חברה פוטר ממנה. זו ההחלטה שקובעת את לוח הזמנים. חשבון מפתח פרטי שנפתח אחרי 13 בנובמבר 2023 חייב להריץ בדיקה סגורה לפני שהאפליקציה כשירה להפצה, ובלשון גוגל: &quot;<span class="en">Google Play requires personal developer accounts created after November 13, 2023, to test their apps before those apps are eligible for distribution on Google Play.</span>&quot; חשבונות ארגוניים לא מוזכרים בדרישה הזאת.</p>
+      <p>בגוגל פליי הרישום הוא תשלום חד פעמי של 25 דולר. באפל זו חברות שנתית בעלות 99 דולר. בשני המקרים התשלום הוא שלכם, החשבונות נפתחים על שמכם ונשארים שלכם, גם כשאנחנו עושים את כל העבודה בפנים.</p>
+      <p>זה לא רק עניין של בעלות על נכס. סעיף 4.2.6 של אפל אומר את זה במפורש: &quot;<span class="en">Apps created from a commercialized template or app generation service will be rejected unless they are submitted directly by the provider of the app's content. These services should not submit apps on behalf of their clients.</span>&quot; אפליקציה שמוגשת מחשבון של ספק היא בדיוק המצב שהסעיף הזה מתאר, ולכן המודל שלנו עובד בתוך חשבון המפתח שלכם ולא בתוך שלנו.</p>
+      <p>עוד נקודה שכדאי לסגור לפני הרישום ולא אחריו. מההגשות שאנחנו רואים, ברגע שחשבון פרטי מתחיל למכור, הכתובת שרשומה בפרופיל התשלומים מוצגת בעמוד האפליקציה בחנות. זו תצפית שלנו ולא ציטוט ממסמך של גוגל, ואם הכתובת הרשומה היא כתובת המגורים שלכם, זה השלב לחשוב על זה.</p>
+      <p>ושאלה שחוזרת אצל מי שכבר פרסם פעם אחת: עמוד העזרה של גוגל מנסח את הדרישה ברמת האפליקציה, &quot;<span class="en">must run a closed test for their app with a minimum of 12 testers</span>&quot;, אבל הוא לא אומר במפורש מה קורה עם אפליקציה שנייה באותו חשבון פרטי אחרי שכבר התקבלה גישה לייצור. אין לנו תשובה מנוסח רשמי, ולכן אנחנו בונים לוח זמנים בהנחה שהמסלול חוזר, ובודקים את המצב בפועל בקונסולה שלכם לפני שמתחייבים לתאריך.</p>
+
+      <h2>בדיקה סגורה בגוגל: 12 בודקים, 14 יום, ואיך התנאי מנוסח בדיוק</h2>
+      <p class="guide-answer">12 הבודקים צריכים להיות רשומים לבדיקה הסגורה ברגע שאתם מגישים את הבקשה לגישה לייצור, ורצופים לאורך 14 הימים שקדמו להגשה. הנוסח של גוגל: &quot;<span class="en">At least 12 testers must be opted in to your closed test when you apply for production access, and they must have been opted in continuously for the preceding 14 days.</span>&quot;</p>
+      <p>המילה הקובעת בנוסח הזה היא <span class="en">preceding.</span> לא מספיק שהיו לכם 12 בודקים במשך שבועיים מתישהו. הם צריכים להיות רשומים ברגע ההגשה, ורצופים לאורך השבועיים שלפניה. גוגל גם סוגרת את הפרצה הברורה במשפט נפרד: &quot;<span class="en">Testers who opt in, test for fewer than 14 days, and then opt out do not count toward the requirement.</span>&quot;</p>
+      <p>המשמעות המעשית: נשירה של בודק ניתנת לתיקון, אבל המחליף מתחיל 14 יום רצופים משלו. אפשר לחשב את זה מראש: נשירה ביום השני דוחה אתכם ביומיים, נשירה ביום השביעי דוחה אתכם בשבוע. זה עיכוב, לא אסון, וכדאי לתכנן איתו.</p>
+      <p>עמידה בתנאי מאפשרת להגיש בקשה לגישה לייצור, היא לא מבטיחה אותה. גוגל בודקת את הבקשה ומחליטה, ומי שמבטיח לכם אישור מבטיח משהו שאינו בשליטתו.</p>
+      <p>עוד משהו מהשטח, וזו תצפית שלנו ולא מסמך של גוגל: המונה במסך הבדיקה הסגורה מתעדכן באיחור, לפעמים 24 עד 48 שעות אחרי שהתנאי כבר התקיים. אנשים רואים מספר שלא זז, מניחים שאיבדו את השבועיים, ומתחילים את הכל מהתחלה בלי סיבה.</p>
+      <p>בטופס הבקשה גוגל שואלת על גיוס הבודקים, והשאלה מנוסחת כך: &quot;<span class="en">Select an option indicating how easy it was to recruit testers for your app&quot;.</span> כלומר גוגל שואלת כמה קל היה לגייס, לא איך גייסתם. באותו עמוד עזרה גוגל גם כותבת מה הדרך שהיא מציינת: &quot;<span class="en">The most common way to recruit testers is to use personal and professional networks.</span>&quot; יש בטופס גם שדות פתוחים, למשל &quot;<span class="en">Summarize the feedback received from testers and describe how feedback was collected</span>&quot;, ושם אתם מתארים את הבדיקות ואת המשוב.</p>
+      <p>את גיוס הבודקים מפעיל אצלנו השירות השני שלנו, <span class="en">12testersisrael.com</span>, ושם נמצא ההסבר המלא על המסלול הזה.</p>
+
+      <h2>אפל: למה אתר עטוף נופל בסעיף 4.2.2, ומה עומד בדרישות</h2>
+      <p class="guide-answer">סעיף 4.2.2 של אפל מנוסח כך, מילה במילה: &quot;<span class="en">Other than catalogs, apps shouldn't primarily be marketing materials, advertisements, web clippings, content aggregators, or a collection of links.</span>&quot; המילה הקובעת היא <span class="en">primarily</span>, ויש בסעיף פטור מפורש לקטלוגים. הכלל לא מכוון לכל אפליקציה שמבוססת על אתר, הוא מכוון לאפליקציה שזה כל מה שהיא.</p>
+      <p>סעיף 4.2 עצמו מנוסח בלשון <span class="en">should include</span> ולא כחובה. הוא מצפה שהאפליקציה תביא פיצ׳רים, תוכן וממשק שעושים אותה למשהו מעבר לאתר שנארז מחדש. והמונח <span class="en">web clippings</span> שמופיע בסעיף 4.2.2 הוא לא מונח משפטי, הוא תיאור של אפליקציה שהיא בעצם קיצור דרך לאתר.</p>
+      <p>אפליקציה שכל תפקידה הוא לטעון כתובת מרוחקת בתוך <span class="en">WebView</span> היא המקרה שהתיאור הזה מכוון אליו. בגוגל הכלל קיים גם הוא, אבל הוא מנוסח אחרת, וההבדל בין החנויות הוא בניסוח ולא בקיום של הדרישה. מדיניות <span class="en">Minimum Functionality</span> של גוגל אומרת: &quot;<span class="en">Apps should provide a stable, responsive, and engaging user experience. Apps that crash, do not have the basic degree of adequate utility as mobile apps, lack engaging content, or exhibit other behavior that is not consistent with a functional and engaging user experience are not allowed on Google Play.</span>&quot; יש לגוגל גם סעיף ייעודי ל <span class="en">WebView</span>, במדיניות <span class="en">Webviews and Affiliate Spam: &quot;We don't allow apps whose primary purpose is to drive affiliate traffic to a website or provide a webview of a website without permission from the website owner or administrator.</span>&quot; שימו לב למה שהסעיף הזה תולה בו את האיסור, והוא הרשאה של בעל האתר. מי שעוטף את האתר של עצמו הוא לא מי שהסעיף מכוון אליו. זו אמירה על הכלל, לא תחזית לגבי החלטה של אף אחת מהחנויות.</p>
+      <p>מה שאנחנו עושים אחרת: הנכסים ארוזים בתוך הבילד במקום להיטען מכתובת חיצונית, הניווט הוא ניווט נייטיב אמיתי עם טאב בר, יש התראות פוש, ויש מסכים שמתנהגים בהיגיון גם בלי רשת. מהניסיון שלנו זו הדרך להתרחק מהתיאור שבסעיף 4.2.2. וחשוב לסייג: אפל לא מפרסמת צ׳קליסט מעבר, ואין רשימה שמסמנים אותה ומקבלים אישור.</p>
+      <p>יש כאן גם שיקול מוצרי ולא רק רגולטורי, והוא לטובת אריזה מקומית: כל מה שנטען מהרשת בזמן ריצה הוא תוכן שאתם לא שולטים בו ברגע שהסוקר פותח את האפליקציה, והוא גם החלק הראשון שנשבר אצל משתמש בלי קליטה.</p>
+
+      <h2>שישה סעיפים שצריך להוסיף לאפליקציה שנבנתה בוייב קודינג</h2>
+      <p class="guide-answer">אלה שישה סעיפים שכמעט תמיד חסרים: התחברות, מחיקת חשבון, בחירת תמונות, דיווח וחסימה, אופן הגבייה, וחשבון הדגמה לסוקר של אפל. שלושה מהם, מחיקת חשבון, דיווח וחסימה ואופן הגבייה, חלים גם על גוגל וגם על אפל.</p>
+      <p>התחברות. סעיף 4.8 לא מחייב את <span class="en">Sign in with Apple</span> בשמו. מה שהוא מחייב זה להציע אפשרות התחברות נוספת שוות ערך, עם שלושה מאפיינים, בנוסח של אפל: &quot;<span class="en">the login service limits data collection to the user's name and email address; the login service allows users to keep their email address private as part of setting up their account; and the login service does not collect interactions with your app for advertising purposes without consent.</span>&quot; אפליקציה שמציעה התחברות דרך גוגל נכנסת לסעיף הזה וצריכה להעמיד לצידה שירות שעומד בשלושת המאפיינים. <span class="en">Sign in with Apple</span> עומד בהם, אבל הוא לא הדרך היחידה. יש גם פטור מפורש לאפליקציה שמשתמשת אך ורק במערכת ההרשמה וההתחברות של החברה עצמה.</p>
+      <p>מחיקת חשבון. אפל דורשת בסעיף <span class="en">5.1.1(v)</span> שאפליקציה שמאפשרת יצירת חשבון תאפשר גם מחיקה שלו מתוך האפליקציה. גוגל דורשת שני מסלולים, אחד בתוך האפליקציה ואחד בכתובת ווב שמוצהרת בטופס <span class="en">Data Safety</span>, וגם מחיקה של הנתונים המשויכים. לגבי כתובת הווב גוגל כותבת: &quot;<span class="en">The weblink must be functional (for example, loads without error), relevant in scope</span>&quot;, והמסלול צריך להסתיים בלי להחזיר את המשתמש לאפליקציה ולדרוש ממנו להוריד אותה שוב כדי להגיש את הבקשה. ושימו לב לנקודה שקל לפספס: התחברות דרך גוגל היא יצירת חשבון לכל דבר. מהפרויקטים שאנחנו רואים, כפתור ההתחברות דרך גוגל מגיע מהכלים האלה כברירת מחדל, ומסלול המחיקה לא מגיע איתו.</p>
+      <p>תמונות. העלאת תמונות צריכה לעבור דרך <span class="en">Photo Picker</span> של אנדרואיד ולא דרך ההרשאה הרחבה <span class="en">READ_MEDIA_IMAGES</span>, אלא אם יש שימוש ליבה שמצדיק גישה רחבה ועובר בדיקה נפרדת.</p>
+      <p>תוכן משתמשים. אפליקציה עם צ׳אט או עם תוכן שמשתמשים מעלים צריכה מנגנון דיווח וחסימה שזמין מתוך האפליקציה, וזו דרישה של שתי החנויות: במדיניות <span class="en">User Generated Content</span> של גוגל, ובסעיף 1.2 של אפל שדורש &quot;<span class="en">A mechanism to report offensive content and timely responses to concerns</span>&quot; וגם &quot;<span class="en">The ability to block abusive users from the service&quot;.</span></p>
+      <p>תשלומים. אם אתם מוכרים שירות שנצרך מחוץ לאפליקציה, למשל תור למספרה או משלוח, סעיף <span class="en">3.1.3(e)</span> מנוסח כך: &quot;<span class="en">If your app enables people to purchase physical goods or services that will be consumed outside of the app, you must use purchase methods other than in-app purchase to collect those payments</span>&quot; ואוסר לגבות עליו דרך רכישה מתוך האפליקציה. אם לעומת זאת אתם פותחים פיצ׳ר דיגיטלי בתוך האפליקציה, אתם חייבים רכישה מתוך האפליקציה, ובאנדרואיד את <span class="en">Play Billing.</span> אפשר לטעות כאן בשני הכיוונים, והם שני סעיפים נפרדים. נקודה נוספת שכדאי להכיר: בחנות של ארצות הברית אפל לא דורשת <span class="en">entitlement</span> כדי לכלול כפתור או קישור חיצוני לרכישה, ומחוץ לחנות הזאת עדיין צריך <span class="en">entitlement.</span> זה פטור לפי חנות, לא לפי מיקום המפתח.</p>
+      <p>חשבון הדגמה. אם האפליקציה יושבת מאחורי מסך התחברות, הסוקר של אפל צריך להיכנס. בטופס <span class="en">App Review Information</span> מסמנים שנדרשת התחברות וממלאים שם משתמש וסיסמה של חשבון הדגמה פעיל. הגשה של אפליקציה נעולה בלי הפרטים האלה משאירה את הסוקר מול מסך שהוא לא יכול לעבור, ואין לו דרך לבדוק את מה שמאחוריו. אם יש פיצ׳רים שנפתחים רק אחרי תשלום או רק להרשאה מסוימת, מציינים אותם באותו מקום.</p>
+
+      <h2>שני מועדים בשנת 2026, ומה באמת קורה עם אימות מפתחי אנדרואיד</h2>
+      <p class="guide-answer">החל מתאריך 31 באוגוסט 2026 אפליקציות חדשות ועדכונים בגוגל פליי צריכים לטרגט אנדרואיד 16, כלומר גרסת <span class="en">API 36</span>, והארכה, למי שכבר יש לו אפליקציה בחנות, מזיזה את מועד העמידה בדרישה ל 1 בנובמבר 2026. במקביל, עד תאריך 30 בספטמבר 2026 צריך לוודא בעמוד הבית של <span class="en">Play Console</span> שכל שמות החבילה שלכם רשומים. גוגל מנסחת את הסיכון כך: &quot;<span class="en">register any remaining apps you want to continue distributing to avoid global removal from Google Play&quot;.</span></p>
+      <p>דרישת גרסת <span class="en">API 36</span> חלה על כל העלאה חדשה, ולכן אפליקציה שנבנתה לפני חצי שנה על גרסת יעד נמוכה יותר צריכה בנייה מחדש לפני ההגשה. ההארכה מזיזה את מועד העמידה בדרישה ל 1 בנובמבר 2026, וגוגל כותבת שטופסי ההארכה יהיו זמינים ב <span class="en">Play Console</span> בהמשך השנה. היא מיועדת לעדכון של אפליקציה שכבר קיימת בחנות, ולא כדי להגיש אפליקציה חדשה מתחת ל <span class="en">API 36.</span> לאפליקציה שנבנית עכשיו מאפס פשוט אין סיבה לא לטרגט את הגרסה הנכונה מלכתחילה.</p>
+      <p>אימות מפתחי אנדרואיד מבלבל מסיבה אחת: מדובר בשלושה מנגנונים נפרדים, עם תאריכים ותוצאות שונים. שתי הטעויות שכדאי לא לעשות הן להניח שאין שום דחיפות למפתח ישראלי, ולהניח שהאפליקציה תוסר גלובלית לפי מיקום המשתמשים. שתיהן לא נכונות, וברגע שמפרידים בין שלושת המנגנונים התמונה ברורה.</p>
+      <p>הראשון, רישום שמות חבילה בעמוד הבית של <span class="en">Play Console.</span> זה מה שנוגע לכם ישירות, גם בישראל, וזה המועד של 30 בספטמבר 2026. גוגל כותבת: &quot;<span class="en">While 99% of apps on Play have been registered automatically using information you have already provided, you should check your Play Console Home page.</span>&quot; המספר הוא 99 אחוז ולא כולם, וההוראה היא ללכת ולבדוק. לאפליקציה חדשה שנוצרת בקונסולה גוגל כותבת שהרישום נעשה אוטומטית: &quot;<span class="en">For new apps, when you create an app in the Google Play Console, Google Play automatically registers the package name and links it to your account.</span>&quot;</p>
+      <p>השני, אימות זהות המפתח. אם כבר עברתם את אימות הזהות של <span class="en">Play Console</span>, גוגל אומרת שאין פעולה חדשה לבצע: &quot;<span class="en">For most Play developers, no new action is required for identity verification.</span>&quot;</p>
+      <p>השלישי, החסימה בפועל של התקנות במכשירים. זו האזורית, וזה מה שכן מוגבל לארבע מדינות: &quot;<span class="en">These new developer verification protections will take effect on September 30, 2026, starting with users in Brazil, Indonesia, Singapore, and Thailand.</span>&quot; ההרחבה הגלובלית של המנגנון הזה מתוכננת בשנת 2027.</p>
+      <p>מה שחשוב לא לבלבל: ההסרה מגוגל פליי נקבעת לפי סטטוס הרישום שלכם כמפתחים, לא לפי מיקום המשתמשים. מיקום המשתמש רלוונטי רק למנגנון החסימה בהתקנה. וגוגל לא מפרסמת מנגנון אכיפה או לוח זמנים להסרה בפועל, ולכן אף אחד לא יכול להגיד לכם שהאפליקציה נמחקת בתאריך 1 באוקטובר. מה שכן אפשר להגיד זה שהבדיקה בעמוד הבית של הקונסולה היא פעולה אחת, ושווה לעשות אותה לפני 30 בספטמבר 2026.</p>
+
+      <h2>כמה זמן זה לוקח, ומה אנחנו עושים בפועל</h2>
+      <p class="guide-answer">הרצפה בגוגל היא 14 יום. זה המינימום של הבדיקה הסגורה לפני שאפשר בכלל להגיש בקשה לגישה לייצור, ואחריו נוספים זמן הבדיקה של הבקשה אצל גוגל וזמן ביקורת ההגשה עצמה. אפל מפרסמת ש &quot;<span class="en">On average, 90% of submissions are reviewed in less than 24 hours</span>&quot;, אבל זה ממוצע ולא התחייבות, ואנחנו לא נותנים תאריך אישור, כי אף אחד לא שולט בו.</p>
+      <p>מה שקובע את לוח הזמנים בגוגל הוא 14 ימי הבדיקה הסגורה, ואחריהם בקשת הגישה לייצור. באפל הבדיקה הראשונה בדרך כלל מהירה, ואפל עצמה מפרסמת ממוצע של פחות מ 24 שעות ל 90 אחוז מההגשות, אבל אין שעון קבוע לכל הדרך: יש ביקורת אנושית ויכולים להיות כמה סבבי תיקון, והם מה שמזיז את התאריך. מי שנוקב בפניכם בתאריך פרסום מדויק נוקב במשהו שאינו בשליטתו.</p>
+      <p>בשירות שלנו אתם מגיעים עם אפליקציה שעובדת, ואנחנו לוקחים משם: הפיכת הפרויקט לבילד נייטיב עם נכסים ארוזים, ניווט אמיתי, פוש ומסכי אופליין, הטמעת מחיקת חשבון והתחברות תקינה, בניית דפי המדיניות, מילוי טופס <span class="en">Data Safety</span> ושאלון הפרטיות של אפל, הכנת חשבון ההדגמה לסוקר, העלאה לחשבון המפתח שלכם, והובלת התהליך מול הקונסולות עד ההגשה, כולל טיפול בהערות שחוזרות.</p>
+      <p>עוד החלטה קטנה עם השפעה גדולה: היקף ההפצה. אצל אפל ההצהרה על סטטוס סוחר לפי רגולציית <span class="en">DSA</span> האירופית נדרשת בכל מקרה, גם אם אתם לא מפיצים באירופה, ובלשון אפל: &quot;<span class="en">Even if you don't distribute apps in the EU, you'll still need to declare a trader status.</span>&quot; מה שהפצה לישראל בלבד כן חוסכת זה את הסיווג כסוחר לצורך הפצה באיחוד האירופי ואת החובות שנלוות אליו. אפל גם כותבת &quot;<span class="en">Apple can't determine whether you're a trader</span>&quot;, כלומר ההחלטה והאחריות עליה הן שלכם. אצל גוגל לא מצאנו עמוד עזרה רשמי שמחיל דרישת סוחר לפי <span class="en">DSA</span> על כל המפתחים, ולכן אנחנו לא טוענים את זה כאן. את ההפצה תמיד אפשר להרחיב אחר כך בלי לבנות שום דבר מחדש.</p>
+      <p>המחירים מתחילים בסכום של 1,190 שקל לגוגל פליי בלבד, ובסכום של 2,490 שקל לשתי החנויות. בדיקת התאמה ראשונית היא בחינם בוואטסאפ 055 267 2300: אתם שולחים את הקישור לפרויקט, ואנחנו אומרים מה עומד בדרישות, מה צריך לשנות ומה לא שווה להתחיל איתו.</p>
+
+    <h2 id="faq">שאלות נפוצות</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <h3>אפשר להעלות אפליקציה מבייס 44 או לאבבל לחנות בלי לדעת לתכנת?</h3>
+          <div class="faq-a"><p>כן, אבל לא בלחיצת כפתור. חלק מהכלים כבר מייצרים את הקובץ בעצמם. בייס 44 מייצרת קבצי <span class="en">IPA</span> לאייפון וקבצי <span class="en">AAB</span> לאנדרואיד בתוכנית <span class="en">Builder</span> ומעלה, וכותבת בתיעוד שלה: &quot;<span class="en">You are responsible for setting up and paying for your Apple and Google developer accounts, as well as managing your app listings and submissions.</span>&quot; מה שנשאר הוא חשבונות המפתח, רישום שם החבילה, הצהרות הנתונים, הבדיקה הסגורה בגוגל, נכסי החנות והטיפול בסבבי הביקורת. זה החלק שאנחנו עושים, בתוך חשבון שנפתח ונשאר על שמכם.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>כמה עולה חשבון מפתח בגוגל ובאפל?</h3>
+          <div class="faq-a"><p>גוגל גובה 25 דולר בתשלום חד פעמי, אפל גובה 99 דולר לשנה. שני התשלומים משולמים על ידכם ישירות, והחשבונות נפתחים ונשארים על שמכם.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>אם כבר פרסמתי אפליקציה אחת, אני פטור מדרישת 12 הבודקים באפליקציה הבאה?</h3>
+          <div class="faq-a"><p>אין לנו תשובה מנוסח רשמי, ולכן אנחנו לא טוענים לשום כיוון. עמוד העזרה של גוגל מנסח את הדרישה ברמת האפליקציה, &quot;<span class="en">must run a closed test for their app with a minimum of 12 testers</span>&quot;, אבל הוא לא אומר במפורש מה קורה עם אפליקציה שנייה באותו חשבון פרטי אחרי שכבר התקבלה גישה לייצור. אנחנו מתכננים לוח זמנים בהנחה שהמסלול חוזר, ובודקים את המצב בקונסולה שלכם לפני שמתחייבים לתאריך. חשבונות ארגוניים לא מוזכרים בדרישה הזאת מלכתחילה.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>המונה של הבדיקה הסגורה בקונסולה לא זז, איבדתי את השבועיים?</h3>
+          <div class="faq-a"><p>כנראה שלא. מההגשות שאנחנו רואים, המסך מתעדכן באיחור של 24 עד 48 שעות אחרי שהתנאי כבר התקיים. זו תצפית שלנו ולא מסמך של גוגל. אל תתחילו מחזור חדש לפני שנתתם למסך יום או יומיים.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>אימות מפתחי אנדרואיד בספטמבר 2026 חל עלי בישראל?</h3>
+          <div class="faq-a"><p>חלקית, וההפרדה חשובה. עד תאריך 30 בספטמבר 2026 צריך לוודא בעמוד הבית של <span class="en">Play Console</span> שכל שמות החבילה שלכם רשומים, וגוגל מנסחת את הסיכון כך: &quot;<span class="en">to avoid global removal from Google Play&quot;.</span> החלק הזה נוגע לכל מפתח, גם ישראלי. מה שכן אזורי הוא החסימה של התקנות במכשירים, שמתחילה באותו תאריך עבור משתמשים בברזיל, אינדונזיה, סינגפור ותאילנד, ומתרחבת גלובלית בשנת 2027. ולגבי אימות הזהות עצמו גוגל כותבת: &quot;<span class="en">For most Play developers, no new action is required for identity verification.</span>&quot;</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>כדאי להפיץ את האפליקציה בכל העולם או רק בישראל?</h3>
+          <div class="faq-a"><p>ההצהרה על סטטוס סוחר מול אפל נדרשת בכל מקרה. אפל כותבת: &quot;<span class="en">Even if you don't distribute apps in the EU, you'll still need to declare a trader status.</span>&quot; מה שהפצה לישראל בלבד חוסכת זה את הסיווג כסוחר לצורך הפצה באיחוד האירופי ואת החובות שנלוות אליו. את ההפצה אפשר להרחיב בהמשך בלי לבנות שום דבר מחדש.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>האפליקציה שלי מאחורי מסך התחברות. מה אפל צריכה כדי לבדוק אותה?</h3>
+          <div class="faq-a"><p>חשבון הדגמה. בטופס <span class="en">App Review Information</span> מסמנים שנדרשת התחברות וממלאים שם משתמש וסיסמה של חשבון פעיל שהסוקר יכול להיכנס איתו. אם יש פיצ׳רים שנפתחים רק אחרי תשלום או רק להרשאה מסוימת, מציינים אותם באותו מקום. בלי זה הסוקר עומד מול מסך שהוא לא יכול לעבור.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>אפל מחייבת <span class="en">Sign in with Apple</span> אם יש לי התחברות עם גוגל?</h3>
+          <div class="faq-a"><p>לא בשמו. סעיף 4.8 מחייב להציע אפשרות התחברות נוספת שוות ערך שעומדת בשלושה מאפיינים: איסוף מוגבל לשם ולכתובת מייל, אפשרות לשמור על כתובת המייל פרטית בעת פתיחת החשבון, ואי איסוף של אינטראקציות באפליקציה לצורכי פרסום בלי הסכמה. <span class="en">Sign in with Apple</span> עומד בשלושתם, ולכן הוא עונה על הדרישה, אבל הוא לא הדרך היחידה. אפליקציה שמשתמשת אך ורק במערכת ההרשמה וההתחברות של החברה עצמה פטורה מהסעיף.</p></div>
+        </div>
+    </div>
+
+    <div class="guide-cta panel">
+      <p><strong>רוצים לדעת איפה האפליקציה שלכם עומדת?</strong> שלחו קישור לפרויקט בוואטסאפ. נחזור עם מה עומד בדרישות, מה צריך לשנות, ומה לא שווה להתחיל איתו. בחינם, לפני ששילמתם שקל.</p>
+      <a class="btn btn-wa" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%D7%95%D7%99%D7%99%D7%91%20%D7%A7%D7%95%D7%93%D7%99%D7%A0%D7%92%20%D7%9C%D7%97%D7%A0%D7%95%D7%AA%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%94%D7%AA%D7%90%D7%9E%D7%94" target="_blank" rel="noopener">בדיקת התאמה בוואטסאפ</a>
+    </div>
+
+    <p class="guide-related">מדריכים נוספים: <a href="/base44-to-google-play">Base44 לגוגל פליי</a> · <a href="/lovable-to-app-store">Lovable לאפ סטור</a> · <a href="/app-store-costs">כמה זה עולה</a> · <a href="/apple-rejection-guidelines">דחייה מאפל</a></p>
+  </div>
+</main>
+<footer class="site-footer">
+  <div class="container"><p class="legal-line">© 2026 App2Store · <a href="/">דף הבית</a> · <a href="/accessibility">הצהרת נגישות</a> · המידע נכון לאוגוסט 2026; מדיניות החנויות נקבעת על ידי Google ו Apple ועשויה להשתנות. אין באמור התחייבות לאישור.</p></div>
+</footer>
+<a class="wa-float" href="https://wa.me/972552672300" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ">
+  <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
+</a>
+<button class="a11y-btn" id="a11yBtn" type="button" aria-label="תפריט נגישות" aria-expanded="false">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="4.4" r="2.1"/><path d="M19.2 7.2a1 1 0 0 0-1.2-.7c-2 .5-4 .8-6 .8s-4-.3-6-.8a1 1 0 1 0-.5 1.9c1.6.4 3.2.7 4.8.8v2.9l-2.2 6.3a1 1 0 0 0 1.9.7l2-5.7 2 5.7a1 1 0 1 0 1.9-.7l-2.2-6.3V9.2c1.6-.1 3.2-.4 4.8-.8a1 1 0 0 0 .7-1.2z"/></svg>
+</button>
+<div class="a11y-panel" id="a11yPanel" role="dialog" aria-label="הגדרות נגישות">
+  <h3>נגישות</h3>
+  <button class="a11y-row" data-a11y="fs"><span>גודל טקסט</span><span class="state" id="fsState">רגיל</span></button>
+  <button class="a11y-row" data-a11y="contrast"><span>ניגודיות גבוהה</span><span class="state" id="contrastState">כבוי</span></button>
+  <button class="a11y-row" data-a11y="links"><span>הדגשת קישורים</span><span class="state" id="linksState">כבוי</span></button>
+  <button class="a11y-row" data-a11y="motion"><span>עצירת אנימציות</span><span class="state" id="motionState">כבוי</span></button>
+  <div class="a11y-foot">
+    <a href="/accessibility">הצהרת נגישות</a>
+    <button class="a11y-reset" id="a11yReset" type="button">איפוס</button>
+  </div>
+</div>
+<script src="/script.js?v=20260815a" defer></script>
+<script defer src="/meta-pixel.js?v=4"></script>
+<script defer src="/ga4.js?v=3"></script>
+<script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

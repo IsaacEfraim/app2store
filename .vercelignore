@@ -1,0 +1,6 @@
+# Versioned but never served: guide sources, the sourced fact sheet, build and
+# deploy tooling. Everything here would otherwise be reachable as a static file.
+content/
+scripts/
+internal/
+.claude/

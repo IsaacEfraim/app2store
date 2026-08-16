@@ -12,8 +12,10 @@ const KEY = "032c9753a7f73a147253f71a36e852c2";
 
 const defaultUrls = [
   "https://app2store.co.il/",
+  "https://app2store.co.il/vibe-coding-to-store",
   "https://app2store.co.il/base44-to-google-play",
   "https://app2store.co.il/lovable-to-app-store",
+  "https://app2store.co.il/apple-rejection-guidelines",
   "https://app2store.co.il/app-store-costs",
   "https://app2store.co.il/sitemap.xml",
   "https://app2store.co.il/llms.txt",

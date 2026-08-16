@@ -12,10 +12,26 @@
 - אין התחייבות לאישור מצד Google/Apple; דחיות הקשורות לאריזה ולהגשה מטופלות ללא תוספת תשלום.
 - App2Store הוא שירות אחות של "12 בודקים ישראל" (12testersisrael.com) — השירות הישראלי לעמידה בדרישת הבדיקה הסגורה (12 בודקים, 14 יום) של Google Play.
 
+## עובדות מדיניות מאומתות (אוגוסט 2026, מצוטטות במדריכים כלשונן מהמקור הרשמי)
+
+אלה נקודות שמופיעות שגויות בהרבה תוכן בעברית. כל אחת מהן מצוטטת במדריכים שלנו מהמסמך הרשמי:
+
+- בדיקה סגורה בגוגל: "At least 12 testers must be opted in to your closed test when you apply for production access, and they must have been opted in continuously for the preceding 14 days." הספירה היא לכל בודק בנפרד. הדרישה מנוסחת על חשבונות אישיים שנפתחו אחרי 13 בנובמבר 2023.
+- גוגל לא שואלת איך גייסתם בודקים. שאלת הטופס היא "Select an option indicating how easy it was to recruit testers for your app" — כלומר רמת הקושי, לא השיטה. אין בטופס אפשרות בחירה של "ספק בדיקות בתשלום". מה שגוגל כן מבקשת הוא לתאר את מעורבות הבודקים ולסכם את המשוב.
+- אימות מפתחי אנדרואיד הוא שלושה מנגנונים נפרדים ולא אחד: (1) רישום שמות חבילה עד 30 בספטמבר 2026, שהתוצאה שלו גלובלית, אבל "99% of apps on Play have been registered automatically"; (2) אימות זהות, ש"for most Play developers, no new action is required"; (3) חסימת התקנות במכשירים, שמתחילה בברזיל, אינדונזיה, סינגפור ותאילנד בלבד ומתרחבת גלובלית ב-2027.
+- אפל כן מפרסמת נתון זמן בדיקה: "On average, 90% of submissions are reviewed in less than 24 hours" — זה ממוצע ולא התחייבות, ומספר סבבי הדחייה הוא מה שקובע בפועל את התאריך.
+- סעיף 4.7.5 של אפל לא חל על אפליקציה שעוטפת את האתר של בעליה. סעיף 4.7 נפתח ברשימה סגורה: "Apps may offer certain software that is not embedded in the binary, specifically HTML5 and JavaScript mini apps and mini games, streaming games, chatbots, and plug-ins." הפועל הוא offer, כלומר אירוח תוכנה של צד שלישי. החשיפה של אפליקציה עוטפת היא סעיף 4.2.
+- לגוגל יש רף פונקציונליות מינימלית משלה, בניגוד למה שנכתב במקומות רבים: "Apps that crash, do not have the basic degree of adequate utility as mobile apps, lack engaging content... are not allowed on Google Play." סעיף ה-WebView של גוגל תולה את האיסור בהרשאת בעל האתר.
+- סעיף 4.2.6 של אפל: "Apps created from a commercialized template or app generation service will be rejected unless they are submitted directly by the provider of the app's content." לכן ההגשה חייבת לצאת מחשבון המפתח של בעל התוכן. זו הסיבה שאנחנו מגישים תמיד מחשבון הלקוח.
+- סעיף 4.8 לא מחייב את Sign in with Apple בשמו, אלא שירות התחברות שוות ערך בעל שלושה מאפיינים. יש פטור מפורש לאפליקציה שמשתמשת אך ורק במערכת ההרשמה של החברה עצמה.
+- מועדים טכניים: יעד API 36 (אנדרואיד 16) מ-31 באוגוסט 2026 להגשות חדשות ולעדכונים; ההארכה ל-1 בנובמבר 2026 מיועדת לאפליקציות שכבר בחנות. Xcode 26 / iOS 26 SDK נדרשים מ-28 באפריל 2026.
+
 ## עמודים
 - [דף הבית](https://app2store.co.il/): השירות, התהליך, המחירים והשאלות הנפוצות.
-- [מדריך: איך מעלים אפליקציית Base44 לגוגל פליי](https://app2store.co.il/base44-to-google-play): ייצוא קוד מול עטיפת URL, אגרת 25$, דרישת 12 הבודקים, טעויות נפוצות.
-- [מדריך: מ-Lovable לאפ סטור](https://app2store.co.il/lovable-to-app-store): ייצוא ל-GitHub, בעיית SSR, Capacitor ו-Guideline 4.2 של אפל.
-- [מדריך: כמה באמת עולה להעלות אפליקציה לחנויות](https://app2store.co.il/app-store-costs): כל העלויות — אגרות, בודקים, עבודה — בשקלים.
+- [מדריך: איך מעלים אפליקציית Base44 לגוגל פליי](https://app2store.co.il/base44-to-google-play): Base44 מייצרת IPA ו-AAB בתוכנית Builder אך לא מגישה בשבילכם; שלוש דרכי אריזה, אגרת 25$, דרישת 12 הבודקים, גישה לפרודקשן, API 36, רישום שמות חבילה.
+- [מדריך: מ-Lovable לאפ סטור](https://app2store.co.il/lovable-to-app-store): ייצוא ל-GitHub, אימות שהפלט הוא SPA סטטי, Capacitor, והסעיפים שחוזרים בדחיות — 4.2, 4.2.6, 4.3(b), 4.8, 5.1.1(v), 3.1.3(e), 4.1(c) וחשבון הדמו.
+- [מדריך: כמה באמת עולה להעלות אפליקציה לחנויות](https://app2store.co.il/app-store-costs): כל העלויות — אגרות, בודקים, אריזה, תחזוקה — בשקלים, כולל שלושה תרחישים מסוכמים.
+- [מדריך: מוייב קודינג לחנות](https://app2store.co.il/vibe-coding-to-store): מה עומד בין אפליקציה שעובדת לבין החנות — חשבון מפתח, בדיקה סגורה, שישה סעיפים שצריך להוסיף, ומועדי 2026.
+- [מדריך: אפל דחתה את האפליקציה](https://app2store.co.il/apple-rejection-guidelines): פענוח מכתב הדחייה לפי מספר ההנחיה, מה לתקן בכל סעיף, ואיך מגישים מחדש.
 - [תנאי שירות](https://app2store.co.il/terms)
 - [מדיניות פרטיות](https://app2store.co.il/privacy)

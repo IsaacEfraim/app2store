@@ -1063,3 +1063,44 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
   .brand-mark { width: 33px; height: 33px; }
   .brand-name { font-size: 1.1rem; }
 }
+
+/* ---- long-form guides ------------------------------------------------- */
+/* The answer_first paragraph is the passage an AI engine is most likely to
+   lift, so it is marked visually as the answer rather than buried in prose. */
+.guide-body .guide-answer {
+  font-size: 1.04rem;
+  color: var(--ink);
+  background: var(--surface);
+  border-inline-start: 3px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 13px 16px;
+  margin: 0 0 14px;
+}
+.guide-updated {
+  font-size: .82rem;
+  color: var(--ink-soft);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 14px;
+  margin-bottom: 8px;
+}
+/* Verbatim policy text. Kept LTR and visually separate so a reader can always
+   tell Google's or Apple's words from ours. */
+.quote-en {
+  direction: ltr;
+  text-align: left;
+  unicode-bidi: isolate;
+  font-size: .93rem;
+  line-height: 1.6;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border-inline-start: 3px solid var(--line);
+  border-radius: 6px;
+  padding: 12px 14px;
+  margin: 0 0 14px;
+}
+.guide-body .faq-list { margin-top: 6px; }
+.guide-body .faq-item { padding: 14px 0; }
+.guide-body .faq-item h3 { font-size: 1.02rem; margin: 0 0 7px; color: var(--ink); }
+.guide-body .faq-item .faq-a { padding: 0; }
+.guide-body .faq-item .faq-a p { margin: 0 0 8px; }
+.guide-body .faq-item .faq-a p:last-child { margin-bottom: 0; }

@@ -6,3 +6,6 @@ IMAGES-TODO.md
 
 .vercel
 .env*
+
+# Working artifacts from the content review passes; not part of the site.
+internal/

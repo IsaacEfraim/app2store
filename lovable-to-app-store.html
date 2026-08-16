@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>מ-Lovable לאפ סטור: איך עוברים את אפל ב-2026 (Guideline 4.2) | App2Store</title>
-<meta name="description" content="אפליקציית Lovable שלכם יכולה להגיע לאפ סטור — אם יודעים לעבור את Guideline 4.2 של אפל. המדריך בעברית: ייצוא ל-GitHub, בעיית ה-SSR, Capacitor, ולמה עטיפות ריקות נדחות.">
+<title>Lovable לאפ סטור: מה אפל בודקת ואיך נערכים לזה | App2Store</title>
+<meta name="description" content="איך מוציאים אפליקציית Lovable לאפ סטור ב 2026: ייצוא הקוד אל GitHub, build סטטי, אריזה עם Capacitor, והסעיפים שאנחנו רואים חוזרים בדחיות: 4.2, 4.2.6, 4.8, 5.1.1(v) ו 3.1.3(e).">
 <link rel="canonical" href="https://app2store.co.il/lovable-to-app-store">
 <meta property="og:type" content="article">
 <meta property="og:locale" content="he_IL">
-<meta property="og:title" content="מ-Lovable לאפ סטור: איך עוברים את אפל ב-2026">
-<meta property="og:description" content="ייצוא ל-GitHub, בעיית ה-SSR, Capacitor, ו-Guideline 4.2 — למה אפל דוחה עטיפות ריקות ואיך עוברים בכל זאת.">
+<meta property="og:title" content="Lovable לאפ סטור: מה אפל בודקת ואיך נערכים לזה">
+<meta property="og:description" content="איך מוציאים אפליקציית Lovable לאפ סטור ב 2026: ייצוא הקוד אל GitHub, build סטטי, אריזה עם Capacitor, והסעיפים שאנחנו רואים חוזרים בדחיות: 4.2, 4.2.6, 4.8, 5.1.1(v) ו 3.1.3(e).">
 <meta property="og:url" content="https://app2store.co.il/lovable-to-app-store">
 <meta property="og:image" content="https://app2store.co.il/assets/og-v2.png">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0C1720">
 <script>
 (function(){
@@ -28,33 +29,128 @@
 })();
 </script>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<link rel="stylesheet" href="/styles.css?v=20260807b">
+<link rel="stylesheet" href="/styles.css?v=20260816a">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Article",
-      "headline": "מ-Lovable לאפ סטור: איך עוברים את אפל ב-2026 (Guideline 4.2)",
+      "headline": "Lovable לאפ סטור: מה אפל בודקת ואיך נערכים לזה",
+      "description": "איך מוציאים אפליקציית Lovable לאפ סטור ב 2026: ייצוא הקוד אל GitHub, build סטטי, אריזה עם Capacitor, והסעיפים שאנחנו רואים חוזרים בדחיות: 4.2, 4.2.6, 4.8, 5.1.1(v) ו 3.1.3(e).",
       "inLanguage": "he",
-      "author": { "@type": "Organization", "name": "App2Store", "url": "https://app2store.co.il/" },
-      "publisher": { "@type": "Organization", "name": "App2Store" },
-      "dateModified": "2026-08-06",
-      "mainEntityOfPage": "https://app2store.co.il/lovable-to-app-store"
+      "author": {
+        "@type": "Organization",
+        "name": "App2Store",
+        "url": "https://app2store.co.il/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "App2Store",
+        "url": "https://app2store.co.il/"
+      },
+      "dateModified": "2026-08-16",
+      "mainEntityOfPage": "https://app2store.co.il/lovable-to-app-store",
+      "wordCount": 4543
     },
     {
       "@type": "BreadcrumbList",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "App2Store", "item": "https://app2store.co.il/" },
-        { "@type": "ListItem", "position": 2, "name": "מדריך: Lovable לאפ סטור", "item": "https://app2store.co.il/lovable-to-app-store" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "App2Store",
+          "item": "https://app2store.co.il/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "מדריכים",
+          "item": "https://app2store.co.il/#guides"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lovable לאפ סטור",
+          "item": "https://app2store.co.il/lovable-to-app-store"
+        }
       ]
     },
     {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "למה אפל דוחה אפליקציות שהן עטיפה של אתר?", "acceptedAnswer": { "@type": "Answer", "text": "בגלל Guideline 4.2 (Minimum Functionality): אפל דורשת שאפליקציה תיתן חוויה שונה מגלישה בדפדפן. עטיפת WebView חשופה נדחית עם הנימוק שהיא 'לא שונה מספיק מחוויית דפדפן'. הפתרון: להוסיף יכולות שדפדפן לא נותן — התראות פוש, ניווט נייטיב וטיפול במצב לא מקוון." } },
-        { "@type": "Question", "name": "כמה עולה חשבון מפתח של אפל?", "acceptedAnswer": { "@type": "Answer", "text": "99 דולר לשנה (Apple Developer Program), משולם ישירות לאפל. בלי חשבון פעיל האפליקציה יורדת מהחנות, ולכן זו עלות שנתית קבועה שצריך לתקצב." } },
-        { "@type": "Question", "name": "האם צריך מק כדי להעלות אפליקציה לאפ סטור?", "acceptedAnswer": { "@type": "Answer", "text": "כדי לבנות ולחתום אפליקציית iOS צריך סביבת macOS עם Xcode (או שירותי בנייה בענן). זו אחת הסיבות שרוב בוני ה-AI הישראלים משתמשים בשירות במקום להתקין סביבת פיתוח שלמה בשביל הגשה אחת." } }
+        {
+          "@type": "Question",
+          "name": "האם צריך מק כדי להעלות אפליקציית Lovable לאפ סטור",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כדי לבנות, לחתום ולהעלות אפליקציית iOS צריך סביבת macOS עם Xcode, או שירות בנייה בענן שמריץ macOS בשבילכם. התיעוד של Expo מתאר את זה כך: \"iOS builds run on macOS runners hosted in Expo's macOS cloud\". אין מסלול רשמי של אפל לבנייה ולחתימה ממחשב Windows בלבד, ובכל מקרה צריך חברות בתוכנית המפתחים של אפל בעלות 99 דולר לשנה."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אפשר לארוז אפליקציה בלי לייצא את הקוד מ Lovable",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "לא באופן שמחזיק מים. בלי הקוד אפשר רק להצביע על כתובת אינטרנט חיה, כלומר בדיוק המבנה שסעיף 4.2 מתאר כ repackaged website. חיבור הפרויקט אל GitHub הוא הצעד הראשון בכל מסלול רציני, והוא גם מה שנותן לכם בעלות אמיתית על התוצר."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אפל דחתה לי עם 4.2, צריך להתחיל מחדש",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "לא. הדחייה מתייחסת לגרסה שהוגשה, לא לאפליקציה עצמה. עונים לבודק בדף ה Resolution Center, מסבירים מה נוסף, מעלים בנייה חדשה עם היכולות הנייטיביות ומגישים שוב באותה רשומת אפליקציה. מה שלא עוזר זה להגיש שוב את אותה גרסה עם טקסט שיווקי אחר. אף אחד לא יכול להבטיח לכם שהסבב הבא יאושר."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "יש לי התחברות עם Google, חייבים להוסיף Sign in with Apple",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "סעיף 4.8 לא נוקב בשם Sign in with Apple. הוא דורש שתוצע גם אפשרות התחברות שקולה שעומדת בשלושת התנאים שלו, וביניהם שהמשתמש יוכל לשמור את כתובת המייל שלו פרטית. מהמקרים שאנחנו רואים, Sign in with Apple הוא הפתרון שנבחר בדרך כלל כי הוא עומד בהם ללא עבודה נוספת. אפליקציה שמשתמשת אך ורק במערכת מייל וסיסמה משלה נכנסת לפטור המפורש בלשון אפל: \"Your app exclusively uses your company's own account setup and sign-in systems\"."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "כמה זמן לוקחת הבדיקה של אפל",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "אפל מפרסמת נתון: \"On average, 90% of submissions are reviewed in less than 24 hours\". חשוב לקרוא אותו נכון, זה ממוצע ולא התחייבות, והוא מתאר את הבדיקה עצמה ולא את כל הדרך לחנות. מה שקובע בפועל הוא מספר הסבבים: חשבון דמו עובד, הערות ברורות לבודק והיעדר סעיפי מדיניות פתוחים מקטינים את מספר הדחיות, וזה מה שמזיז את התאריך."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אפשר להעלות את אותה אפליקציה גם לגוגל פליי",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "כן, אותו פרויקט Capacitor מייצר גם פרויקט אנדרואיד. שימו לב שהדרישות שונות. גוגל כותבת: \"Developers with personal accounts created after November 13, 2023, must run a closed test for their app with a minimum of 12 testers\", וכן שלפחות 12 בודקים צריכים להיות רשומים ברצף במשך 14 הימים שלפני הבקשה לגישה לייצור. הדרישה מנוסחת על חשבונות אישיים, וחשבונות ארגוניים לא מוזכרים בה."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "אם כבר יש לי אפליקציה בייצור, האפליקציה הבאה שלי צריכה שוב 12 בודקים",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "עמוד העזרה של גוגל לא אומר את זה במפורש לשום כיוון, ולכן אנחנו לא טוענים שכן ולא טוענים שלא. מה שאנחנו כן עושים זה לתכנן את לוח הזמנים כאילו המסלול נדרש, ואם מתברר בקונסולה שהוא לא, הרווחתם שבועיים."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "מי מגיש את האפליקציה בפועל, אנחנו או אתם",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ההגשה יוצאת מחשבון Apple Developer שרשום עליכם, ואנחנו עובדים בתוכו. זו לא העדפה שלנו אלא סעיף 4.2.6, שקובע \"Apps created from a commercialized template or app generation service will be rejected unless they are submitted directly by the provider of the app's content\" ומוסיף \"These services should not submit apps on behalf of their clients\". החשבונות והאפליקציה נשארים שלכם בכל מקרה."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "צריך מדיניות פרטיות גם אם האפליקציה לא אוספת כלום",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "אפל דורשת קישור למדיניות פרטיות בכל אפליקציה, בשדה של App Store Connect וגם בתוך האפליקציה: \"All apps must include a link to their privacy policy in the App Store Connect metadata field and within the app in an easily accessible manner\". גם אפליקציה שלא אוספת נתונים צריכה מסמך שאומר את זה. בגוגל, המדיניות צריכה להיות עקבית עם מה שסימנתם בטופס בטיחות הנתונים."
+          }
+        }
       ]
     }
   ]
@@ -70,49 +166,169 @@
       </a>
       <span><a class="brand-name" href="/">App2Store</a></span>
     </div>
-    <a class="btn btn-wa btn-sm" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20%D7%A2%D7%9C%20Lovable%20%D7%95%D7%90%D7%A4%20%D7%A1%D7%98%D7%95%D7%A8" target="_blank" rel="noopener">שאלה? וואטסאפ</a>
+    <a class="btn btn-wa btn-sm" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20Lovable%20%D7%9C%D7%90%D7%A4%20%D7%A1%D7%98%D7%95%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%94%D7%AA%D7%90%D7%9E%D7%94" target="_blank" rel="noopener">שאלה? וואטסאפ</a>
   </div>
 </header>
 <main class="page-body guide-body">
   <div class="container">
     <p class="guide-crumb"><a href="/">App2Store</a> ← מדריכים ← Lovable לאפ סטור</p>
-    <h1>מ-Lovable לאפ סטור: איך עוברים את אפל (2026)</h1>
-    <p class="guide-intro">גוגל פליי סלחני. אפל — לא. מי שמנסה להעלות אפליקציית Lovable לאפ סטור בתור "עוד עטיפה של אתר" מקבל את אותו מייל דחייה שכולם מקבלים. הנה למה זה קורה ואיך עוברים בכל זאת — בלי קסמים, עם הנדסה נכונה.</p>
+    <h1><span class="en">Lovable</span> לאפ סטור: מה אפל בודקת בהגשה ואיך נערכים לזה (2026)</h1>
+    <p class="guide-intro">איך מוציאים אפליקציית <span class="en">Lovable</span> לאפ סטור ב 2026: ייצוא הקוד אל <span class="en">GitHub, build</span> סטטי, אריזה עם <span class="en">Capacitor</span>, והסעיפים שאנחנו רואים חוזרים בדחיות: <span class="en">4.2, 4.2.6, 4.8, 5.1.1(v)</span> ו <span class="en">3.1.3(e).</span></p>
+    <p class="guide-updated">עודכן ב 16 באוגוסט 2026. כל ציטוט באנגלית בעמוד הזה הוא הנוסח הרשמי של Google או של Apple כלשונו.</p>
 
-    <h2>שלב 1: מוציאים את הקוד מ-Lovable</h2>
-    <p>היתרון הגדול של Lovable: <strong>הקוד שלכם באמת שלכם.</strong> מחברים את הפרויקט ל-GitHub (בהגדרות הפרויקט) ומקבלים אפליקציית React מלאה. עם הקוד ביד אפשר לארוז אריזה אמיתית — לא רק להצביע על כתובת.</p>
-    <p>⚠️ <strong>המלכודת של 2026:</strong> פרויקטים חדשים ב-Lovable נבנים כברירת מחדל עם רינדור בצד שרת (SSR). אריזת מובייל צריכה build סטטי — אז מבקשים מ-Lovable בפרומפט לבנות כ-SPA, או מגדירים build סטטי ידנית. מי שמדלג על זה מגלה אפליקציה עם מסך לבן.</p>
+      <h2>איך מוציאים אפליקציית <span class="en">Lovable</span> לאפ סטור</h2>
+      <p class="guide-answer">המסלול הוא ייצוא הקוד של <span class="en">Lovable</span> אל <span class="en">GitHub</span>, מעבר ל <span class="en">build</span> סטטי, אריזה עם <span class="en">Capacitor</span> כשכל הנכסים יושבים בתוך הבינארי, והגשה מחשבון <span class="en">Apple Developer</span> שרשום עליכם. אף אחד לא יכול להבטיח אישור של אפל, ומהדחיות שאנחנו רואים בשלב הזה חוזרים חמישה סעיפים: <span class="en">4.2, 4.2.6, 4.8, 5.1.1(v)</span> ו <span class="en">3.1.3(e).</span></p>
+      <p>אפליקציית <span class="en">Lovable</span> היא אתר. היא רצה בדפדפן, היא נבנית מקוד <span class="en">React</span>, והיא מצוינת בדיוק בזה. אפל בודקת אותה בתור אפליקציה, בבדיקה אנושית, מול רשימת הנחיות שכל סעיף בה הוא מספר שאפשר לצטט ממכתב הדחייה. לכן העבודה היא לא להעלות אתר לחנות, אלא להפוך את התוצר לפרויקט <span class="en">iOS</span> אמיתי ואז לסגור את הדרישות המוצריות והמשפטיות שנלוות אליו.</p>
+      <p>הסדר שעובד אצלנו: מוציאים את הקוד אל <span class="en">GitHub</span>, מוודאים שהפרויקט נבנה כ <span class="en">build</span> סטטי, אורזים עם <span class="en">Capacitor</span> כך שכל קובץ <span class="en">HTML, JavaScript, CSS</span> ותמונה נמצא בתוך האפליקציה, מוסיפים יכולות שדפדפן לא נותן, וסוגרים את חמשת הסעיפים שחוזרים בדחיות שאנחנו רואים על אפליקציות שנבנו בכלי <span class="en">AI: 4.2, 4.2.6, 4.8, 5.1.1(v)</span> ו <span class="en">3.1.3(e).</span> בסוף מגישים עם חשבון דמו פעיל.</p>
+      <p>כל אחד מהשלבים האלה הוא מקום שאנשים נופלים בו, וכולם ניתנים לטיפול לפני ההגשה הראשונה. מה שלא ניתן לשליטה הוא ההחלטה של אפל עצמה. אנחנו לא מבטיחים אישור, ומי שכן מבטיח לכם אישור פשוט לא מכיר את התהליך.</p>
 
-    <h2>שלב 2: אורזים עם Capacitor</h2>
-    <p>Capacitor (הכלי הפתוח של צוות Ionic) עוטף את ה-build בקונטיינר נייטיב של iOS. זה השלב שבו נכנסות היכולות שאפל מחפשת: התראות פוש, ניווט מותאם, splash, אייקונים וטיפול במצב לא מקוון. הבנייה והחתימה דורשות סביבת macOS עם Xcode ופרופילי חתימה (Provisioning Profiles) — החלק שבו רוב האנשים מרימים ידיים.</p>
+      <h2>שלב ראשון: ייצוא הקוד אל <span class="en">GitHub</span></h2>
+      <p class="guide-answer">ב <span class="en">Lovable</span> הקוד באמת שלכם: מחברים את הפרויקט אל <span class="en">GitHub</span> מתוך הגדרות הפרויקט ומקבלים ריפו <span class="en">React</span> מלא. בלי הקוד אין אריזה אמיתית אלא רק אפליקציה שמצביעה על כתובת אינטרנט חיה, וזה בדיוק המבנה שסעיף 4.2 נועד לסנן.</p>
+      <p>אחרי החיבור אתם מקבלים פרויקט רגיל שאפשר להתקין ולבנות במחשב, ולא קופסה שחורה של פלטפורמה. זו הנקודה שבה כדאי לעשות סדר בשני דברים שמתפוצצים אחר כך.</p>
+      <p>הראשון הוא משתני סביבה. כל מה שנארז אל תוך אפליקציית מובייל נחשב ציבורי, כי מי שמתעקש יכול לפתוח את חבילת האפליקציה ולקרוא את המחרוזות שבתוכה. מפתח <span class="en">anon</span> של <span class="en">Supabase</span> נועד לשבת בצד הלקוח ומוגן על ידי מדיניות <span class="en">RLS</span>, אבל מפתח <span class="en">service role</span> לא אמור להיות שם לעולם, וכך גם מפתחות <span class="en">API</span> של ספקים חיצוניים שאתם משלמים עליהם לפי שימוש.</p>
+      <p>השני הוא קריאות רשת שמניחות שאתם על אותו דומיין כמו האתר. באפליקציה ארוזה אין דומיין, ולכן כל קריאה צריכה כתובת מלאה ומפורשת של השרת או של <span class="en">Supabase</span>, עם הגדרת <span class="en">CORS</span> שמאפשרת את המקור של האפליקציה. שתי הנקודות האלה נראות טכניות וזניחות, והן ההבדל בין אפליקציה שעובדת על מכשיר לבין אפליקציה שנפתחת ולא מציגה כלום.</p>
 
-    <h2>שלב 3: המבחן האמיתי — Guideline 4.2</h2>
-    <p>סעיף 4.2 של אפל (Minimum Functionality) הוא הסיבה מספר אחת לדחיית אפליקציות מהסוג הזה. הנוסח שמקבלים במייל: <em>"your app provides a limited user experience as it is not sufficiently different from a mobile browsing experience"</em>. בעברית: "זה סתם האתר שלך בקופסה".</p>
-    <p>מה כן עובר? אפליקציה שמשתמשת ביכולות שדפדפן לא נותן:</p>
-    <ul>
-      <li><strong>התראות פוש</strong> — היכולת הבודדת עם היחס הכי טוב של מאמץ/תוצאה מול הבודקים.</li>
-      <li><strong>התנהגות אפליקציה</strong> — ניווט בלי שורת כתובת, קישורים חיצוניים שנפתחים החוצה, כיבוד ה-safe area של האייפון.</li>
-      <li><strong>טיפול במצב לא מקוון</strong> — מסך ייעודי במקום שגיאת דפדפן.</li>
-    </ul>
-    <p>וגם אז — אפל לפעמים דוחה בסבב ראשון. ההבדל בין מקצוען לחובבן הוא התשובה לבודק: תיאור מדויק של היכולות הנייטיביות, וידאו קצר, וסבב תיקון ממוקד. בחבילות שלנו, דחיות שקשורות לאריזה ולהגשה — עלינו.</p>
+      <h2>בעיית ה <span class="en">SSR</span>: למה חייבים <span class="en">build</span> סטטי</h2>
+      <p class="guide-answer">אריזה למובייל דורשת <span class="en">build</span> סטטי, כלומר תיקייה של קבצים שאפשר להעתיק אל תוך האפליקציה ולהריץ בלי שרת. אם הפרויקט בנוי לרינדור בצד שרת, על המכשיר אין מי שיגיש את ה <span class="en">HTML</span>, והמשתמש יראה מסך לבן.</p>
+      <p>כאן יש חדשות טובות: ברירת המחדל של <span class="en">Lovable</span> היא בדיוק מה שצריך. הפלט הרגיל הוא <span class="en">React</span> עם <span class="en">TypeScript, Vite</span> ו <span class="en">Tailwind</span>, כלומר אפליקציית עמוד יחיד שכל הניתוב שלה קורה בצד הלקוח, עם קובץ <span class="en">index.html</span> אחד כנקודת כניסה. לכן ברוב המקרים זו לא עבודה אלא אימות: מריצים <span class="en">build</span> ומוודאים שהתיקייה שנוצרת נפתחת בכוחות עצמה.</p>
+      <p>המקום שבו זה כן נשבר הוא פרויקט שהוזז מהמחסנית הזאת אחרי הייצוא, למשל מי שעבר ל <span class="en">Next.js</span> או הוסיף ראוטר שמניח שיש שרת שמכיר כל נתיב. אם זה המצב שלכם, צריך להגדיר את ה <span class="en">build</span> מחדש בריפו כך שייצא פלט סטטי.</p>
+      <p>הבדיקה הכי מהירה: מריצים את ה <span class="en">build</span>, מגישים את תיקיית הפלט משרת סטטי מקומי פשוט, ומנווטים בין המסכים. אם רענון על מסך פנימי מחזיר שגיאה, הראוטר עדיין מצפה לשרת. אם התמונות והפונטים לא נטענים, הנתיבים אבסולוטיים במקום יחסיים. שני הדברים האלה נראים זניחים כשבודקים אותם בדפדפן, ומייצרים אפליקציה ריקה על אייפון. עדיף לגלות אותם לפני שמתחילים לשלם על חשבון מפתח.</p>
 
-    <h2>עוד שלושה דברים שאפל דורשת</h2>
-    <ul>
-      <li><strong>חשבון Apple Developer:</strong> <span class="en">$99</span> לשנה, על שמכם, משולם ישירות לאפל.</li>
-      <li><strong>חשבון דמו לבודקים:</strong> אם האפליקציה דורשת התחברות, מספקים משתמש בדיקה — לא סיסמה אישית שלכם.</li>
-      <li><strong>רכישות בתוך האפליקציה:</strong> מוכרים מוצר דיגיטלי? אפל תדרוש IAP עם העמלה שלה. מוצרים ושירותים פיזיים — פטורים. את זה בודקים <em>לפני</em> שמתחילים.</li>
-    </ul>
+      <h2>אריזה עם <span class="en">Capacitor</span>, כשכל הנכסים בפנים</h2>
+      <p class="guide-answer"><span class="en">Capacitor</span> עוטף את ה <span class="en">build</span> הסטטי בפרויקט <span class="en">Xcode</span> אמיתי ומעתיק את כל הנכסים אל תוך הבינארי. זה ההבדל בין אפליקציה שנבדקת כאפליקציה לבין <span class="en">WebView</span> שמצביע על אתר חי, שאפל מתארת בסעיף 4.2 כ <span class="en">repackaged website.</span></p>
+      <p>טכנית זה קצר: מגדירים בקובץ הקונפיגורציה את תיקיית ה <span class="en">build</span> בתור <span class="en">webDir</span>, מוסיפים את פלטפורמת <span class="en">iOS</span>, מסנכרנים, ופותחים את הפרויקט ב <span class="en">Xcode.</span> הכלל החשוב הוא דווקא מה שלא עושים. לא מגדירים בקונפיגורציה כתובת שרת חיצונית שממנה האפליקציה תטען את עצמה, כי ברגע שעושים את זה חזרתם בדיוק לעטיפה שרצינו להימנע ממנה. הנכסים יושבים בפנים, והרשת משמשת לנתונים בלבד.</p>
+      <p>אם האפליקציה כן מורידה משאבים בהפעלה הראשונה כדי לתפקד, סעיף <span class="en">4.2.3(ii)</span> מחייב להציג למשתמש את גודל ההורדה ולבקש אישור לפני שהיא מתחילה. שימו לב למספור: <span class="en">4.2.3(i)</span> הוא כלל אחר לגמרי, שדורש שהאפליקציה תעבוד בכוחות עצמה בלי אפליקציה נוספת. עוד סיבה טובה פשוט לארוז מראש.</p>
+      <p>השלב הזה הוא גם המקום שבו נכנסות היכולות הנייטיביות: התראות פוש, מסך פתיחה ואייקונים, כיבוד ה <span class="en">safe area</span> של האייפון, פתיחת קישורים בדפדפן המערכת ולא בתוך המסך, ומסך ייעודי למצב בלי אינטרנט במקום שגיאת דפדפן.</p>
+      <p>הבנייה והחתימה דורשות סביבת <span class="en">macOS</span> עם <span class="en">Xcode</span> ופרופילי חתימה, או שירות בנייה בענן שמריץ את זה בשבילכם. התיעוד של <span class="en">Expo</span> מנסח את זה כך: &quot;<span class="en">iOS builds run on macOS runners hosted in Expo's macOS cloud</span>&quot;, ובעמוד ההתקנה מוסיף &quot;<span class="en">If you are going to use EAS Build to create release builds for the Apple App Store, you need access to an account with a $99 USD Apple Developer Program membership&quot;.</span> כלומר אפשר לוותר על מק מקומי, אבל לא על חברות בתוכנית המפתחים של אפל.</p>
 
-    <div class="guide-cta panel">
-      <p><strong>רוצים שמישהו שכבר עבר את זה יעשה את הכול?</strong> אריזה עם היכולות שאפל דורשת, חתימות, עמוד חנות והגשה — כולל טיפול בדחיות אריזה בלי תוספת מחיר. בדיקת התאמה חינם, כולל תשובה ישרה אם האפליקציה שלכם עוד לא מוכנה לאפל.</p>
-      <a class="btn btn-wa" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%99%D7%A9%20%D7%9C%D7%99%20%D7%90%D7%A4%D7%9C%D7%99%D7%A7%D7%A6%D7%99%D7%99%D7%AA%20Lovable%20%D7%95%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%94%D7%92%D7%99%D7%A2%20%D7%9C%D7%90%D7%A4%20%D7%A1%D7%98%D7%95%D7%A8" target="_blank" rel="noopener">שלחו לנו את הקישור בוואטסאפ</a>
+      <h2>סעיף 4.2: למה אתר עטוף נדחה ומה באמת מבדיל אפליקציה</h2>
+      <p class="guide-answer">סעיף 4.2 דורש שהאפליקציה תכלול תכונות, תוכן וממשק שמרימים אותה מעבר לאתר ארוז מחדש, ובלשון אפל: &quot;<span class="en">Your app should include features, content, and UI that elevate it beyond a repackaged website&quot;.</span> סעיף 4.2.2 מוסיף, מילה במילה: &quot;<span class="en">Other than catalogs, apps shouldn't primarily be marketing materials, advertisements, web clippings, content aggregators, or a collection of links&quot;.</span></p>
+      <p>חשוב לדייק בשני דברים בניסוח של אפל. הראשון הוא שהיא כותבת שאפליקציה צריכה לעבור את הרף הזה, ולא שהיא תידחה אוטומטית. השני הוא המילה <span class="en">primarily</span>: הכלל לא אוסר על אפליקציה להכיל תוכן שיווקי או קישורים, אלא על אפליקציה להיות בעיקרה כזו, ויש בו גם פטור מפורש לקטלוגים. אפליקציה שמבוססת על אתר אינה פסולה מעצם קיומה.</p>
+      <p>בפועל אנחנו רואים שאפליקציה שכל מה שהיא עושה זה להציג את האתר שלכם בתוך מסגרת נדחית לרוב, עם הנוסח המוכר על חוויה שאינה שונה מספיק מגלישה בדפדפן. זו הסיבה שחוזרת הכי הרבה בדחיות שאנחנו רואים על אפליקציות שנבנו בכלי וייב קודינג, וזו תצפית שלנו ולא סטטיסטיקה שאפל מפרסמת.</p>
+      <p>מה שמבדיל אפליקציה, שוב מהניסיון שלנו ולא מתוך רשימה רשמית של אפל, זה יכולות שדפדפן לא נותן: התראות פוש, ניווט נייטיב עם סרגל לשוניות במקום תפריט אתר, שמירת מצב מקומית שמאפשרת פתיחה מיידית גם בלי רשת, גישה למצלמה או לבורר התמונות של המערכת, שיתוף דרך ה <span class="en">share sheet</span> של <span class="en">iOS</span>, וזיהוי ביומטרי במקום הקלדת סיסמה. כל אחת מהן היא גם שיפור אמיתי למשתמש וגם משהו שאפשר להצביע עליו בהערות לבודק.</p>
+      <p>וגם עם כל זה, סבב דחייה ראשון קורה. ההבדל הוא במה שקורה אחריו: תשובה עניינית בדף ה <span class="en">Resolution Center</span>, סרטון קצר שמראה את היכולות הנייטיביות בפעולה, ותיקון ממוקד. מה שלא עוזר זה להגיש שוב את אותה גרסה עם טקסט אחר.</p>
+
+      <h2>סעיף 4.2.6: מי בכלל רשאי להגיש אפליקציה שנוצרה בכלי <span class="en">AI</span></h2>
+      <p class="guide-answer">סעיף 4.2.6 קובע, מילה במילה: &quot;<span class="en">Apps created from a commercialized template or app generation service will be rejected unless they are submitted directly by the provider of the app's content. These services should not submit apps on behalf of their clients and should offer tools that let their clients create customized, innovative apps that provide unique customer experiences&quot;.</span> לכן ההגשה חייבת לצאת מחשבון <span class="en">Apple Developer</span> שרשום עליכם.</p>
+      <p>האם <span class="en">Lovable</span> או <span class="en">Base44</span> נחשבים <span class="en">app generation service</span> לצורך הסעיף הזה, זו הפרשנות שאנחנו עובדים לפיה ולא ניסוח של אפל. אפל כותבת <span class="en">commercialized template</span> או <span class="en">app generation service</span>, והיא לא מפרסמת רשימה של כלים. אנחנו מעדיפים להיערך לפי הפרשנות המחמירה, כי המחיר של טעות כאן הוא דחייה שקשה לתקן בדיעבד. מהשיחות שאנחנו מנהלים, זה סעיף שכמעט לא עולה בפני מי שבנה אפליקציה בכלי <span class="en">AI</span> בישראל.</p>
+      <p>המשמעות המעשית היא שתי בחירות שצריך לעשות נכון מההתחלה. הראשונה היא החשבון: האפליקציה נרשמת, נחתמת ומוגשת מתוך חשבון המפתח שלכם, כשאתם ספק התוכן, ולא מחשבון של מי שאורז לכם אותה. אצלנו זו ממילא ברירת המחדל, אתם פותחים את חשבון <span class="en">Apple</span> ואת חשבון <span class="en">Google</span> על שמכם והם נשארים שלכם גם אחרי שסיימנו.</p>
+      <p>השנייה היא המוצר: האפליקציה צריכה להיות מוצר עם תוכן וערך משלה, ולא עוד עותק של אותה תבנית עם לוגו אחר. אם מישהו מציע לכם להעלות כמה אפליקציות זהות מחשבון אחד שלו, זה הסעיף שרלוונטי לשם.</p>
+      <p>כדאי לדעת שאפל מציינת באותו סעיף גם דרך שלישית שהיא כן מקבלת: במקום להגיש בינארי נפרד לכל לקוח, ספק יכול להגיש אפליקציה אחת שמאגדת בתוכה את התוכן של כל הלקוחות, במודל של בורר או אגרגטור. זו לא הדרך שאנחנו הולכים בה, כי היא מתאימה לספק שרוצה אפליקציה משלו ולא ללקוח שרוצה אפליקציה משלו, אבל מי שמציג את 4.2.6 כאילו יש רק אפשרות אחת פשוט לא קרא את הסעיף עד הסוף.</p>
+
+      <h2>סעיף <span class="en">4.3(b)</span>: קטגוריות רוויות, והכלל החדש מיוני 2026</h2>
+      <p class="guide-answer">אפל לא מקבלת הגשות חדשות בקטגוריות רוויות אלא אם הן מציעות חוויה שונה או משופרת באופן משמעותי. בלשונה: &quot;<span class="en">Certain kinds of apps, such as dating, flashlight, sound effects, wallpaper, simple timers, and fortune telling, are well established on the App Store and we will not accept new submissions unless they offer a meaningfully different or improved experience&quot;.</span></p>
+      <p>זה הסעיף העדכני ביותר שרלוונטי לקהל הזה, והוא נכנס בעדכון ההנחיות של 8 ביוני 2026. הוא לא מדבר על איכות האריזה אלא על עצם הרעיון, ולכן אי אפשר לפתור אותו בתיקון טכני.</p>
+      <p>הפתיחה של הסעיף רחבה מהרשימה: &quot;<span class="en">Don't submit apps that are indistinguishable from what's already widely available&quot;.</span> הרשימה היא דוגמאות, לא גבול. אם בניתם בכלי וייב קודינג משהו שדומה מאוד לאפליקציות קיימות, כדאי להיערך לשאלה הזאת מראש ולא להיתקל בה אחרי ההגשה.</p>
+      <p>יש לסעיף גם שיניים: &quot;<span class="en">Repeated submissions of this kind may lead to removal from the Apple Developer Program&quot;.</span> כלומר הגשות חוזרות של אותו סוג אפליקציה מאותו חשבון הן סיכון ברמת החשבון ולא רק ברמת ההגשה. זה רלוונטי במיוחד למי שמתכנן להוציא כמה אפליקציות דומות מאותו חשבון מפתח.</p>
+      <p>מה שאנחנו עושים עם זה בפועל: לפני שמגישים, מנסחים במשפט אחד מה באפליקציה שונה או טוב יותר ממה שכבר קיים בחנות, וכותבים את זה גם בהערות לבודק. אם אי אפשר לנסח את המשפט הזה, הבעיה היא במוצר ולא בהגשה, ועדיף לדעת את זה לפני שמשלמים 99 דולר.</p>
+
+      <h2>סעיף 4.7.5 וקוד שנטען מרחוק</h2>
+      <p class="guide-answer">אפל מאפשרת תוכנה שלא מוטמעת בבינארי בקטגוריות מוגדרות, בהן מיני אפליקציות ומיני משחקים ב <span class="en">HTML5</span> ו <span class="en">JavaScript</span>, משחקי סטרימינג, צ׳אטבוטים, תוספים, ואפליקציות אמולטור של קונסולות רטרו ומחשב. סעיף 4.7.5 מחייב את הקטגוריות האלה לסמן תוכן שחורג מדירוג הגיל של האפליקציה ולהגביל גישה של קטינים לפי גיל מאומת או מוצהר.</p>
+      <p>שווה להבין מה זה אומר לגביכם, כי הכלל הזה מצוטט הרבה ולא במדויק. אם האפליקציה שלכם פשוט טוענת את האתר שלכם מהשרת, היא לרוב לא נכנסת ל 4.7 בכלל, היא נופלת קודם על 4.2.</p>
+      <p>לעומת זאת, אם האפליקציה כן מריצה מיני אפליקציות, תוספים או צ׳אטבוט, אתם בתוך 4.7 על כל מה שנלווה אליו: סעיף 4.7.1 דורש מנגנוני סינון, דיווח וחסימה, סעיף 4.7.4 דורש אינדקס של כל התוכנה שמוצעת בתוך האפליקציה, וההוראה שם היא לא רק לרשום אותה אלא לכלול קישורים אוניברסליים אליה, ו 4.7.5 מוסיף את חובת הגבלת הגיל.</p>
+      <p>המסקנה המעשית זהה בשני המקרים ולכן היא קלה לזכירה: הקוד נארז מקומית, והרשת מביאה נתונים בלבד. עדכון תוכן דרך <span class="en">API</span> הוא דבר רגיל ולגיטימי לחלוטין. דחיפת מסכים וקוד חדשים מהשרת אל אפליקציה קיימת היא סיפור אחר לגמרי, ולא כדאי להיכנס אליו בהגשה ראשונה.</p>
+
+      <h2>סעיף 4.8: האם חייבים <span class="en">Sign in with Apple</span></h2>
+      <p class="guide-answer">סעיף 4.8 לא כותב בשום מקום שחייבים <span class="en">Sign in with Apple.</span> הוא מחייב שאפליקציה שמשתמשת בשירות התחברות של צד שלישי או רשת חברתית תציע גם אפשרות שקולה שעומדת בשלושה תנאים: איסוף מוגבל לשם ולכתובת מייל, אפשרות למשתמש לשמור את כתובת המייל שלו פרטית, ואיסור על איסוף אינטראקציות לצורכי פרסום בלי הסכמה.</p>
+      <p>הנוסח הרשמי של הדרישה הוא: &quot;<span class="en">Apps that use a third-party or social login service (such as Facebook Login, Google Sign-In, Log in with X, Sign In with LinkedIn, Login with Amazon, or WeChat Login) to set up or authenticate the user's primary account with the app must also offer as an equivalent option another login service with the following features: the login service limits data collection to the user's name and email address; the login service allows users to keep their email address private as part of setting up their account; and the login service does not collect interactions with your app for advertising purposes without consent&quot;.</span></p>
+      <p>הרבה אפליקציות <span class="en">Lovable</span> נתקעות כאן, כי הרבה פרויקטים מפעילים ב <span class="en">Supabase</span> גם התחברות עם <span class="en">Google</span>, ואז הסעיף חל עליכם. לגבי ברירות המחדל של <span class="en">Supabase</span> כדאי לדייק: התיעוד שלה אומר &quot;<span class="en">Email authentication is enabled by default</span>&quot;, כלומר מייל וסיסמה עובדים מהרגע הראשון, וספק <span class="en">Google</span> הוא משהו שמפעילים ומגדירים בנפרד.</p>
+      <p>יש פטור מפורש בלשון אפל: &quot;<span class="en">Your app exclusively uses your company's own account setup and sign-in systems&quot;.</span> כלומר אפליקציה שמשתמשת אך ורק במערכת ההרשמה וההתחברות שלכם, מייל וסיסמה משלכם, לא נדרשת להוסיף כלום. זו החלטה לגיטימית לגמרי בהגשה ראשונה, ולפעמים היא הדרך המהירה ביותר לצאת לדרך. יש בסעיף פטורים נוספים, למשל אפליקציה ארגונית או חינוכית שמחייבת התחברות עם חשבון ארגוני קיים.</p>
+      <p>מהמקרים שאנחנו רואים, מי שכן משאיר התחברות חברתית בוחר בדרך כלל להוסיף את <span class="en">Sign in with Apple</span>, כי הוא עומד בשלושת התנאים בלי עבודה נוספת. אם זו הבחירה שלכם, שריינו זמן להטמעה. צריך להגדיר <span class="en">Service ID</span> ומפתח חתימה בחשבון המפתח, לחבר אותם לספק ההזדהות, ולטפל בשתי נקודות שמפילות אנשים: אפל מחזירה את שם המשתמש רק בפעם הראשונה שהמשתמש מאשר את ההתחברות, כך שאם לא שמרתם אותו אז לא תקבלו אותו שוב, וכתובת המייל עשויה להגיע ככתובת מייל אנונימית של אפל שמעבירה הודעות אל התיבה האמיתית, ולכן כל לוגיקה שמניחה כתובת מייל אמיתית של המשתמש צריכה לדעת להתמודד עם זה.</p>
+
+      <h2>סעיף <span class="en">5.1.1(v)</span>: מחיקת חשבון מתוך האפליקציה</h2>
+      <p class="guide-answer">אם האפליקציה מאפשרת יצירת חשבון, סעיף <span class="en">5.1.1(v)</span> מחייב שתהיה בתוך האפליקציה עצמה גם דרך למחוק את החשבון. גוגל מחייבת גם מסלול בתוך האפליקציה וגם כתובת אינטרנט למחיקה שמוצהרת בטופס בטיחות הנתונים, וגם התחברות יחידה מספק חיצוני נכנסת שם להגדרה, כי גוגל מונה מנגנוני זיהוי &quot;<span class="en">such as password, phone number OTP (one-time password), 2FA (two-factor authentication), biometric, SSO (single sign-on), and so on&quot;.</span></p>
+      <p>זו אחת הדחיות שאנחנו רואים הכי הרבה באפליקציות שנבנו בכלי <span class="en">AI</span>, פשוט כי המסך הזה לא נבנה. שלוש נקודות שחשוב לדעת.</p>
+      <p>ראשית, אפל מדברת על מחיקה. כפתור שמנתק אתכם, מקפיא את החשבון או שולח מייל לתמיכה אינו אותו דבר. שנית, המחיקה צריכה לכלול גם את הנתונים שנוצרו עם החשבון, ולא רק את שורת המשתמש בטבלה. שלישית, בצד המימוש: ב <span class="en">Supabase</span> מחיקת משתמש דורשת הרשאת <span class="en">service role</span>, ולכן היא לא יכולה לרוץ מקוד הלקוח. הפתרון הנכון הוא פונקציית שרת שמאמתת את המשתמש המחובר ומוחקת אותו ואת הנתונים שלו, והכפתור באפליקציה רק קורא לה.</p>
+      <p>בצד של גוגל צריך בנוסף דף אינטרנט שמסביר איך למחוק חשבון ונתונים, והכתובת שלו נכנסת לשדה ייעודי במקטע <span class="en">Data safety</span> בעמוד <span class="en">App content</span> ב <span class="en">Play Console.</span> גוגל מנסחת את הדרישה כך: &quot;<span class="en">The user must be able to request deletion of their account through the pathway</span>&quot;, ומוסיפה שהמסלול צריך לעבוד &quot;<span class="en">without sending the user back to the app and requiring them to re-download it to submit their request&quot;.</span> גוגל גם דורשת שהקישור יהיה פעיל, שמסלול הבקשה יהיה בולט וקל לאיתור בעמוד, ושהעמוד יזכיר את שם האפליקציה או שם המפתח כפי שהם מופיעים בעמוד החנות שלכם. לא מצאנו בתיעוד הרשמי דרישה מפורשת שהעמוד יהיה נגיש בלי התחברות, ולכן אנחנו לא מציגים את זה כציטוט, רק ממליצים עליו. הדף הזה סוגר מראש סיבה נפוצה לסבב נוסף מול הצוות של גוגל.</p>
+
+      <h2>מדיניות פרטיות: איפה בדיוק אפל וגוגל דורשות אותה</h2>
+      <p class="guide-answer">אפל דורשת בסעיף <span class="en">5.1.1(i)</span> קישור למדיניות הפרטיות בשני מקומות: בשדה הייעודי ב <span class="en">App Store Connect</span> וגם בתוך האפליקציה עצמה, באופן נגיש. גוגל דורשת קישור למדיניות פרטיות בעמוד החנות, והיא בודקת שהמדיניות עקבית עם מה שהצהרתם בטופס בטיחות הנתונים.</p>
+      <p>הנוסח של אפל: &quot;<span class="en">All apps must include a link to their privacy policy in the App Store Connect metadata field and within the app in an easily accessible manner&quot;.</span> שימו לב ל <span class="en">within the app.</span> הרבה אפליקציות שנבנו בכלי <span class="en">AI</span> מגיעות עם מדיניות פרטיות באתר בלבד, וזה חצי מהדרישה.</p>
+      <p>בפועל זה אומר קישור אחד בעמוד ההגדרות או בעמוד החשבון שפותח את המדיניות, ואותה כתובת בדיוק בשדה של <span class="en">App Store Connect.</span> אם המדיניות שלכם נוצרה בכלי אוטומטי, קראו אותה לפני ההגשה ובדקו שהיא מתארת את מה שהאפליקציה באמת אוספת, כולל שירותי צד שלישי כמו <span class="en">Supabase</span>, ספק אנליטיקה או ספק מודל שפה אם אתם שולחים אליו טקסט של משתמשים. על הנקודה האחרונה אפל מפורשת בסעיף <span class="en">5.1.2(i): &quot;You must clearly disclose where personal data will be shared with third parties, including with third-party AI, and obtain explicit permission before doing so&quot;.</span> כלומר לא מספיק לגלות, צריך גם לבקש רשות.</p>
+      <p>בצד של גוגל, אי התאמה בין מדיניות הפרטיות לבין טופס בטיחות הנתונים היא סיבה עצמאית לסבב נוסף, גם כשהאפליקציה עצמה תקינה לגמרי. שווה למלא את הטופס אחרי שקוראים את הקוד ולא לפי הזיכרון.</p>
+
+      <h2>סעיף <span class="en">3.1.3(e)</span>: מתי חייבים רכישה מתוך האפליקציה ומתי אסור</h2>
+      <p class="guide-answer">מכירה של מוצרים ושירותים מהעולם האמיתי שנצרכים מחוץ לאפליקציה חייבת להיגבות באמצעי תשלום שאינו רכישה מתוך האפליקציה, למשל <span class="en">Apple Pay</span> או הזנת כרטיס אשראי רגילה. שדרוג דיגיטלי בתוך האפליקציה, לעומת זאת, חייב לעבור בחנות הישראלית דרך מנגנון הרכישות של אפל לפי סעיף 3.1.1.</p>
+      <p>ישראלים שבונים אפליקציית הזמנות, תורים או משלוחים נוטים להתבלבל בדיוק בכיוון ההפוך משני הכללים, ובשני המקרים זו דחייה.</p>
+      <p>תור למספרה, שולחן במסעדה, משלוח אוכל, מוצר פיזי או שיעור פרונטלי הם שירותים שנצרכים מחוץ לאפליקציה, ולכן הם נגבים בתשלום רגיל דרך ספק סליקה, בלי לתת לאפל אחוזים. מנוי, פתיחת פיצ׳ר, הסרת פרסומות, קרדיטים או תוכן דיגיטלי הם רכישה בתוך האפליקציה. הנוסח של אפל בסעיף <span class="en">3.1.1: &quot;If you want to unlock features or functionality within your app, (by way of example: subscriptions, in-game currencies, game levels, access to premium content, or unlocking a full version), you must use in-app purchase&quot;.</span></p>
+      <p>חשוב לסייג לפי חנות ולא לפי מיקום המפתח, כי מי שיבדוק אתכם מול מקור אמריקאי יראה תמונה אחרת. בחנות של ארצות הברית אפל כותבת במפורש שאין צורך ב <span class="en">entitlement</span> כדי לכלול כפתורים או קישורים חיצוניים לרכישה: &quot;<span class="en">These entitlements are not required for developers to include buttons, external links, or other calls to action in their United States storefront apps&quot;.</span> מחוץ לחנות ההיא עדיין נדרש <span class="en">entitlement.</span> אתם מוכרים לרוב בחנות הישראלית, ולכן ההנחה שלכם צריכה להיות המסלול הרגיל של רכישה מתוך האפליקציה.</p>
+      <p>בצד של גוגל ההיגיון מקביל בחנות שאתם מוכרים בה: תוכן דיגיטלי עובר דרך מערכת החיוב של <span class="en">Play</span>, מוצרים ושירותים פיזיים לא. שווה להחליט את זה לפני שבונים את מסך התשלום, כי החלפת שיטת תשלום אחרי שהאפליקציה כבר בנויה היא עבודה גדולה בהרבה מלבחור נכון מראש.</p>
+
+      <h2>סעיף <span class="en">4.1(c)</span>: אייקון ושם שאינם שלכם</h2>
+      <p class="guide-answer">בעדכון ההנחיות מ 13 בנובמבר 2025 נוסף סעיף <span class="en">4.1(c)</span>, שאוסר להשתמש באייקון, במותג או בשם מוצר של מפתח אחר בתוך האייקון או השם של האפליקציה שלכם. זה רלוונטי במיוחד לאפליקציות שנבנו בכלי <span class="en">AI</span>, כי הרבה מהן מקבלות אייקון ושם שנוצרו אוטומטית.</p>
+      <p>המקרה הקלאסי הוא אפליקציה שמשתלבת עם שירות מוכר ולכן שמה אותו בשם או באייקון, למשל אפליקציה שנקראת על שם רשת חברתית או שמציגה את הלוגו שלה. גם כשהאינטגרציה אמיתית, השם והאייקון הם נכס של מישהו אחר.</p>
+      <p>לפני ההגשה שווה לעבור על שלושה שדות: שם האפליקציה, שם המשנה, והאייקון עצמו. אם אחד מהם מכיל מותג של צד שלישי, החליפו אותו. תיאור האפליקציה יכול להזכיר תאימות לשירות בטקסט רגיל, וזה סיפור אחר מלשים את המותג בזהות של האפליקציה.</p>
+
+      <h2>חשבון הדמו: הכשל שהופך דחייה רגילה למשהו הרבה יותר גרוע</h2>
+      <p class="guide-answer">אם יש באפליקציה מסך התחברות, סעיף <span class="en">2.1(a)</span> דורש למסור לבודק פרטי חשבון דמו בשדה המיועד. אפל מנסחת את זה כך: &quot;<span class="en">include demo account info (and turn on your back-end service!)&quot;.</span> אם אתם לא יכולים לספק חשבון דמו מטעמים משפטיים או אבטחתיים, אפל מאפשרת חלופה: &quot;<span class="en">you may include a built-in demo mode in lieu of a demo account with prior approval by Apple&quot;.</span></p>
+      <p>זה הכשל היקר ביותר שראינו, והוא גם מהקלים למניעה. הבודק מנסה להיכנס, מגלה מסך סגור, ומדווח שהאפליקציה מתנהגת אחרת ממה שהוצהר. משם זה כבר לא דיון על סעיף 4.2.</p>
+      <p>כדאי לדעת איך אפל קוראת למצב הזה. סעיף <span class="en">2.3.1(a)</span> אוסר על יכולות מוסתרות, רדומות או לא מתועדות באפליקציה, וסעיף <span class="en">2.3.1(b)</span> קובע שהתנהגות חמורה או חוזרת מהסוג הזה היא עילה להסרה מתוכנית המפתחים של אפל. זה לא אומר שחשבון דמו חסר סוגר לכם את החשבון, ואנחנו לא טוענים את זה: לשון ההסרה בסעיף נוגעת בעיקר לשיווק מטעה ולהתנהגות חוזרת. זה כן אומר שהגשה בלי גישה נתפסת אצל הבודק כהסתרה של פונקציונליות, וזו קטגוריה חמורה יותר מדחייה על אריזה.</p>
+      <p>רשימת הבדיקה שלנו לפני שליחה: לסמן שהאפליקציה דורשת התחברות, משתמש בדיקה אמיתי עם נתונים בפנים ולא חשבון ריק, סיסמה שלא פגה, שרת ובסיס נתונים פעילים כולל כל מפתח <span class="en">API</span> בתשלום, וחשוב במיוחד, מסלול כניסה שלא דורש קוד חד פעמי לטלפון ישראלי שהבודק לא יכול לקבל. אם יש אימות בסמס, מכינים משתמש בדיקה עם קוד קבוע. בהערות לבודק כותבים בדיוק איפה נמצאת כל יכולת נייטיבית ואיך מגיעים אליה, ומצרפים סרטון קצר. זו עבודה זולה מאוד ביחס למה שהיא מונעת.</p>
+
+      <h2>הצהרת סטטוס סוחר לפי ה <span class="en">DSA</span>, גם למי שמפיץ רק בישראל</h2>
+      <p class="guide-answer">אפל מבקשת מכם להצהיר על סטטוס סוחר גם אם אתם לא מפיצים באיחוד האירופי. בלשון התיעוד של <span class="en">App Store Connect: &quot;Even if you don't distribute apps in the EU, you'll still need to declare a trader status&quot;.</span> אפל גם כותבת במפורש &quot;<span class="en">Apple can't determine whether you're a trader</span>&quot;, כלומר ההחלטה עליכם.</p>
+      <p>זה שדה שמפתיע ישראלים שמפיצים רק בישראל, כי הוא מנוסח כדרישה אירופית והוא מופיע בכל מקרה. התיעוד גם מציין שאפליקציות שונות באותו חשבון יכולות לקבל הצהרה שונה, כך שזו לא הגדרה אחת לכל החשבון.</p>
+      <p>מה שכן, אנחנו לא נותנים ייעוץ משפטי ולא ממלאים את השדה במקומכם. מי שמוכר משהו באפליקציה או מפעיל אותה כעסק צריך להתייעץ עם רואה החשבון או עורך הדין שלו לפני שהוא מסמן.</p>
+      <p>לגבי <span class="en">Google Play</span>, לא מצאנו עמוד עזרה רשמי של גוגל שמחייב הצהרת סוחר לפי ה <span class="en">DSA</span> מכל מפתחי <span class="en">Play</span>, ולכן אנחנו לא טוענים את זה. עמוד ה <span class="en">EEA</span> הרשמי של גוגל עוסק ב <span class="en">Digital Markets Act</span>, שזה רגולציה אחרת. אם אתם רואים מישהו שמציג את זה כדרישה גורפת בשתי החנויות, בקשו ממנו קישור.</p>
+
+      <h2>מה כל זה אומר על העלות ועל לוח הזמנים</h2>
+      <p class="guide-answer">חשבון <span class="en">Apple Developer</span> עולה 99 דולר לשנה וחשבון <span class="en">Google Play</span> עולה 25 דולר בתשלום חד פעמי, שניהם משולמים ישירות לחנויות ונרשמים עליכם. החבילות שלנו מתחילות ב 1,190 שקלים לגוגל פליי ו 2,490 שקלים לשתי החנויות. אפל מפרסמת ש &quot;<span class="en">On average, 90% of submissions are reviewed in less than 24 hours</span>&quot;, אבל זה ממוצע ולא התחייבות, ומה שקובע בפועל את התאריך הוא מספר סבבי הדחייה ולא הבדיקה הראשונה.</p>
+      <p>אפל לא מתנה פרסום בייצור בסבב בדיקה סגורה כמו שגוגל עושה בחשבונות אישיים. <span class="en">TestFlight</span> קיים והוא בדיקה סגורה לכל דבר, אבל השימוש בו אופציונלי. לכן החסם באייפון הוא הבדיקה האנושית ואיכות ההגשה.</p>
+      <p>מה שכן בשליטה זו ההגשה עצמה: אפליקציה ארוזה נכון, עם היכולות שמבדילות אותה, עם מסך מחיקת חשבון, עם מדיניות פרטיות בשני המקומות, עם החלטת תשלומים נכונה, עם חשבון דמו עובד ועם הערות ברורות לבודק. אם בכל זאת מגיעה דחייה שקשורה לאריזה או להגשה, מטפלים בה ומגישים שוב.</p>
+      <p>אם אתם רוצים גם את גוגל פליי, אותו פרויקט <span class="en">Capacitor</span> מייצר גם את הצד של אנדרואיד, אבל שם נכנס משחק אחר. גוגל כותבת: &quot;<span class="en">Developers with personal accounts created after November 13, 2023, must run a closed test for their app with a minimum of 12 testers</span>&quot;, ומוסיפה &quot;<span class="en">At least 12 testers must be opted in to your closed test when you apply for production access, and they must have been opted in continuously for the preceding 14 days&quot;.</span> בודק שנרשם, בדק פחות מ 14 יום ואז יצא לא נספר. הדרישה מנוסחת על חשבונות אישיים, וחשבונות ארגוניים לא מוזכרים בה. עמוד העזרה לא אומר במפורש אם אפליקציה שנייה מאותו חשבון חייבת לעבור את המסלול שוב אחרי שכבר התקבלה גישה לייצור, ולכן אנחנו לא טוענים לכיוון זה או אחר, ומתכננים לפי מה שכתוב. את הצד של גוגל פירטנו במדריך על <span class="en">Base44</span> וגוגל פליי.</p>
+      <p>עוד תאריך שכדאי להכיר אם אתם גם בגוגל: גוגל מבקשת לרשום את שמות החבילה של האפליקציות בעמוד הבית של <span class="en">Play Console</span>, ובלשונה &quot;<span class="en">By September 30, 2026, register any remaining apps you want to continue distributing to avoid global removal from Google Play&quot;.</span> גוגל גם כותבת שהיא כבר רשמה אוטומטית 99 אחוז מהאפליקציות, כך שברוב המקרים מדובר בבדיקה קצרה בקונסולה ולא בעבודה.</p>
+      <p>אצלנו החשבונות נפתחים על שמכם, האגרות של גוגל ואפל משולמות ישירות על ידיכם, והכול נשאר שלכם. בדיקת התאמה בוואטסאפ היא בחינם, כולל תשובה ישרה אם האפליקציה עדיין לא מוכנה להגשה לאפל.</p>
+
+    <h2 id="faq">שאלות נפוצות</h2>
+    <div class="faq-list">
+        <div class="faq-item">
+          <h3>האם צריך מק כדי להעלות אפליקציית <span class="en">Lovable</span> לאפ סטור</h3>
+          <div class="faq-a"><p>כדי לבנות, לחתום ולהעלות אפליקציית <span class="en">iOS</span> צריך סביבת <span class="en">macOS</span> עם <span class="en">Xcode</span>, או שירות בנייה בענן שמריץ <span class="en">macOS</span> בשבילכם. התיעוד של <span class="en">Expo</span> מתאר את זה כך: &quot;<span class="en">iOS builds run on macOS runners hosted in Expo's macOS cloud&quot;.</span> אין מסלול רשמי של אפל לבנייה ולחתימה ממחשב <span class="en">Windows</span> בלבד, ובכל מקרה צריך חברות בתוכנית המפתחים של אפל בעלות 99 דולר לשנה.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>אפשר לארוז אפליקציה בלי לייצא את הקוד מ <span class="en">Lovable</span></h3>
+          <div class="faq-a"><p>לא באופן שמחזיק מים. בלי הקוד אפשר רק להצביע על כתובת אינטרנט חיה, כלומר בדיוק המבנה שסעיף 4.2 מתאר כ <span class="en">repackaged website.</span> חיבור הפרויקט אל <span class="en">GitHub</span> הוא הצעד הראשון בכל מסלול רציני, והוא גם מה שנותן לכם בעלות אמיתית על התוצר.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>אפל דחתה לי עם 4.2, צריך להתחיל מחדש</h3>
+          <div class="faq-a"><p>לא. הדחייה מתייחסת לגרסה שהוגשה, לא לאפליקציה עצמה. עונים לבודק בדף ה <span class="en">Resolution Center</span>, מסבירים מה נוסף, מעלים בנייה חדשה עם היכולות הנייטיביות ומגישים שוב באותה רשומת אפליקציה. מה שלא עוזר זה להגיש שוב את אותה גרסה עם טקסט שיווקי אחר. אף אחד לא יכול להבטיח לכם שהסבב הבא יאושר.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>יש לי התחברות עם <span class="en">Google</span>, חייבים להוסיף <span class="en">Sign in with Apple</span></h3>
+          <div class="faq-a"><p>סעיף 4.8 לא נוקב בשם <span class="en">Sign in with Apple.</span> הוא דורש שתוצע גם אפשרות התחברות שקולה שעומדת בשלושת התנאים שלו, וביניהם שהמשתמש יוכל לשמור את כתובת המייל שלו פרטית. מהמקרים שאנחנו רואים, <span class="en">Sign in with Apple</span> הוא הפתרון שנבחר בדרך כלל כי הוא עומד בהם ללא עבודה נוספת. אפליקציה שמשתמשת אך ורק במערכת מייל וסיסמה משלה נכנסת לפטור המפורש בלשון אפל: &quot;<span class="en">Your app exclusively uses your company's own account setup and sign-in systems&quot;.</span></p></div>
+        </div>
+        <div class="faq-item">
+          <h3>כמה זמן לוקחת הבדיקה של אפל</h3>
+          <div class="faq-a"><p>אפל מפרסמת נתון: &quot;<span class="en">On average, 90% of submissions are reviewed in less than 24 hours&quot;.</span> חשוב לקרוא אותו נכון, זה ממוצע ולא התחייבות, והוא מתאר את הבדיקה עצמה ולא את כל הדרך לחנות. מה שקובע בפועל הוא מספר הסבבים: חשבון דמו עובד, הערות ברורות לבודק והיעדר סעיפי מדיניות פתוחים מקטינים את מספר הדחיות, וזה מה שמזיז את התאריך.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>אפשר להעלות את אותה אפליקציה גם לגוגל פליי</h3>
+          <div class="faq-a"><p>כן, אותו פרויקט <span class="en">Capacitor</span> מייצר גם פרויקט אנדרואיד. שימו לב שהדרישות שונות. גוגל כותבת: &quot;<span class="en">Developers with personal accounts created after November 13, 2023, must run a closed test for their app with a minimum of 12 testers</span>&quot;, וכן שלפחות 12 בודקים צריכים להיות רשומים ברצף במשך 14 הימים שלפני הבקשה לגישה לייצור. הדרישה מנוסחת על חשבונות אישיים, וחשבונות ארגוניים לא מוזכרים בה.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>אם כבר יש לי אפליקציה בייצור, האפליקציה הבאה שלי צריכה שוב 12 בודקים</h3>
+          <div class="faq-a"><p>עמוד העזרה של גוגל לא אומר את זה במפורש לשום כיוון, ולכן אנחנו לא טוענים שכן ולא טוענים שלא. מה שאנחנו כן עושים זה לתכנן את לוח הזמנים כאילו המסלול נדרש, ואם מתברר בקונסולה שהוא לא, הרווחתם שבועיים.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>מי מגיש את האפליקציה בפועל, אנחנו או אתם</h3>
+          <div class="faq-a"><p>ההגשה יוצאת מחשבון <span class="en">Apple Developer</span> שרשום עליכם, ואנחנו עובדים בתוכו. זו לא העדפה שלנו אלא סעיף 4.2.6, שקובע &quot;<span class="en">Apps created from a commercialized template or app generation service will be rejected unless they are submitted directly by the provider of the app's content</span>&quot; ומוסיף &quot;<span class="en">These services should not submit apps on behalf of their clients&quot;.</span> החשבונות והאפליקציה נשארים שלכם בכל מקרה.</p></div>
+        </div>
+        <div class="faq-item">
+          <h3>צריך מדיניות פרטיות גם אם האפליקציה לא אוספת כלום</h3>
+          <div class="faq-a"><p>אפל דורשת קישור למדיניות פרטיות בכל אפליקציה, בשדה של <span class="en">App Store Connect</span> וגם בתוך האפליקציה: &quot;<span class="en">All apps must include a link to their privacy policy in the App Store Connect metadata field and within the app in an easily accessible manner&quot;.</span> גם אפליקציה שלא אוספת נתונים צריכה מסמך שאומר את זה. בגוגל, המדיניות צריכה להיות עקבית עם מה שסימנתם בטופס בטיחות הנתונים.</p></div>
+        </div>
     </div>
 
-    <p class="guide-related">מדריכים נוספים: <a href="/base44-to-google-play">Base44 ← גוגל פליי</a> · <a href="/app-store-costs">כמה באמת עולה להעלות אפליקציה</a></p>
+    <div class="guide-cta panel">
+      <p><strong>רוצים לדעת איפה האפליקציה שלכם עומדת?</strong> שלחו קישור לפרויקט בוואטסאפ. נחזור עם מה עומד בדרישות, מה צריך לשנות, ומה לא שווה להתחיל איתו. בחינם, לפני ששילמתם שקל.</p>
+      <a class="btn btn-wa" href="https://wa.me/972552672300?text=%D7%94%D7%99%D7%99%2C%20%D7%A7%D7%A8%D7%90%D7%AA%D7%99%20%D7%90%D7%AA%20%D7%94%D7%9E%D7%93%D7%A8%D7%99%D7%9A%20Lovable%20%D7%9C%D7%90%D7%A4%20%D7%A1%D7%98%D7%95%D7%A8%20%D7%95%D7%A8%D7%95%D7%A6%D7%94%20%D7%91%D7%93%D7%99%D7%A7%D7%AA%20%D7%94%D7%AA%D7%90%D7%9E%D7%94" target="_blank" rel="noopener">בדיקת התאמה בוואטסאפ</a>
+    </div>
+
+    <p class="guide-related">מדריכים נוספים: <a href="/base44-to-google-play">Base44 לגוגל פליי</a> · <a href="/app-store-costs">כמה זה עולה</a> · <a href="/vibe-coding-to-store">וייב קודינג לחנות</a> · <a href="/apple-rejection-guidelines">דחייה מאפל</a></p>
   </div>
 </main>
 <footer class="site-footer">
-  <div class="container"><p class="legal-line">© 2026 App2Store · <a href="/">דף הבית</a> · <a href="/accessibility">הצהרת נגישות</a> · App Store הוא סימן מסחרי של Apple Inc.; השימוש תיאורי בלבד.</p></div>
+  <div class="container"><p class="legal-line">© 2026 App2Store · <a href="/">דף הבית</a> · <a href="/accessibility">הצהרת נגישות</a> · המידע נכון לאוגוסט 2026; מדיניות החנויות נקבעת על ידי Google ו Apple ועשויה להשתנות. אין באמור התחייבות לאישור.</p></div>
 </footer>
 <a class="wa-float" href="https://wa.me/972552672300" target="_blank" rel="noopener" aria-label="שיחה בוואטסאפ">
   <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm5.2 14.2c-.2.6-1.2 1.1-1.7 1.2-.5 0-1 .2-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.5.5c-.2.2-.3.4-.1.7.2.3.9 1.5 2 2.4 1.4 1.2 2.5 1.6 2.9 1.7.3.2.5.1.7-.1l1.1-1.3c.2-.3.5-.2.8-.1l2.1 1c.3.2.5.3.6.4 0 .1 0 .7-.2 1.2z"/></svg>
