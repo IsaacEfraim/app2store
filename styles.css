@@ -755,8 +755,11 @@ a.brand-name { text-decoration: none; color: var(--ink); }
 .proof-note { margin-top: 10px; font-size: .8rem; color: var(--ink-soft); }
 
 /* ---------- pricing ---------- */
-.price-grid { display: grid; grid-template-columns: 1.25fr 1fr; gap: 16px; align-items: stretch; }
-@media (max-width: 860px) { .price-grid { grid-template-columns: 1fr; } }
+/* Three tiers: the bundle sits in the centre, which in RTL means it is the
+   middle DOM child. The singles flank it so it reads as the sensible choice
+   rather than the expensive extreme. */
+.price-grid { display: grid; grid-template-columns: 1fr 1.15fr 1fr; gap: 16px; align-items: stretch; }
+@media (max-width: 1020px) { .price-grid { grid-template-columns: 1fr; } }
 .price-card { padding: 30px 28px; position: relative; display: flex; flex-direction: column; }
 .price-card.primary { border: 2px solid var(--brand); box-shadow: 0 12px 34px rgba(14,138,92,.14); }
 .price-badge {
@@ -1104,3 +1107,26 @@ a:focus-visible, button:focus-visible, input:focus-visible, summary:focus-visibl
 .guide-body .faq-item .faq-a { padding: 0; }
 .guide-body .faq-item .faq-a p { margin: 0 0 8px; }
 .guide-body .faq-item .faq-a p:last-child { margin-bottom: 0; }
+
+
+/* The saving, stated on the bundle card. It has to survive a calculator, so the
+   a la carte sum sits right next to it rather than being asserted alone. */
+.price-save {
+  font-size: .9rem;
+  color: var(--ink-soft);
+  background: var(--surface);
+  border-inline-start: 3px solid var(--brand);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 13px;
+  margin-bottom: 18px;
+  line-height: 1.55;
+}
+.price-save b { color: var(--ink); }
+.price-why {
+  font-size: .88rem;
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 74em;
+  margin-top: 16px;
+}
+.price-why b { color: var(--ink); }
