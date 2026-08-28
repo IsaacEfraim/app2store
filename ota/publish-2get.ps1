@@ -46,8 +46,21 @@ try {
 $manifestJson = @{ version = $Version; url = "https://app2store.co.il/ota/2get/$bundleName" } | ConvertTo-Json -Compress
 [System.IO.File]::WriteAllText((Join-Path $otaDir "latest.json"), $manifestJson)
 
-# 4. Deploy the site (serves /ota/2get/*)
+# 4. Keep only the new bundle and the previous one (rollback), then persist to
+#    git. The OTA files MUST be tracked: a site deploy made from a fresh clone
+#    silently drops anything untracked (this wiped the endpoint on 2026-08-25).
+Get-ChildItem $otaDir -Filter "bundle-*.zip" |
+    Sort-Object LastWriteTime -Descending |
+    Select-Object -Skip 2 |
+    Remove-Item -Force
+
 Push-Location "C:\New Project\app2store"
+git add -A ota/2get
+git commit -m "OTA 2get $Version"
+git push origin main
+if ($LASTEXITCODE -ne 0) { throw "git push failed - fix before deploying, or the next clone deploy wipes OTA again" }
+
+# 5. Deploy the site (serves /ota/2get/*)
 npx vercel deploy --prod --yes
 Pop-Location
 
