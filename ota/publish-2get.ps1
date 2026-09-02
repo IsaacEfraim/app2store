@@ -3,14 +3,17 @@
 # latest.json, and deploys the app2store site (which serves the OTA files).
 # Usage: .\publish-2get.ps1 -Version 1.0.1
 param(
-    [Parameter(Mandatory = $true)][string]$Version
+    [Parameter(Mandatory = $true)][string]$Version,
+    # "" = the frozen channel for binaries built before Firebase (versionCode 1-2).
+    # "v2" = binaries from versionCode 3 up, the only ones that can run push code.
+    [string]$Channel = "v2"
 )
 
 # NOTE: keep Continue — native tools (npm/vercel) write warnings to stderr,
 # and Stop turns those into fatal errors under PowerShell 5.1.
 $ErrorActionPreference = "Continue"
 $appRepo = "C:\New Project\2get"
-$otaDir = "C:\New Project\app2store\ota\2get"
+$otaDir = if ($Channel) { "C:\New Project\app2store\ota\2get\$Channel" } else { "C:\New Project\app2store\ota\2get" }
 $bundleName = "bundle-$Version.zip"
 
 # 1. Build the mobile web bundle
@@ -43,7 +46,8 @@ try {
 }
 
 # 3. Manifest (BOM-less UTF8 — Out-File utf8 adds a BOM in PS 5.1)
-$manifestJson = @{ version = $Version; url = "https://app2store.co.il/ota/2get/$bundleName" } | ConvertTo-Json -Compress
+$urlBase = if ($Channel) { "https://app2store.co.il/ota/2get/$Channel" } else { "https://app2store.co.il/ota/2get" }
+$manifestJson = @{ version = $Version; url = "$urlBase/$bundleName" } | ConvertTo-Json -Compress
 [System.IO.File]::WriteAllText((Join-Path $otaDir "latest.json"), $manifestJson)
 
 # 4. Keep only the new bundle and the previous one (rollback), then persist to
@@ -64,4 +68,4 @@ if ($LASTEXITCODE -ne 0) { throw "git push failed - fix before deploying, or the
 npx vercel deploy --prod --yes
 Pop-Location
 
-Write-Host "OTA $Version published: https://app2store.co.il/ota/2get/latest.json"
+Write-Host "OTA $Version published: $urlBase/latest.json"
