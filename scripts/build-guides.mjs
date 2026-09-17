@@ -180,7 +180,7 @@ ${JSON.stringify(schema, null, 2)}
 <header class="site-header">
   <div class="container">
     <div class="brand">
-      <a class="brand-home" href="/" aria-label="App2Store — דף הבית">
+      <a class="brand-home" href="/" aria-label="App2Store, דף הבית">
         <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="#10222E"/><path d="M24 10v16" stroke="#25D366" stroke-width="4.5" stroke-linecap="round"/><path d="M16 20l8 8 8-8" stroke="#25D366" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M12 32v3a3 3 0 0 0 3 3h18a3 3 0 0 0 3-3v-3" stroke="#fff" stroke-width="3.5" stroke-linecap="round" fill="none"/></svg>
       </a>
       <span><a class="brand-name" href="/">App2Store</a></span>

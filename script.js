@@ -1,4 +1,4 @@
-/* App2Store — hero show + WhatsApp prefill + sticky CTA */
+/* App2Store: hero show + WhatsApp prefill + sticky CTA + lead form */
 (function () {
   "use strict";
 
@@ -18,13 +18,13 @@
     android: "אני מתעניין בחבילת Google Play.",
     ios: "אני מתעניין בחבילת App Store.",
     maint: "אני רוצה לשאול על ליווי אחרי ההשקה.",
-    combo: "אני רוצה את החבילה המשולבת — המרה + 12 בודקים."
+    combo: "אני רוצה את החבילה המשולבת, המרה + 12 בודקים."
   };
 
   function waMessage(plan) {
     var base = state.domain
       ? "היי, בניתי את " + state.domain + " ואני רוצה לבדוק העלאה לגוגל פליי ולאפ סטור."
-      : "היי, יש לי אפליקציה שנבנתה ב-Base44/Lovable/v0 ואני רוצה לבדוק העלאה לחנויות.";
+      : "היי, יש לי אפליקציה שנבנתה ב Lovable/Base44/v0 ואני רוצה לבדוק העלאה לחנויות.";
     if (plan && PLAN_TEXT[plan]) base += " " + PLAN_TEXT[plan];
     return base;
   }
@@ -118,6 +118,45 @@
   }
 
   refreshWaLinks();
+
+  /* ---------- lead form (bottom of the home page) ---------- */
+
+  var leadForm = document.getElementById("leadForm");
+  if (leadForm) {
+    var leadNote = document.getElementById("leadNote");
+    var leadBtn = leadForm.querySelector('button[type="submit"]');
+    var leadBtnText = leadBtn.textContent;
+    leadForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (!leadForm.checkValidity()) { leadForm.reportValidity(); return; }
+      var honey = leadForm.querySelector('input[name="_honey"]');
+      if (honey && honey.value) return;
+      var payload = {};
+      new FormData(leadForm).forEach(function (v, k) { if (k !== "_honey" && k !== "_next") payload[k] = v; });
+      payload["עמוד"] = location.pathname + location.search;
+      leadBtn.disabled = true;
+      leadBtn.textContent = "שולח...";
+      fetch("https://formsubmit.co/ajax/itzike25@gmail.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify(payload)
+      }).then(function (r) { return r.ok ? r.json() : Promise.reject(r); })
+        .then(function (res) {
+          if (!res || String(res.success) !== "true") return Promise.reject(res);
+          leadForm.classList.add("sent");
+          leadNote.textContent = "קיבלנו. חוזרים אליכם בוואטסאפ עם תשובה ברורה.";
+          leadBtn.textContent = "נשלח";
+          try { if (window.fbq) fbq("track", "Lead", { content_name: "site_form" }); } catch (err) {}
+          try { if (window.gtag) gtag("event", "generate_lead", { method: "site_form" }); } catch (err) {}
+        })
+        .catch(function () {
+          leadBtn.disabled = false;
+          leadBtn.textContent = leadBtnText;
+          leadNote.innerHTML = 'לא נשלח. אפשר לשלוח את אותם פרטים ישירות <a href="#" data-wa>בוואטסאפ</a>.';
+          refreshWaLinks();
+        });
+    });
+  }
 
   /* ---------- stage elements ---------- */
 
@@ -232,13 +271,13 @@
     applyBrowserMono(icon);
     els.fly.style.background = icon.bg;
 
-    /* 1 — the url bar pulses: today it's just a link */
+    /* 1. the url bar pulses: today it's just a link */
     els.urlbar.classList.remove("pulse");
     void els.urlbar.offsetWidth;
     els.urlbar.classList.add("pulse");
     await wait(1100);
 
-    /* 2 — the app contracts into an icon over the browser */
+    /* 2. the app contracts into an icon over the browser */
     var browserRect = els.browserBody.getBoundingClientRect();
     var start = centerIn(browserRect, 44);
     els.fly.style.transform = "translate(" + start.x + "px," + start.y + "px) scale(2.6)";
@@ -253,7 +292,7 @@
     cur = { x: start.x, y: start.y, s: 1 };
     await wait(620);
 
-    /* 3 — it travels through the gate; each station approves it */
+    /* 3. it travels through the gate; each station approves it */
     for (var i = 0; i < els.chips.length; i++) {
       var chipRect = els.chips[i].getBoundingClientRect();
       var p = centerIn(chipRect, 44);
@@ -262,12 +301,12 @@
       await wait(260);
     }
 
-    /* 4 — stamp: it's in the store */
+    /* 4. stamp: it's in the store */
     positionStamp();
     els.stamp.classList.add("show");
     await wait(650);
 
-    /* 5 — it lands on the home screen; the phone takes the weight */
+    /* 5. it lands on the home screen; the phone takes the weight */
     var slotRect = els.slotIcon.getBoundingClientRect();
     var land = centerIn(slotRect, 44);
     await moveFly(land, 0.77, 540);
@@ -283,7 +322,7 @@
     var tag = document.getElementById("browserTag");
     if (tag) tag.textContent = "האתר? נשאר באוויר כרגיל ✓";
 
-    /* 6 — the listing goes live: התקנה */
+    /* 6. the listing goes live: התקנה */
     els.listingIcon.style.background = icon.bg;
     els.listingIcon.classList.add("lit");
     await wait(280);
@@ -418,16 +457,16 @@
       if (ready) {
         html += "<h3>נראית מוכנה לחנות 🎉</h3>";
         html += "<p>על בסיס התשובות, האפליקציה שלכם מועמדת טובה לגוגל פליי" + (answers.digital === "yes" ? "" : " ולאפ סטור") + ".</p>";
-        if (answers.login === "yes") html += "<p>👤 בגלל שיש התחברות — נכין יחד משתמש דמו לבודקים של החנויות. עניין של דקות.</p>";
-        if (answers.digital === "yes") html += "<p>💳 מוצר דיגיטלי בתשלום דורש בדרך כלל רכישות In-App אצל אפל (עם עמלה). נבדוק את זה בבדיקת ההתאמה — לפעמים יש דרך חכמה יותר.</p>";
+        if (answers.login === "yes") html += "<p>👤 בגלל שיש התחברות, נכין יחד משתמש דמו לבודקים של החנויות. עניין של דקות.</p>";
+        if (answers.digital === "yes") html += "<p>💳 מוצר דיגיטלי בתשלום דורש בדרך כלל רכישות In-App אצל אפל (עם עמלה). נבדוק את זה בבדיקת ההתאמה. לפעמים יש דרך חכמה יותר.</p>";
         html += "<p><strong>הצעד הבא לוקח דקה:</strong> שלחו לנו את הקישור, ותקבלו אישור סופי ומחיר סגור.</p>";
         waSummary = "היי, עשיתי את בדיקת המוכנות באתר ויצא שהאפליקציה שלי מוכנה. זה הקישור: ";
       } else {
         checkResult.classList.add("warn");
-        html += "<h3>כמעט שם — יש מה לחזק קודם</h3>";
-        if (answers.mobile !== "yes") html += "<p>📱 קודם כול מובייל: פתחו את האפליקציה בטלפון. אם משהו נשבר — ברוב הפלטפורמות זה פרומפט תיקון אחד (\"make it mobile friendly\").</p>";
-        if (answers.real !== "yes") html += "<p>⚡ החנויות אוהבות אפליקציות שעושות משהו: הוסיפו פעולה אמיתית אחת — טופס, חישוב, שמירת מידע — וזה כבר סיפור אחר.</p>";
-        html += "<p>לא בטוחים? שלחו לנו את הקישור ונגיד לכם בדיוק מה חסר — בחינם, בלי התחייבות.</p>";
+        html += "<h3>כמעט שם. יש מה לחזק קודם</h3>";
+        if (answers.mobile !== "yes") html += "<p>📱 קודם כול מובייל: פתחו את האפליקציה בטלפון. אם משהו נשבר, ברוב הפלטפורמות זה פרומפט תיקון אחד (\"make it mobile friendly\").</p>";
+        if (answers.real !== "yes") html += "<p>⚡ החנויות אוהבות אפליקציות שעושות משהו: הוסיפו פעולה אמיתית אחת (טופס, חישוב, שמירת מידע) וזה כבר סיפור אחר.</p>";
+        html += "<p>לא בטוחים? שלחו לנו את הקישור ונגיד לכם בדיוק מה חסר, ללא תשלום ובלי התחייבות.</p>";
         waSummary = "היי, עשיתי את בדיקת המוכנות באתר ויצא שכדאי לחזק כמה דברים. אשמח לחוות דעת על הקישור: ";
       }
       html += '<a class="btn btn-wa" target="_blank" rel="noopener" href="https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(waSummary + (state.domain ? "https://" + state.domain : "")) + '">'
